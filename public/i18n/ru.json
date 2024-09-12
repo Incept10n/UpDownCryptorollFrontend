@@ -3,5 +3,11 @@
 
     "btc": "Биткоин",
     "eth": "Эфириум",
-    "ton": "Ton"
+    "ton": "Ton",
+
+    "makePredictionText": "Делай прогноз",
+
+    "dailyChallenge": "Дневной челендж",
+    "aboutTheProject": "О проекте",
+    "rules": "Правила"
 }

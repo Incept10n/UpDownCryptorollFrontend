@@ -52,7 +52,7 @@ const ChooseGameButton = () => {
             >
                 <div className="flex justify-start items-center w-full">
                     {currentIcon !== "" && <img src={currentIcon} alt="coin" />}
-                    <div className="text-[#CCC3C3] text-[16px] w-full text-left ml-[10px]">
+                    <div className="upDownTextWhite text-[16px] w-full text-left ml-[10px]">
                         {currentText}
                     </div>
                 </div>

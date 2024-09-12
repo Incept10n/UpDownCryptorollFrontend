@@ -4,6 +4,7 @@ import {
     GameCoice,
 } from "../../../context/ApplicationContext";
 import { assets } from "../../../imagesImports/assets";
+import { useNavigate } from "react-router-dom";
 
 const ChooseGameExpandMenuItem = ({
     coinIcon,
@@ -16,7 +17,11 @@ const ChooseGameExpandMenuItem = ({
 }) => {
     const { setCurrentGame } = useContext(ApplicationContext)!;
 
+    const navigate = useNavigate();
+
     const handleOnClick = () => {
+        navigate("/play");
+
         if (coinIcon === assets.icons.coins.btc) {
             setCurrentGame(GameCoice.Btc);
         } else if (coinIcon === assets.icons.coins.eth) {
@@ -37,7 +42,7 @@ const ChooseGameExpandMenuItem = ({
                     alt="bitcoin logo"
                     className="w-[29px] h-[30px]"
                 />
-                <div className="text-[#CCC3C3] w-[70px] text-left">
+                <div className="upDownTextWhite w-[70px] text-left">
                     {coinName}
                 </div>
             </div>

@@ -10,3 +10,28 @@ body {
 .UpDownDarkBlueBg {
     color: #151820;
 }
+
+.upDownTextWhite {
+    color: #ccc3c3;
+}
+
+.bitcoinTextGradient {
+    background: linear-gradient(-86deg, #c6b419 29%, #ee9833 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.ethereumTextGradient {
+    background: linear-gradient(-86deg, #3655c5, #7987cc);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.tonTextGradient {
+    background: linear-gradient(-86deg, #0088cc, #9ddef2);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

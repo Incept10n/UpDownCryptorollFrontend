@@ -3,5 +3,11 @@
 
     "btc": "Bitcoin",
     "eth": "Ethereum",
-    "ton": "TON"
+    "ton": "TON",
+
+    "makePredictionText": "Make your prediciton",
+
+    "dailyChallenge": "Daily challenge",
+    "aboutTheProject": "About the project",
+    "rules": "Rules"
 }

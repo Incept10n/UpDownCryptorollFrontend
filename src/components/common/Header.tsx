@@ -1,15 +1,20 @@
+import { Link } from "react-router-dom";
 import { assets } from "../../imagesImports/assets";
 import ChooseGameButton from "./header/ChooseGameButton";
+import MainHeaderButtons from "./header/MainHeaderButtons";
+import MakePredictionText from "./header/MakePredictionText";
 
 const Header = () => {
     return (
         <header className="flex justify-between">
-            <div className="flex justify-between items-center">
-                <img src={assets.icons.logo} alt="logo" />
+            <div className="flex justify-between items-center font-semibold">
+                <Link to="/">
+                    <img src={assets.icons.logo} alt="logo" />
+                </Link>
                 <ChooseGameButton />
             </div>
-            <div></div>
-            <div></div>
+            <MakePredictionText />
+            <MainHeaderButtons />
         </header>
     );
 };
