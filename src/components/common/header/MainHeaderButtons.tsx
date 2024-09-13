@@ -1,24 +1,20 @@
 import { useTranslation } from "react-i18next";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { assets } from "../../../imagesImports/assets";
-import { useContext, useEffect, useState } from "react";
-import {
-    ApplicationContext,
-    GameCoice,
-} from "../../../context/ApplicationContext";
+import { useEffect, useState } from "react";
 import MobileButtonsMenu from "./MobileButtonsMenu";
 
 const MainHeaderButtons = () => {
     const { t } = useTranslation();
-    const { currentGame } = useContext(ApplicationContext)!;
+    const location = useLocation();
 
     const [isDisplayingButtons, setIsDisplayingButtons] = useState(
-        currentGame !== GameCoice.None,
+        location.pathname !== "/",
     );
 
     useEffect(() => {
-        setIsDisplayingButtons(currentGame !== GameCoice.None);
-    }, [currentGame]);
+        setIsDisplayingButtons(location.pathname !== "/");
+    }, [location.pathname]);
 
     return (
         <div

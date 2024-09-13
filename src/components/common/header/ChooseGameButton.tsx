@@ -6,6 +6,7 @@ import {
     GameCoice,
 } from "../../../context/ApplicationContext";
 import { useTranslation } from "react-i18next";
+import { useLocation } from "react-router-dom";
 
 const ChooseGameButton = () => {
     const [isExpanded, setIsExpanded] = useState(false);
@@ -17,6 +18,8 @@ const ChooseGameButton = () => {
     const divRef = useRef<HTMLDivElement>(null);
 
     const { t } = useTranslation();
+
+    const location = useLocation();
 
     useEffect(() => {
         if (currentGame === GameCoice.None) {
@@ -45,7 +48,7 @@ const ChooseGameButton = () => {
     return (
         <div
             ref={divRef}
-            className={`${currentGame === GameCoice.None && "hidden"}`}
+            className={`${location.pathname === "/" && "hidden"}`}
         >
             <button
                 className="md:w-[154px] md:h-[44px] w-[108px] h-[30px] 
