@@ -6,6 +6,7 @@ import {
     ApplicationContext,
     GameCoice,
 } from "../../../context/ApplicationContext";
+import MobileButtonsMenu from "./MobileButtonsMenu";
 
 const MainHeaderButtons = () => {
     const { t } = useTranslation();
@@ -23,41 +24,48 @@ const MainHeaderButtons = () => {
         <div
             className="upDownTextWhite font-semibold 
                        flex justify-between items-center 
-                       space-x-[34px] mr-[60px]"
+                       sm:space-x-[34px] space-x-[15px] sm:mr-[60px] mr-[27px]"
         >
             <button
                 className={`border border-[#ccc3c3] rounded-[10px] py-[9px] px-[14px]
-                            ${!isDisplayingButtons && "hidden"}`}
+                            ${!isDisplayingButtons && "lg:hidden"}
+                            lg:block hidden`}
             >
                 {t("dailyChallenge")}
             </button>
             <a
                 href="https://cryptoroll.su"
                 target="_blank"
-                className="hover:underline"
+                className="hover:underline lg:block hidden"
             >
                 {t("aboutTheProject")}
             </a>
-            <Link to="/rules" className="hover:underline">
+            <Link to="/rules" className="hover:underline lg:block hidden">
                 {t("Rules")}
             </Link>
             <div
                 className={`border border-[#ccc3c3] rounded-[10px] py-[8px] px-[9px]
-                            flex justify-between items-center w-[115px]
+                            flex justify-between items-center 
+                            md:w-[115px] md:h-auto w-[100px] h-[27px]
                             ${!isDisplayingButtons && "hidden"}`}
             >
-                3754.53
-                <img src={assets.images.coin} alt="coin currency" />
+                <div className="md:text-[1em] text-[14px] ">3754.53</div>
+                <img
+                    src={assets.images.coin}
+                    alt="coin currency"
+                    className="md:w-[26px] md:h-[26px] w-[19px] h-[19px]"
+                />
             </div>
             <Link
                 to="/profile"
-                className={`${!isDisplayingButtons && "hidden"}`}
+                className={`${!isDisplayingButtons && "lg:hidden"} lg:block hidden`}
             >
                 <img
                     src={assets.icons.profilePicture}
                     alt="profile picture pic"
                 />
             </Link>
+            <MobileButtonsMenu />
         </div>
     );
 };

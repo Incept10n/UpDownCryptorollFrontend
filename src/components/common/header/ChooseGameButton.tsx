@@ -43,16 +43,33 @@ const ChooseGameButton = () => {
     }, [currentGame]);
 
     return (
-        <div ref={divRef}>
+        <div
+            ref={divRef}
+            className={`${currentGame === GameCoice.None && "hidden"}`}
+        >
             <button
-                className="w-[154px] h-[44px] flex justify-between items-center
-                bg-[#0D121D] bg-opacity-[0.69]
-                rounded-[9px] px-[10px]"
+                className="md:w-[154px] md:h-[44px] w-[108px] h-[30px] 
+                           flex justify-between items-center
+                           bg-[#0D121D] bg-opacity-[0.69]
+                           rounded-[9px] px-[10px]"
                 onClick={() => setIsExpanded((prevState) => !prevState)}
             >
                 <div className="flex justify-start items-center w-full">
-                    {currentIcon !== "" && <img src={currentIcon} alt="coin" />}
-                    <div className="upDownTextWhite text-[16px] w-full text-left ml-[10px]">
+                    {currentIcon !== "" && (
+                        <img
+                            src={currentIcon}
+                            alt="coin"
+                            className="md:w-[30px] md:h-[30px] w-[20px] h-[20px]"
+                        />
+                    )}
+                    <div
+                        className={`upDownTextWhite md:text-[16px] text-[12px] text-left 
+                                    ${
+                                        currentGame !== GameCoice.None
+                                            ? "md:ml-[10px] ml-[3px]"
+                                            : "md:ml-[3px] ml-0"
+                                    }`}
+                    >
                         {currentText}
                     </div>
                 </div>
@@ -60,13 +77,15 @@ const ChooseGameButton = () => {
                     src={assets.icons.arrowDown}
                     alt="arrow down"
                     className={`${isExpanded ? "rotate-[180deg]" : "rotate-0"}
-                                 transition-all duration-[0.5] ease-in-out`}
+                                 transition-all duration-[0.5] ease-in-out
+                                 md:w-[17px] md:h-[11px] w-[10px] h-[6px]`}
                 />
             </button>
             <div
-                className={`bg-[#0D121D] w-[154px] overflow-hidden bg-opacity-[0.69] backdrop-blur 
+                className={`bg-[#0D121D] md:w-[154px] w-[108px] 
+                            overflow-hidden bg-opacity-[0.69] backdrop-blur 
                             rounded-[9px] absolute mt-[5px] flex flex-col
-                            ${isExpanded ? "h-[155px]" : "h-[0px]"}
+                            ${isExpanded ? "md:h-[155px] h-[128px]" : "h-[0px]"}
                             transition-all duration-[0.5] ease-in-out`}
                 onClick={() => setIsExpanded(false)}
             >

@@ -20,7 +20,9 @@ const MakePredictionText = () => {
                                   : currentGame === GameCoice.Ton
                                     ? "tonTextGradient"
                                     : "hidden"
-                        } text-[50px] font-semibold flex justify-center items-center`}
+                        } 
+                        2xl:text-[50px] text-[0px] 
+                        font-semibold flex justify-center items-center`}
         >
             {t("makePredictionText")}
         </div>

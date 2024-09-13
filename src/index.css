@@ -8,11 +8,15 @@ body {
 }
 
 .UpDownDarkBlueBg {
-    color: #151820;
+    background-color: #151820;
 }
 
 .upDownTextWhite {
     color: #ccc3c3;
+}
+
+.bitcoinGradient {
+    background: radial-gradient(circle, #f2cb40 1%, #151820 100%);
 }
 
 .bitcoinTextGradient {

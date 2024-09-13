@@ -36,18 +36,18 @@ const ChooseGameExpandMenuItem = ({
             className="flex flex-col mt-[10px] hover:cursor-pointer"
             onClick={handleOnClick}
         >
-            <div className="flex justify-between items-center w-[75%] ml-[19px]">
+            <div className="flex justify-between items-center md:w-[75%] w-[93%] md:ml-[19px] ml-[15px]">
                 <img
                     src={coinIcon}
                     alt="bitcoin logo"
-                    className="w-[29px] h-[30px]"
+                    className="md:w-[29px] md:h-[30px] w-[22px] h-[22px]"
                 />
-                <div className="upDownTextWhite w-[70px] text-left">
+                <div className="upDownTextWhite w-[70px] text-left md:text-[16px] text-[12px]">
                     {coinName}
                 </div>
             </div>
             {!lastChild && (
-                <div className="bg-[#CCC3C3] w-[85%] h-[2px] rounded-full mt-[10px] mx-auto optacity-[0.5]" />
+                <div className="bg-[#CCC3C3] w-[85%] md:h-[2px] h-[0.5px] rounded-full mt-[10px] mx-auto optacity-[0.5]" />
             )}
         </div>
     );
