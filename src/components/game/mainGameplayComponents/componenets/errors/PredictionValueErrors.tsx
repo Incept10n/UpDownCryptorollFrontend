@@ -11,7 +11,7 @@ const PredictionValueErrors = ({
     return (
         <div className="text-red-300 text-[16px] absolute bottom-[-28px] w-full text-center">
             {validationErrors.find(
-                (err) => err === MainFormValidationMistakes.NoTimeframeChosen,
+                (err) => err === MainFormValidationMistakes.NoPredictionChosen,
             ) && <div>{t("noPredictionValue")}</div>}
         </div>
     );

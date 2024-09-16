@@ -1,5 +1,8 @@
 import { useContext, useEffect, useState } from "react";
-import { ApplicationContext } from "../../../../context/ApplicationContext";
+import {
+    ApplicationContext,
+    GameCoice,
+} from "../../../../context/ApplicationContext";
 import { useTranslation } from "react-i18next";
 import GradientText from "./GradientText";
 import { assets } from "../../../../imagesImports/assets";
@@ -13,13 +16,17 @@ import GuessButton from "./GuessButton";
 import BetInputField from "./BetInputField";
 import { useTonAddress, useTonWallet } from "@tonconnect/ui-react";
 import { validateFormValues } from "../../../../helperFunctions/validationFunctions";
-import { fetchPlayerInfo } from "../../../../helperFunctions/fetchFunctions";
+import {
+    fetchPlayerInfo,
+    postMatch,
+} from "../../../../helperFunctions/fetchFunctions";
 import BetErrors from "./errors/BetErrors";
 import PredictionTimeframeErrors from "./errors/PredictionTimeframeErrors";
 import PredictionValueErrors from "./errors/PredictionValueErrors";
 
 const GuessPriceForm = () => {
-    const { setDisplayTonConnectPopup } = useContext(ApplicationContext)!;
+    const { currentGame, setDisplayTonConnectPopup } =
+        useContext(ApplicationContext)!;
 
     const [betValue, setBetValue] = useState("");
     const [currentTimeframeChoice, setCurrentTimeframeChoice] =
@@ -51,15 +58,25 @@ const GuessPriceForm = () => {
             predictionValue,
         );
 
-        console.log(validErrors);
-
         setValidationErrors(validErrors);
 
         if (validErrors.length !== 1) {
             return;
         }
 
-        console.log("the form is valid!");
+        console.log(
+            "the form is valid!, sending post request for match with 15 seconds timeframe as a text",
+        );
+
+        await postMatch(
+            walletAddress,
+            currentGame,
+            Number.parseFloat(betValue),
+            currentTimeframeChoice,
+            predictionValue,
+        );
+
+        console.log("post request to create match has been sent");
     };
 
     useEffect(() => {
