@@ -85,7 +85,7 @@ const ChooseGameButton = () => {
                 />
             </button>
             <div
-                className={`bg-[#0D121D] md:w-[154px] w-[108px] 
+                className={`bg-[#0D121D] md:w-[154px] w-[108px] z-[20]
                             overflow-hidden bg-opacity-[0.69] backdrop-blur 
                             rounded-[9px] absolute mt-[5px] flex flex-col
                             ${isExpanded ? "md:h-[155px] h-[128px]" : "h-[0px]"}

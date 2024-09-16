@@ -6,8 +6,9 @@ import {
 } from "../../context/ApplicationContext";
 import EthereumGradient from "./gradients/EthereumGradient";
 import TonGradient from "./gradients/TonGradient";
-import TradingViewWidget from "./tradingViewWidgets/TradingViewWidget";
 import MainGameplay from "./mainGameplayComponents/MainGameplay";
+import TradingViewWidget from "./tradingViewWidgets/TradingViewWidget";
+import CardUpDownBackground from "./mainGameplayComponents/componenets/CardUpDownBackground";
 
 const GameManager = () => {
     const { currentGame, setCurrentGame } = useContext(ApplicationContext)!;
@@ -18,7 +19,7 @@ const GameManager = () => {
 
     return (
         <>
-            <div>
+            <div className="fixed z-[-5]">
                 {currentGame === GameCoice.Btc ? (
                     <BitcoinGradient />
                 ) : currentGame === GameCoice.Eth ? (
@@ -30,16 +31,21 @@ const GameManager = () => {
                 )}
             </div>
             <div
-                className="w-full h-100vh fixed top-[180px] left-[64px] z-[-10]
+                className="w-full h-100vh fixed top-[180px] left-[64px]
                            flex"
             >
                 <div className="w-[767px] h-[703px]">
                     <TradingViewWidget />
                 </div>
-                <div className="w-[50%] ml-[33px]">
+                <div className="w-[50%] ml-[33px] relative">
                     <MainGameplay />
                 </div>
             </div>
+            <CardUpDownBackground
+                widthPx={750}
+                heightPx={400}
+                className="absolute left-[864px] top-[180px] z-[-10]"
+            />
         </>
     );
 };

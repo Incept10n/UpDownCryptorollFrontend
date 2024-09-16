@@ -11,5 +11,22 @@
     "dailyChallenge": "Daily challenge",
     "aboutTheProject": "About the project",
     "aboutMobile": "About",
-    "rules": "Rules"
+    "rules": "Rules",
+
+    "iWantToBet": "I want to bet",
+    "that": "that",
+    "btcPricein": "Bitcoin price in",
+    "willGo": "Will go",
+    "minutes": "minutes",
+    "hours": "hours",
+    "up": "Up",
+    "down": "Down",
+    "makePrediction": "Make prediction",
+
+    "plsConnectYourWallet": "You need to connect your wallet to continue",
+
+    "emptyBet": "Bet cannot be empty or 0",
+    "insufFunds": "Insufficient funds",
+    "noTimeframeChoice": "Choose prediction time",
+    "noPredictionValue": "Choose prediction value"
 }

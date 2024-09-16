@@ -1,5 +1,11 @@
+import GuessPriceForm from "./componenets/GuessPriceForm";
+
 const MainGameplay = () => {
-    return <div>MainGameplay</div>;
+    return (
+        <div>
+            <GuessPriceForm />
+        </div>
+    );
 };
 
 export default MainGameplay;

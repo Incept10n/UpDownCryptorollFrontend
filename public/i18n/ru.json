@@ -11,5 +11,22 @@
     "dailyChallenge": "Дневной челендж",
     "aboutTheProject": "О проекте",
     "aboutMobile": "О проекте",
-    "rules": "Правила"
+    "rules": "Правила",
+
+    "iWantToBet": "Ставлю",
+    "that": "что",
+    "btcPricein": "цена BTC через",
+    "willGo": "пойдёт",
+    "minutes": "минут",
+    "hours": "часов",
+    "up": "Вверх",
+    "down": "Вниз",
+    "makePrediction": "Сделать прогноз",
+
+    "plsConnectYourWallet": "Подключите ваш TON кошелёк, чтобы продолжить",
+
+    "emptyBet": "Ставка не может быть пустой или 0",
+    "insufFunds": "Недостаточно средств",
+    "noTimeframeChoice": "Выберите время прогнозирования",
+    "noPredictionValue": "Выберите значение прогноза"
 }
