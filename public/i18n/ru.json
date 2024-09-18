@@ -28,5 +28,12 @@
     "emptyBet": "Ставка не может быть пустой или 0",
     "insufFunds": "Недостаточно средств",
     "noTimeframeChoice": "Выберите время прогнозирования",
-    "noPredictionValue": "Выберите значение прогноза"
+    "noPredictionValue": "Выберите значение прогноза",
+
+    "alreadyInMatch": "Вы уже сделали прогноз",
+    "betAlreadyInMatch": "Ставка:",
+    "coinAlreadyInMatch": "Коин:",
+    "predictionAlreadyInMatch": "Прогноз:",
+    "timeRemainingAlreadyInMatch": "Осталось времени:",
+    "seconds": "секунд"
 }

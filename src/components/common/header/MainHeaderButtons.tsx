@@ -18,10 +18,10 @@ const MainHeaderButtons = () => {
     const [isDisplayingButtons, setIsDisplayingButtons] = useState(
         location.pathname !== "/",
     );
-    const [currentBalance, setCurrentBalance] = useState(0);
     const [isLoading, setIsLoading] = useState(true);
 
-    const { setDisplayTonConnectPopup } = useContext(ApplicationContext)!;
+    const { currentBalance, setCurrentBalance, setDisplayTonConnectPopup } =
+        useContext(ApplicationContext)!;
 
     useEffect(() => {
         if (!wallet) {

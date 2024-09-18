@@ -14,6 +14,7 @@ function App() {
     const [currentGame, setCurrentGame] = useState<GameCoice>(GameCoice.None);
     const [displayTonConnectPopup, setDisplayTonConnectPopup] =
         useState<boolean>(false);
+    const [currentBalance, setCurrentBalance] = useState(0);
 
     return (
         <ApplicationContext.Provider
@@ -22,6 +23,8 @@ function App() {
                 setCurrentGame,
                 displayTonConnectPopup,
                 setDisplayTonConnectPopup,
+                currentBalance,
+                setCurrentBalance,
             }}
         >
             <TonConnectUIProvider manifestUrl={manifestUrl}>

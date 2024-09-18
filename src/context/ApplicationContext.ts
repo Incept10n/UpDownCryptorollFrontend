@@ -12,6 +12,8 @@ export interface ApplicationContextInterface {
     setCurrentGame: React.Dispatch<React.SetStateAction<GameCoice>>;
     displayTonConnectPopup: boolean;
     setDisplayTonConnectPopup: Dispatch<SetStateAction<boolean>>;
+    currentBalance: number;
+    setCurrentBalance: Dispatch<SetStateAction<number>>;
 }
 
 export const ApplicationContext = createContext<

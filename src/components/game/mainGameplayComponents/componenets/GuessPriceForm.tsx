@@ -1,8 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import {
-    ApplicationContext,
-    GameCoice,
-} from "../../../../context/ApplicationContext";
+import { ApplicationContext } from "../../../../context/ApplicationContext";
 import { useTranslation } from "react-i18next";
 import GradientText from "./GradientText";
 import { assets } from "../../../../imagesImports/assets";
@@ -18,14 +15,17 @@ import { useTonAddress, useTonWallet } from "@tonconnect/ui-react";
 import { validateFormValues } from "../../../../helperFunctions/validationFunctions";
 import {
     fetchPlayerInfo,
+    fetchCurrentUserMatch,
     postMatch,
 } from "../../../../helperFunctions/fetchFunctions";
 import BetErrors from "./errors/BetErrors";
 import PredictionTimeframeErrors from "./errors/PredictionTimeframeErrors";
 import PredictionValueErrors from "./errors/PredictionValueErrors";
+import WaitForMatchToFinish from "./mainFormComponents/WaitForMatchToFinish";
+import { CurrentMatch } from "../../../../types/CurrentMatch";
 
 const GuessPriceForm = () => {
-    const { currentGame, setDisplayTonConnectPopup } =
+    const { setCurrentBalance, currentGame, setDisplayTonConnectPopup } =
         useContext(ApplicationContext)!;
 
     const [betValue, setBetValue] = useState("");
@@ -42,6 +42,10 @@ const GuessPriceForm = () => {
     const { t } = useTranslation();
     const wallet = useTonWallet();
     const walletAddress = useTonAddress(false);
+
+    const [isCurrentlyInMatch, setIsCurrentlyInMatch] =
+        useState<boolean>(false);
+    const [currentMatch, setCurrentMatch] = useState<CurrentMatch | null>(null);
 
     const submitForm = async () => {
         if (wallet === null) {
@@ -76,17 +80,38 @@ const GuessPriceForm = () => {
             predictionValue,
         );
 
+        fetchPlayerInfo(walletAddress).then((result) => {
+            setCurrentBalance(result?.currentBalance);
+        });
+        fetchCurrentUserMatch(walletAddress).then((result) => {
+            setCurrentMatch(result);
+            setIsCurrentlyInMatch(result?.id !== -1);
+        });
+
         console.log("post request to create match has been sent");
     };
 
     useEffect(() => {
-        fetchPlayerInfo(walletAddress).then((result) => {
-            setCurrentUserBalance(result?.currentBalance);
-        });
-    }, []);
+        if (wallet) {
+            fetchPlayerInfo(walletAddress).then((result) => {
+                setCurrentBalance(result?.currentBalance);
+            });
+            fetchCurrentUserMatch(walletAddress).then((result) => {
+                setCurrentMatch(result);
+                setIsCurrentlyInMatch(result?.id !== -1);
+            });
+        }
+    }, [wallet]);
 
     return (
-        <div className="w-[750px] h-[400px] rounded-[68px]">
+        <div className="w-[750px] h-[400px] rounded-[68px] relative">
+            {isCurrentlyInMatch && (
+                <WaitForMatchToFinish
+                    setCurrentMatch={setCurrentMatch}
+                    setIsCurrentlyInMatch={setIsCurrentlyInMatch}
+                    currentMatch={currentMatch}
+                />
+            )}
             <div className="p-[55px] space-y-[27px]">
                 <div className="flex justify-between items-center relative">
                     <GradientText

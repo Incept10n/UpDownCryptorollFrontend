@@ -6,3 +6,4 @@ export const manifestUrl =
     "https://raw.githubusercontent.com/Incept10n/BUFF/refs/heads/master/tonconnect-manifest.json";
 
 export const backendUrl = "http://172.27.33.20:5089";
+// export const backendUrl = "http://localhost:5089";

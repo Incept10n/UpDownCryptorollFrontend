@@ -1,5 +1,6 @@
 import { backendUrl } from "../constants";
 import { GameCoice } from "../context/ApplicationContext";
+import { CurrentMatch } from "../types/CurrentMatch";
 import { PredictionValue, TimeframeChoice } from "../types/HelperTypes";
 import { Converter } from "./Converter";
 
@@ -49,4 +50,19 @@ export const postMatch = async (
     } catch (error) {
         console.log("there was an error while creating match");
     }
+};
+
+export const fetchCurrentUserMatch = async (walletAddress: string) => {
+    const response = await fetch(
+        `${backendUrl}/match/current?walletAddress=${walletAddress}`,
+    );
+
+    const result = await response.json();
+    return new CurrentMatch(
+        result.id,
+        result.bet,
+        result.coin,
+        result.prediction,
+        result.timeRemaining,
+    );
 };

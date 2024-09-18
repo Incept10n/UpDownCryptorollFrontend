@@ -28,5 +28,12 @@
     "emptyBet": "Bet cannot be empty or 0",
     "insufFunds": "Insufficient funds",
     "noTimeframeChoice": "Choose prediction time",
-    "noPredictionValue": "Choose prediction value"
+    "noPredictionValue": "Choose prediction value",
+
+    "alreadyInMatch": "You've already made a prediction",
+    "betAlreadyInMatch": "Bet:",
+    "coinAlreadyInMatch": "Coin:",
+    "predictionAlreadyInMatch": "Prediction:",
+    "timeRemainingAlreadyInMatch": "Time remaining:",
+    "seconds": "seconds"
 }
