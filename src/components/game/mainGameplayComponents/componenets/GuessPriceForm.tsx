@@ -1,16 +1,12 @@
 import { useContext, useEffect, useState } from "react";
 import { ApplicationContext } from "../../../../context/ApplicationContext";
 import { useTranslation } from "react-i18next";
-import GradientText from "./GradientText";
 import { assets } from "../../../../imagesImports/assets";
-import TimeChoiceCard from "./TimeChoiceCard";
 import {
     MainFormValidationMistakes,
     PredictionValue,
     TimeframeChoice,
 } from "../../../../types/HelperTypes";
-import GuessButton from "./GuessButton";
-import BetInputField from "./BetInputField";
 import { useTonAddress, useTonWallet } from "@tonconnect/ui-react";
 import { validateFormValues } from "../../../../helperFunctions/validationFunctions";
 import {
@@ -23,6 +19,10 @@ import PredictionTimeframeErrors from "./errors/PredictionTimeframeErrors";
 import PredictionValueErrors from "./errors/PredictionValueErrors";
 import WaitForMatchToFinish from "./mainFormComponents/WaitForMatchToFinish";
 import { CurrentMatch } from "../../../../types/CurrentMatch";
+import BetInputField from "./mainFormComponents/BetInputField";
+import GuessButton from "./mainFormComponents/GuessButton";
+import TimeChoiceCard from "./mainFormComponents/TimeChoiceCard";
+import GradientText from "./common/GradientText";
 
 const GuessPriceForm = () => {
     const { setCurrentBalance, currentGame, setDisplayTonConnectPopup } =

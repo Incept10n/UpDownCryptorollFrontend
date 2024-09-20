@@ -1,14 +1,12 @@
-import { assets } from "../../../../imagesImports/assets";
+import { assets } from "../../../../../imagesImports/assets";
 
 const CardUpDownBackground = ({
     widthPx,
     heightPx,
-    children,
     className,
 }: {
     widthPx: number;
     heightPx: number;
-    children?: React.ReactNode;
     className?: string;
 }) => {
     return (
@@ -21,17 +19,19 @@ const CardUpDownBackground = ({
                 }}
             >
                 <div
-                    className="w-[99.7%] h-[99.7%] bg-no-repeat"
+                    className="bg-no-repeat rounded-[68px] bg-center"
                     style={{
                         backgroundImage: `url(${assets.images.main.bg})`,
+                        width: `${widthPx - 2}px`,
+                        height: `${heightPx - 2}px`,
                     }}
                 >
-                    <div
-                        className="w-full h-full rounded-[68px] bg-[#0d121d]
-                       backdrop-blur-[30px] bg-opacity-[0.39]"
-                    >
-                        {children}
-                    </div>
+                    {
+                        <div
+                            className="w-full h-full rounded-[68px] bg-[#0d121d]
+                           backdrop-blur-[30px] bg-opacity-[0.39]"
+                        ></div>
+                    }
                 </div>
             </div>
         </div>

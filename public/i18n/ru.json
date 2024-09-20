@@ -32,8 +32,18 @@
 
     "alreadyInMatch": "Вы уже сделали прогноз",
     "betAlreadyInMatch": "Ставка:",
+    "ifYouLoseAlreadyInMatch": "Если проиграете:",
+    "ifYouWinAlreadyInMatch": "Если выиграете:",
     "coinAlreadyInMatch": "Коин:",
     "predictionAlreadyInMatch": "Прогноз:",
-    "timeRemainingAlreadyInMatch": "Осталось времени:",
-    "seconds": "секунд"
+    "entryPriceAlreadyInMatch": "Цена коина на момент прогноза:",
+    "seconds": "секунд",
+
+    "youAreCurrently": "В данный момент вы",
+    "winning": "выигрываете",
+    "losing": "проигрываете",
+    "fromEntry": "от ставки на момент прогноза",
+
+    "livePrice": "Текущая цена",
+    "ifYouWin": "Если вы выиграете, вы получите"
 }

@@ -8,7 +8,7 @@ import EthereumGradient from "./gradients/EthereumGradient";
 import TonGradient from "./gradients/TonGradient";
 import MainGameplay from "./mainGameplayComponents/MainGameplay";
 import TradingViewWidget from "./tradingViewWidgets/TradingViewWidget";
-import CardUpDownBackground from "./mainGameplayComponents/componenets/CardUpDownBackground";
+import CardUpDownBackground from "./mainGameplayComponents/componenets/common/CardUpDownBackground";
 
 const GameManager = () => {
     const { currentGame, setCurrentGame } = useContext(ApplicationContext)!;
@@ -37,7 +37,7 @@ const GameManager = () => {
                 <div className="w-[767px] h-[703px]">
                     <TradingViewWidget />
                 </div>
-                <div className="w-[50%] ml-[33px] relative">
+                <div className="w-[54%] ml-[33px] relative">
                     <MainGameplay />
                 </div>
             </div>
@@ -45,6 +45,11 @@ const GameManager = () => {
                 widthPx={750}
                 heightPx={400}
                 className="absolute left-[864px] top-[180px] z-[-10]"
+            />
+            <CardUpDownBackground
+                widthPx={236}
+                heightPx={391}
+                className="absolute right-[64px] top-[180px] z-[-10]"
             />
         </>
     );

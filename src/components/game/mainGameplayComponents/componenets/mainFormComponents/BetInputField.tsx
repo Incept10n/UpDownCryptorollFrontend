@@ -1,5 +1,5 @@
 import { ChangeEvent, Dispatch, SetStateAction } from "react";
-import { assets } from "../../../../imagesImports/assets";
+import { assets } from "../../../../../imagesImports/assets";
 
 const BetInputField = ({
     betValue,

@@ -1,5 +1,4 @@
 import { useTranslation } from "react-i18next";
-import { assets } from "../../../../../imagesImports/assets";
 import TimeRemainingCards from "./waitForMatchPopupComponents/TimeRemainingCards";
 import { CurrentMatch } from "../../../../../types/CurrentMatch";
 import {
@@ -20,6 +19,10 @@ import {
     fetchCurrentUserMatch,
 } from "../../../../../helperFunctions/fetchFunctions";
 import { useTonAddress } from "@tonconnect/ui-react";
+import CurrentMatchTextWithMoney from "./waitForMatchPopupComponents/CurrentMatchTextWithMoney";
+import CurrentCoinText from "./waitForMatchPopupComponents/CurrentCoinText";
+import CurrentPredictionText from "./waitForMatchPopupComponents/CurrentPredictionText";
+import EntryPriceText from "./EntryPriceText";
 
 const WaitForMatchToFinish = ({
     currentMatch,
@@ -38,6 +41,8 @@ const WaitForMatchToFinish = ({
         PredictionValue.None,
     );
     const [currentClock, setCurrentClock] = useState<CurrentClock | null>(null);
+    const [currentWinningMultiplier, setCurrentWinningMultiplier] = useState(1);
+    const [currentEntryPrice, setCurrentEntryPrice] = useState(0);
 
     const walletAddress = useTonAddress(false);
 
@@ -66,10 +71,15 @@ const WaitForMatchToFinish = ({
                     ? PredictionValue.Up
                     : PredictionValue.Down,
             );
+            setCurrentWinningMultiplier(currentMatch.winningMultiplier);
+            setCurrentEntryPrice(currentMatch.entryPrice);
+
             const initialClock = CurrentClock.fromTimeString(
                 currentMatch.timeRemaining,
             );
             setCurrentClock(initialClock);
+
+            // setCurrentClock(CurrentClock.fromTimeString("00:14:00"));
 
             intervalId = window.setInterval(() => {
                 setCurrentClock((prevClock) => {
@@ -107,83 +117,55 @@ const WaitForMatchToFinish = ({
                         flex justify-center items-center"
         >
             <div
-                className="w-[525px] h-[205px] UpDownDarkBlueBg rounded-[26px]
-                           flex flex-col justify-start items-center 
-                           text-[25px] font-semibold"
+                className="w-[647px] h-[281px] UpDownDarkBlueBg rounded-[26px]
+                           px-[21px] text-[25px] font-semibold"
             >
-                <div className="popupTextGradient text-center mt-[14px]">
+                <div
+                    className="text-[22px] text-[#ccc3c3] opacity-[0.5] 
+                                font-light text-center my-[5px]"
+                >
                     {t("alreadyInMatch")}
                 </div>
-                <div className="flex justify-between items-center space-x-[13px] mt-[24px]">
-                    <div className="flex justify-start items-center">
-                        <div className="popupTextGradient">
-                            {t("betAlreadyInMatch")}
-                        </div>
-                        <div className="flex justify-start items-center ml-[11px]">
-                            <div className="bitcoinTextGradient">
-                                {currentBet}
-                            </div>
-                            <img
-                                src={assets.images.inputFormCoin}
-                                alt="coin currency image"
-                                className="w-[24px] h-[24px] ml-[10px]"
-                            />
-                        </div>
-                    </div>
-                    <div className="flex justify-start items-center">
-                        <div className="popupTextGradient">
-                            {t("coinAlreadyInMatch")}
-                        </div>
-                        <img
-                            src={
-                                currentCoin === GameCoice.Btc
-                                    ? assets.icons.coins.btc
-                                    : currentCoin === GameCoice.Eth
-                                      ? assets.icons.coins.eth
-                                      : currentCoin === GameCoice.Ton
-                                        ? assets.icons.coins.ton
-                                        : assets.icons.coins.btc
-                            }
-                            alt="btc coin"
-                            className="ml-[5px]"
+                <div className="flex justify-between items-start ">
+                    <div>
+                        <CurrentMatchTextWithMoney
+                            text={t("betAlreadyInMatch")}
+                            amountOfMoney={currentBet}
                         />
+                        <CurrentMatchTextWithMoney
+                            text={t("ifYouLoseAlreadyInMatch")}
+                            amountOfMoney={-currentBet}
+                        />
+                        <CurrentMatchTextWithMoney
+                            text={t("ifYouWinAlreadyInMatch")}
+                            amountOfMoney={
+                                +currentBet * currentWinningMultiplier
+                            }
+                        />
+                        <CurrentCoinText currentCoin={currentCoin} />
+                        <CurrentPredictionText
+                            currentPrediction={currentPrediction}
+                        />
+                        <EntryPriceText entryPrice={currentEntryPrice} />
                     </div>
-                    <div className="popupTextGradient flex justify-between items-center">
-                        <div className="popupTextGradient">
-                            {t("predictionAlreadyInMatch")}
+                    <div className="w-auto flex flex-col items-end">
+                        <div className="popupTextGradient flex justify-end items-center">
+                            {currentClock && (
+                                <TimeRemainingCards
+                                    currentClock={currentClock}
+                                />
+                            )}
                         </div>
-                        <div
-                            className={`w-[42px] h-[26px] bg-opacity-[0.72] ml-[6px]
-                                       ${
-                                           currentPrediction ===
-                                           PredictionValue.Up
-                                               ? "bg-[#CCF751]"
-                                               : "bg-[#fd5254]"
-                                       }
-                                       rounded-tl-[100px] rounded-tr-[1000px] 
-                                       rounded-bl-[1000px] rounded-br-[100px]
-                                       flex justify-center items-center relative`}
-                        >
-                            <img
-                                src={assets.icons.winLoseArrow}
-                                alt="arrow"
-                                className={`${
-                                    currentPrediction === PredictionValue.Up
-                                        ? "rotate-[0deg]"
-                                        : "rotate-[180deg]"
-                                } scale-[0.60] absolute top-[-7px]`}
-                            />
+                        <div className="text-[25px] popupTextGradient mr-[2px] mt-[27px]">
+                            {t("youAreCurrently")}
+                        </div>
+                        <div className="text-[25px] text-[#72b83b] mt-[7px]">
+                            {t("winning")}
+                        </div>
+                        <div className="text-[25px] text-[#72b83b] mt-[7px]">
+                            (+10% {t("fromEntry")})
                         </div>
                     </div>
-                </div>
-                <div
-                    className="popupTextGradient flex justify-between items-center 
-                                w-[382px] mt-[19px]"
-                >
-                    <div>{t("timeRemainingAlreadyInMatch")}</div>
-                    {currentClock && (
-                        <TimeRemainingCards currentClock={currentClock} />
-                    )}
                 </div>
             </div>
         </div>

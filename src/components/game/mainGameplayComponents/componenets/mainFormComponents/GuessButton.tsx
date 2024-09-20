@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
-import { assets } from "../../../../imagesImports/assets";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
-import { PredictionValue } from "../../../../types/HelperTypes";
+import { PredictionValue } from "../../../../../types/HelperTypes";
+import { assets } from "../../../../../imagesImports/assets";
 
 const GuessButton = ({
     predictionValue,

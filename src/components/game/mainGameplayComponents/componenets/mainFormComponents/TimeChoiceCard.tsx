@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
-import GradientText from "./GradientText";
-import { TimeframeChoice } from "../../../../types/HelperTypes";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
+import { TimeframeChoice } from "../../../../../types/HelperTypes";
+import GradientText from "../common/GradientText";
 
 const TimeChoiceCard = ({
     currentTimeframeChoice,

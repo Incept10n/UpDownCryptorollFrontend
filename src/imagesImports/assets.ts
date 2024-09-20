@@ -14,6 +14,10 @@ import makePredictionBg from "/gameplayImages/makePredictionBg.svg";
 import tonConnectPopupBg from "/popupImages/tonConnectPopupBg.svg";
 import popupCloseButton from "/popupImages/closeBtn.svg";
 import loadingIcon from "/headerIcons/loading.svg";
+import dollar from "/gameplayImages/Dollar.svg";
+import questionMarkBitcoin from "/gameplayImages/questionMark/questionMarkBitcoin.svg";
+import questionMarkEthereum from "/gameplayImages/questionMark/questionMarkEth.svg";
+import questionMarkTon from "/gameplayImages/questionMark/questionMarkTon.svg";
 
 export const assets = {
     icons: {
@@ -30,6 +34,12 @@ export const assets = {
         winLoseArrow: winLoseArrow,
         popupCloseBtn: popupCloseButton,
         loading: loadingIcon,
+        dollar: dollar,
+        questionMark: {
+            bitcoin: questionMarkBitcoin,
+            ethereum: questionMarkEthereum,
+            ton: questionMarkTon,
+        },
     },
     images: {
         coin: coinPic,

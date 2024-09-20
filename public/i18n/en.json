@@ -32,8 +32,18 @@
 
     "alreadyInMatch": "You've already made a prediction",
     "betAlreadyInMatch": "Bet:",
+    "ifYouLoseAlreadyInMatch": "If you lose:",
+    "ifYouWinAlreadyInMatch": "If you win:",
     "coinAlreadyInMatch": "Coin:",
     "predictionAlreadyInMatch": "Prediction:",
-    "timeRemainingAlreadyInMatch": "Time remaining:",
-    "seconds": "seconds"
+    "entryPriceAlreadyInMatch": "Entry price:",
+    "seconds": "seconds",
+
+    "youAreCurrently": "You are currently",
+    "winning": "winning",
+    "losing": "losing",
+    "fromEntry": "from entry",
+
+    "livePrice": "Live price",
+    "ifYouWin": "If you win you will get"
 }

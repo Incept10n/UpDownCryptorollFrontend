@@ -2,7 +2,7 @@ import { useContext } from "react";
 import {
     ApplicationContext,
     GameCoice,
-} from "../../../../context/ApplicationContext";
+} from "../../../../../context/ApplicationContext";
 
 const GradientText = ({
     text,

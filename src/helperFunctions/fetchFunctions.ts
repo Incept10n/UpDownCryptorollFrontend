@@ -29,8 +29,8 @@ export const postMatch = async (
         WalletAddress: walletAddress,
         Coin: Converter.getCoinFromGameChoice(currentGameChoice),
         PredictionAmount: predictionAmount,
-        PredictionTimeframe:
-            Converter.getTimeFromTimeFrame(predictionTimeFrame), //"00:00:15",
+        PredictionTimeframe: "00:00:15",
+        // Converter.getTimeFromTimeFrame(predictionTimeFrame), //"00:00:15",
         PredictionValue:
             Converter.getStringValueFrompredictionValue(predictionValue),
     };
@@ -64,5 +64,7 @@ export const fetchCurrentUserMatch = async (walletAddress: string) => {
         result.coin,
         result.prediction,
         result.timeRemaining,
+        result.winningMultiplier,
+        result.entryPrice,
     );
 };
