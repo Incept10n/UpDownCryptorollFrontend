@@ -48,7 +48,7 @@ const GameManager = () => {
             />
             <CardUpDownBackground
                 widthPx={236}
-                heightPx={391}
+                heightPx={400}
                 className="absolute right-[64px] top-[180px] z-[-10]"
             />
         </>

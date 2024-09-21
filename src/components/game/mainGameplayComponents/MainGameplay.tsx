@@ -5,7 +5,7 @@ const MainGameplay = () => {
     return (
         <div className="flex justify-between w-[1000px]">
             <GuessPriceForm />
-            <LivePrice />
+            <LivePrice livePrice={69234} profit={1245.5} />
         </div>
     );
 };

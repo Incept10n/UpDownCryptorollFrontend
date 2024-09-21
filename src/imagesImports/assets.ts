@@ -18,6 +18,9 @@ import dollar from "/gameplayImages/Dollar.svg";
 import questionMarkBitcoin from "/gameplayImages/questionMark/questionMarkBitcoin.svg";
 import questionMarkEthereum from "/gameplayImages/questionMark/questionMarkEth.svg";
 import questionMarkTon from "/gameplayImages/questionMark/questionMarkTon.svg";
+import livePriceDollarSignBitcoin from "/gameplayImages/dollarSign/LivePriceDollarSignBitcoin.svg";
+import livePriceDollarSignEth from "/gameplayImages/dollarSign/LivePriceDollarSignEth.svg";
+import livePriceDollarSignTon from "/gameplayImages/dollarSign/LivePriceDollarSignTon.svg";
 
 export const assets = {
     icons: {
@@ -39,6 +42,11 @@ export const assets = {
             bitcoin: questionMarkBitcoin,
             ethereum: questionMarkEthereum,
             ton: questionMarkTon,
+        },
+        livePriceDollarSign: {
+            bitcoin: livePriceDollarSignBitcoin,
+            ethereum: livePriceDollarSignEth,
+            ton: livePriceDollarSignTon,
         },
     },
     images: {
