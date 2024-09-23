@@ -52,5 +52,9 @@
     "congratsYouWonText": "Congratulations, you won!",
     "unfortunYouLost": "Unfortunately, you lost",
     "collect": "Collect",
-    "ok": "ok, :("
+    "ok": "ok, :(",
+
+    "daysStreakMultText": "days streak multiplier",
+    "betMultiText": "bet multiplier",
+    "noChoiceMulti": "No choice multiplier"
 }

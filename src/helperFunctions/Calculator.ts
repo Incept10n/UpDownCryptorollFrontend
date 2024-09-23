@@ -5,8 +5,13 @@ export class Calculator {
         timeframe: TimeframeChoice,
         loginStreak: number,
     ) => {
-        const dailyBonus = 1 + 0.3 * loginStreak;
+        const dailyBonus = this.getMultiplierFromLoginStreak(loginStreak);
+        const timeframeBonus = this.getMultiplierFromTimeframe(timeframe);
 
+        return dailyBonus + timeframeBonus;
+    };
+
+    static getMultiplierFromTimeframe = (timeframe: TimeframeChoice) => {
         let timeframeBonus: number;
 
         switch (timeframe) {
@@ -27,6 +32,12 @@ export class Calculator {
                 break;
         }
 
-        return dailyBonus + timeframeBonus;
+        return timeframeBonus;
+    };
+
+    static getMultiplierFromLoginStreak = (loginStreak: number) => {
+        const dailyBonus = 1 + 0.3 * loginStreak;
+
+        return dailyBonus;
     };
 }

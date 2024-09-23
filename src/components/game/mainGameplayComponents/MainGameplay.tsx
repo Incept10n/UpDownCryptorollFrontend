@@ -9,6 +9,7 @@ import {
 import { TimeframeChoice } from "../../../types/HelperTypes";
 import { useTonAddress } from "@tonconnect/ui-react";
 import { Calculator } from "../../../helperFunctions/Calculator";
+import Multipliers from "./componenets/Multipliers";
 
 const MainGameplay = () => {
     const { currentGame } = useContext(ApplicationContext)!;
@@ -61,15 +62,21 @@ const MainGameplay = () => {
     }, [betValue, currentTimeframeChoice]);
 
     return (
-        <div className="flex justify-between w-[1000px]">
-            <GuessPriceForm
-                livePrice={livePrice}
+        <div className="flex flex-col">
+            <div className="flex justify-between w-[1000px]">
+                <GuessPriceForm
+                    livePrice={livePrice}
+                    currentTimeframeChoice={currentTimeframeChoice}
+                    setCurrentTimeframeChoice={setCurrentTimeframeChoice}
+                    betValue={betValue}
+                    setBetValue={setBetValue}
+                />
+                <LivePrice livePrice={livePrice} profit={profit} />
+            </div>
+            <Multipliers
+                userLoginStreak={userLoginStreak}
                 currentTimeframeChoice={currentTimeframeChoice}
-                setCurrentTimeframeChoice={setCurrentTimeframeChoice}
-                betValue={betValue}
-                setBetValue={setBetValue}
             />
-            <LivePrice livePrice={livePrice} profit={profit} />
         </div>
     );
 };
