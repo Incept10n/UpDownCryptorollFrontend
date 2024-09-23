@@ -98,7 +98,7 @@ const CollectMatchRewardCard = ({
                         onClick={handleOnCollect}
                     >
                         <div className="popupTextGradient text-[20px] font-semibold">
-                            {isMatchWon ? t("collect") : t("ok(:")}
+                            {isMatchWon ? t("collect") : t("ok")}
                         </div>
                     </button>
                 </div>
