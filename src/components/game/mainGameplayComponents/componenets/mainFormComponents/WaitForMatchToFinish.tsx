@@ -28,12 +28,18 @@ const WaitForMatchToFinish = ({
     currentMatch,
     setCurrentMatch,
     setIsCurrentlyInMatch,
+    livePrice,
 }: {
     currentMatch: CurrentMatch | null;
     setCurrentMatch: Dispatch<SetStateAction<CurrentMatch | null>>;
     setIsCurrentlyInMatch: Dispatch<SetStateAction<boolean>>;
+    livePrice: number;
 }) => {
     const { t } = useTranslation();
+
+    const calculateDeviationFromCurrentPrice = () => {
+        return -(1 - livePrice / currentEntryPrice) * 10;
+    };
 
     const [currentBet, setCurrentBet] = useState<number>(0);
     const [currentCoin, setCurrentCoin] = useState<GameCoice>(GameCoice.None);
@@ -43,6 +49,9 @@ const WaitForMatchToFinish = ({
     const [currentClock, setCurrentClock] = useState<CurrentClock | null>(null);
     const [currentWinningMultiplier, setCurrentWinningMultiplier] = useState(1);
     const [currentEntryPrice, setCurrentEntryPrice] = useState(0);
+    const [isCurrentlyWinning, setIsCurrentlyWinning] = useState(true);
+    const [currentDeviationFromEntryPrice, setCurrentDeviationFromEntryPrice] =
+        useState(() => calculateDeviationFromCurrentPrice());
 
     const walletAddress = useTonAddress(false);
 
@@ -79,8 +88,6 @@ const WaitForMatchToFinish = ({
             );
             setCurrentClock(initialClock);
 
-            // setCurrentClock(CurrentClock.fromTimeString("00:14:00"));
-
             intervalId = window.setInterval(() => {
                 setCurrentClock((prevClock) => {
                     if (prevClock) {
@@ -88,7 +95,9 @@ const WaitForMatchToFinish = ({
 
                         if (prevClock.totalSeconds === 0) {
                             fetchPlayerInfo(walletAddress).then((result) => {
-                                setCurrentBalance(result?.currentBalance);
+                                if (result) {
+                                    setCurrentBalance(result.currentBalance);
+                                }
                             });
                             fetchCurrentUserMatch(walletAddress).then(
                                 (result) => {
@@ -109,6 +118,20 @@ const WaitForMatchToFinish = ({
             clearInterval(intervalId);
         };
     }, [currentMatch]);
+
+    useEffect(() => {
+        if (currentEntryPrice && currentPrediction) {
+            if (currentPrediction === PredictionValue.Up) {
+                setIsCurrentlyWinning(livePrice > currentEntryPrice);
+            } else if (currentPrediction === PredictionValue.Down) {
+                setIsCurrentlyWinning(livePrice < currentEntryPrice);
+            }
+        }
+
+        setCurrentDeviationFromEntryPrice(() =>
+            calculateDeviationFromCurrentPrice(),
+        );
+    }, [livePrice]);
 
     return (
         <div
@@ -138,8 +161,9 @@ const WaitForMatchToFinish = ({
                         />
                         <CurrentMatchTextWithMoney
                             text={t("ifYouWinAlreadyInMatch")}
+                            addPlus
                             amountOfMoney={
-                                +currentBet * currentWinningMultiplier
+                                currentBet * currentWinningMultiplier
                             }
                         />
                         <CurrentCoinText currentCoin={currentCoin} />
@@ -159,11 +183,25 @@ const WaitForMatchToFinish = ({
                         <div className="text-[25px] popupTextGradient mr-[2px] mt-[27px]">
                             {t("youAreCurrently")}
                         </div>
-                        <div className="text-[25px] text-[#72b83b] mt-[7px]">
-                            {t("winning")}
-                        </div>
-                        <div className="text-[25px] text-[#72b83b] mt-[7px]">
-                            (+10% {t("fromEntry")})
+                        {isCurrentlyWinning ? (
+                            <div className="text-[25px] text-[#72b83b] mt-[7px]">
+                                {t("winning")}
+                            </div>
+                        ) : (
+                            <div className="text-[25px] text-[#de4747] mt-[7px]">
+                                {t("losing")}
+                            </div>
+                        )}
+                        <div
+                            className="text-[25px] text-[#72b83b] mt-[7px]"
+                            style={{
+                                color: isCurrentlyWinning
+                                    ? "#72b83b"
+                                    : "#de4747",
+                            }}
+                        >
+                            ({currentDeviationFromEntryPrice.toFixed(5)}%{" "}
+                            {t("fromEntry")})
                         </div>
                     </div>
                 </div>

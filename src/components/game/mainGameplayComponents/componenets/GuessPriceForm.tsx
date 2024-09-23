@@ -1,4 +1,10 @@
-import { useContext, useEffect, useState } from "react";
+import {
+    Dispatch,
+    SetStateAction,
+    useContext,
+    useEffect,
+    useState,
+} from "react";
 import { ApplicationContext } from "../../../../context/ApplicationContext";
 import { useTranslation } from "react-i18next";
 import { assets } from "../../../../imagesImports/assets";
@@ -24,20 +30,32 @@ import GuessButton from "./mainFormComponents/GuessButton";
 import TimeChoiceCard from "./mainFormComponents/TimeChoiceCard";
 import GradientText from "./common/GradientText";
 
-const GuessPriceForm = () => {
-    const { setCurrentBalance, currentGame, setDisplayTonConnectPopup } =
-        useContext(ApplicationContext)!;
+const GuessPriceForm = ({
+    livePrice,
+    currentTimeframeChoice,
+    setCurrentTimeframeChoice,
+    betValue,
+    setBetValue,
+}: {
+    livePrice: number;
+    currentTimeframeChoice: TimeframeChoice;
+    setCurrentTimeframeChoice: Dispatch<SetStateAction<TimeframeChoice>>;
+    betValue: string;
+    setBetValue: Dispatch<SetStateAction<string>>;
+}) => {
+    const {
+        currentBalance,
+        setCurrentBalance,
+        currentGame,
+        setDisplayTonConnectPopup,
+    } = useContext(ApplicationContext)!;
 
-    const [betValue, setBetValue] = useState("");
-    const [currentTimeframeChoice, setCurrentTimeframeChoice] =
-        useState<TimeframeChoice>(TimeframeChoice.None);
     const [predictionValue, setpredictionValue] = useState<PredictionValue>(
         PredictionValue.None,
     );
     const [validationErrors, setValidationErrors] = useState<
         MainFormValidationMistakes[]
     >([]);
-    const [currentUserBalance, setCurrentUserBalance] = useState("");
 
     const { t } = useTranslation();
     const wallet = useTonWallet();
@@ -53,10 +71,8 @@ const GuessPriceForm = () => {
             return;
         }
 
-        console.log(currentUserBalance);
-
         const validErrors = validateFormValues(
-            Number.parseFloat(currentUserBalance),
+            currentBalance,
             Number.parseFloat(betValue),
             currentTimeframeChoice,
             predictionValue,
@@ -81,7 +97,9 @@ const GuessPriceForm = () => {
         );
 
         fetchPlayerInfo(walletAddress).then((result) => {
-            setCurrentBalance(result?.currentBalance);
+            if (result) {
+                setCurrentBalance(result.currentBalance);
+            }
         });
         fetchCurrentUserMatch(walletAddress).then((result) => {
             setCurrentMatch(result);
@@ -94,7 +112,9 @@ const GuessPriceForm = () => {
     useEffect(() => {
         if (wallet) {
             fetchPlayerInfo(walletAddress).then((result) => {
-                setCurrentBalance(result?.currentBalance);
+                if (result) {
+                    setCurrentBalance(result.currentBalance);
+                }
             });
             fetchCurrentUserMatch(walletAddress).then((result) => {
                 setCurrentMatch(result);
@@ -110,6 +130,7 @@ const GuessPriceForm = () => {
                     setCurrentMatch={setCurrentMatch}
                     setIsCurrentlyInMatch={setIsCurrentlyInMatch}
                     currentMatch={currentMatch}
+                    livePrice={livePrice}
                 />
             )}
             <div className="p-[55px] space-y-[27px]">

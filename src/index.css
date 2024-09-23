@@ -91,3 +91,12 @@ input[type="number"] {
         transform: rotate(360deg);
     }
 }
+
+.questionMarkPopupGradientBg {
+    background: linear-gradient(0deg, #737373, #d9d9d9);
+}
+
+.triangle {
+    background: linear-gradient(0deg, #777777, #737373);
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}

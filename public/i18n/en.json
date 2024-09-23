@@ -45,5 +45,7 @@
     "fromEntry": "from entry",
 
     "livePrice": "Live price",
-    "ifYouWin": "If you win you will get"
+    "ifYouWin": "If you win you will get",
+
+    "questionMarkPopupText": "The price that will be recorded when you make prediction"
 }

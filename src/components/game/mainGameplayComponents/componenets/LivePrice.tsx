@@ -25,18 +25,18 @@ const LivePrice = ({
             <div className="flex items-center mt-[33px]">
                 <GradientDollarSign />
                 <GradientText
-                    text={livePrice.toString()}
+                    text={livePrice !== -1 ? livePrice.toString() : "..."}
                     className="text-[40px] font-semibold ml-[7px]"
                 />
             </div>
             <div className="w-[70%] h-[1px] bg-[#6b6a6a] mt-[30px]" />
             <GradientText
                 text={t("ifYouWin")}
-                className="text-center text-[25px] font-semibold w-[80%] mt-[30px]"
+                className="text-center text-[25px] font-semibold w-[80%] mt-[30px] leading-[33px]"
             />
             <div className="flex mt-[7px]">
                 <GradientText
-                    text={"+" + profit.toString()}
+                    text={"+" + profit.toFixed(2)}
                     className="text-[30px] font-semibold"
                 />
                 <img

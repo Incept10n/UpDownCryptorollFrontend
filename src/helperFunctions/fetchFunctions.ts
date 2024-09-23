@@ -2,6 +2,7 @@ import { backendUrl } from "../constants";
 import { GameCoice } from "../context/ApplicationContext";
 import { CurrentMatch } from "../types/CurrentMatch";
 import { PredictionValue, TimeframeChoice } from "../types/HelperTypes";
+import { User } from "../types/User";
 import { Converter } from "./Converter";
 
 export const fetchPlayerInfo = async (walletAddress: string) => {
@@ -11,10 +12,12 @@ export const fetchPlayerInfo = async (walletAddress: string) => {
 
     if (response.ok) {
         const result = await response.json();
-        return {
-            username: result.username,
-            currentBalance: result.currentBalance,
-        };
+        return new User(
+            result.username,
+            result.currentBalance,
+            result.loginStreakCount,
+            result.isLastMatchCollected,
+        );
     }
 };
 
@@ -67,4 +70,16 @@ export const fetchCurrentUserMatch = async (walletAddress: string) => {
         result.winningMultiplier,
         result.entryPrice,
     );
+};
+
+export const fetchCurrentPrice: (coin: GameCoice) => Promise<number> = async (
+    coin: GameCoice,
+) => {
+    const response = await fetch(
+        `${backendUrl}/livePrice?sym=${Converter.getCoinFromGameChoice(coin)}`,
+    );
+
+    const result = await response.json();
+
+    return result;
 };

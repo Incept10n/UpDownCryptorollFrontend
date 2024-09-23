@@ -1,11 +1,75 @@
+import { useContext, useEffect, useState } from "react";
 import GuessPriceForm from "./componenets/GuessPriceForm";
 import LivePrice from "./componenets/LivePrice";
+import { ApplicationContext } from "../../../context/ApplicationContext";
+import {
+    fetchCurrentPrice,
+    fetchPlayerInfo,
+} from "../../../helperFunctions/fetchFunctions";
+import { TimeframeChoice } from "../../../types/HelperTypes";
+import { useTonAddress } from "@tonconnect/ui-react";
+import { Calculator } from "../../../helperFunctions/Calculator";
 
 const MainGameplay = () => {
+    const { currentGame } = useContext(ApplicationContext)!;
+    const [livePrice, setLivePrice] = useState<number>(-1);
+    const walletAddress = useTonAddress(false);
+    const [userLoginStreak, setUserLoginStreak] = useState(1);
+    const [profit, setProfit] = useState(0);
+
+    const [currentTimeframeChoice, setCurrentTimeframeChoice] =
+        useState<TimeframeChoice>(TimeframeChoice.None);
+    const [betValue, setBetValue] = useState("");
+
+    useEffect(() => {
+        const getUserLoginStreak = async () => {
+            const userInfo = await fetchPlayerInfo(walletAddress);
+
+            if (userInfo) {
+                setUserLoginStreak(userInfo.loginStreakCount);
+            }
+        };
+
+        getUserLoginStreak();
+    }, []);
+
+    useEffect(() => {
+        const getLivePrice = async () => {
+            const fetchedPrice = await fetchCurrentPrice(currentGame);
+            setLivePrice(fetchedPrice);
+        };
+
+        const intervalId = window.setInterval(getLivePrice, 500);
+
+        return () => {
+            window.clearInterval(intervalId);
+        };
+    }, [currentGame]);
+
+    useEffect(() => {
+        const totalMultiplier =
+            Calculator.getMultiplierFromTimeframeAndLoginStreak(
+                currentTimeframeChoice,
+                userLoginStreak,
+            );
+
+        if (!Number.isNaN(Number.parseFloat(betValue))) {
+            setProfit(Number.parseFloat(betValue) * totalMultiplier);
+        } else {
+            setProfit(0);
+        }
+    }, [betValue, currentTimeframeChoice]);
+
     return (
         <div className="flex justify-between w-[1000px]">
-            <GuessPriceForm />
-            <LivePrice livePrice={69234} profit={1245.5} />
+            <GuessPriceForm
+                livePrice={livePrice}
+                currentTimeframeChoice={currentTimeframeChoice}
+                setCurrentTimeframeChoice={setCurrentTimeframeChoice}
+                betValue={betValue}
+                setBetValue={setBetValue}
+            />
+            <LivePrice livePrice={livePrice} profit={profit} />
         </div>
     );
 };

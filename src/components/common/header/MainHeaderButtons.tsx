@@ -28,7 +28,9 @@ const MainHeaderButtons = () => {
             setCurrentBalance(0);
         } else if (wallet) {
             fetchPlayerInfo(rawAddress).then((result) => {
-                setCurrentBalance(result?.currentBalance);
+                if (result) {
+                    setCurrentBalance(result.currentBalance);
+                }
             });
         }
 
