@@ -47,5 +47,10 @@
     "livePrice": "Live price",
     "ifYouWin": "If you win you will get",
 
-    "questionMarkPopupText": "The price that will be recorded when you make prediction"
+    "questionMarkPopupText": "The price that will be recorded when you make prediction",
+
+    "congratsYouWonText": "Congratulations, you won!",
+    "unfortunYouLost": "Unfortunately, you lost",
+    "collect": "Collect",
+    "ok(:": "ok, :("
 }

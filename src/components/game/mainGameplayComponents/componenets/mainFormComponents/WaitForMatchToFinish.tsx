@@ -1,6 +1,5 @@
 import { useTranslation } from "react-i18next";
 import TimeRemainingCards from "./waitForMatchPopupComponents/TimeRemainingCards";
-import { CurrentMatch } from "../../../../../types/CurrentMatch";
 import {
     Dispatch,
     SetStateAction,
@@ -23,6 +22,7 @@ import CurrentMatchTextWithMoney from "./waitForMatchPopupComponents/CurrentMatc
 import CurrentCoinText from "./waitForMatchPopupComponents/CurrentCoinText";
 import CurrentPredictionText from "./waitForMatchPopupComponents/CurrentPredictionText";
 import EntryPriceText from "./EntryPriceText";
+import { Match } from "../../../../../types/Match";
 
 const WaitForMatchToFinish = ({
     currentMatch,
@@ -30,8 +30,8 @@ const WaitForMatchToFinish = ({
     setIsCurrentlyInMatch,
     livePrice,
 }: {
-    currentMatch: CurrentMatch | null;
-    setCurrentMatch: Dispatch<SetStateAction<CurrentMatch | null>>;
+    currentMatch: Match | null;
+    setCurrentMatch: Dispatch<SetStateAction<Match | null>>;
     setIsCurrentlyInMatch: Dispatch<SetStateAction<boolean>>;
     livePrice: number;
 }) => {

@@ -1,4 +1,4 @@
-export class CurrentMatch {
+export class Match {
     id: number;
     bet: number;
     coin: string;

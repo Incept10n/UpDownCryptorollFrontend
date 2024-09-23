@@ -24,11 +24,12 @@ import BetErrors from "./errors/BetErrors";
 import PredictionTimeframeErrors from "./errors/PredictionTimeframeErrors";
 import PredictionValueErrors from "./errors/PredictionValueErrors";
 import WaitForMatchToFinish from "./mainFormComponents/WaitForMatchToFinish";
-import { CurrentMatch } from "../../../../types/CurrentMatch";
 import BetInputField from "./mainFormComponents/BetInputField";
 import GuessButton from "./mainFormComponents/GuessButton";
 import TimeChoiceCard from "./mainFormComponents/TimeChoiceCard";
 import GradientText from "./common/GradientText";
+import { Match } from "../../../../types/Match";
+import CollectMatchRewardCard from "./mainFormComponents/CollectMatchRewardCard";
 
 const GuessPriceForm = ({
     livePrice,
@@ -63,7 +64,8 @@ const GuessPriceForm = ({
 
     const [isCurrentlyInMatch, setIsCurrentlyInMatch] =
         useState<boolean>(false);
-    const [currentMatch, setCurrentMatch] = useState<CurrentMatch | null>(null);
+    const [currentMatch, setCurrentMatch] = useState<Match | null>(null);
+    const [isLastMatchCollected, setIsLastMatchCollected] = useState(false);
 
     const submitForm = async () => {
         if (wallet === null) {
@@ -99,6 +101,7 @@ const GuessPriceForm = ({
         fetchPlayerInfo(walletAddress).then((result) => {
             if (result) {
                 setCurrentBalance(result.currentBalance);
+                setIsLastMatchCollected(result.isLastMatchCollected);
             }
         });
         fetchCurrentUserMatch(walletAddress).then((result) => {
@@ -114,6 +117,7 @@ const GuessPriceForm = ({
             fetchPlayerInfo(walletAddress).then((result) => {
                 if (result) {
                     setCurrentBalance(result.currentBalance);
+                    setIsLastMatchCollected(result.isLastMatchCollected);
                 }
             });
             fetchCurrentUserMatch(walletAddress).then((result) => {
@@ -125,13 +129,22 @@ const GuessPriceForm = ({
 
     return (
         <div className="w-[750px] h-[400px] rounded-[68px] relative">
-            {isCurrentlyInMatch && (
+            {isCurrentlyInMatch ? (
                 <WaitForMatchToFinish
                     setCurrentMatch={setCurrentMatch}
                     setIsCurrentlyInMatch={setIsCurrentlyInMatch}
                     currentMatch={currentMatch}
                     livePrice={livePrice}
                 />
+            ) : !isLastMatchCollected ? (
+                <CollectMatchRewardCard
+                    setCurrentBalance={setCurrentBalance}
+                    setIsLastMatchCollected={setIsLastMatchCollected}
+                    setCurrentMatch={setCurrentMatch}
+                    setIsCurrentlyInMatch={setIsCurrentlyInMatch}
+                />
+            ) : (
+                ""
             )}
             <div className="p-[55px] space-y-[27px]">
                 <div className="flex justify-between items-center relative">

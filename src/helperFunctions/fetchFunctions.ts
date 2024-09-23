@@ -1,7 +1,8 @@
 import { backendUrl } from "../constants";
 import { GameCoice } from "../context/ApplicationContext";
-import { CurrentMatch } from "../types/CurrentMatch";
 import { PredictionValue, TimeframeChoice } from "../types/HelperTypes";
+import { Match } from "../types/Match";
+import { MatchHistoryItem } from "../types/MatchHistoryItem";
 import { User } from "../types/User";
 import { Converter } from "./Converter";
 
@@ -61,7 +62,7 @@ export const fetchCurrentUserMatch = async (walletAddress: string) => {
     );
 
     const result = await response.json();
-    return new CurrentMatch(
+    return new Match(
         result.id,
         result.bet,
         result.coin,
@@ -82,4 +83,42 @@ export const fetchCurrentPrice: (coin: GameCoice) => Promise<number> = async (
     const result = await response.json();
 
     return result;
+};
+
+export const fetchMatchHistory = async (
+    walletAddress: string,
+    offset: number,
+    limit: number,
+) => {
+    const response = await fetch(
+        `${backendUrl}/match/history?walletAddress=${walletAddress}&offset=${offset}&limit=${limit}`,
+    );
+
+    const matches: MatchHistoryItem[] = (await response.json()).map(
+        (m: any) =>
+            new MatchHistoryItem(
+                m.id,
+                m.bet,
+                m.coin,
+                m.entryDateTime,
+                m.entryPrice,
+                m.exitDateTime,
+                m.exitPrice,
+                m.predictionTimeframe,
+                m.predictionValue,
+                m.resultPayout,
+                m.resultStatus,
+            ),
+    );
+
+    return matches;
+};
+
+export const collectLastMatch = async (walletAddress: string) => {
+    await fetch(
+        `${backendUrl}/user/collectLastMatch?walletAddress=${walletAddress}`,
+        {
+            method: "POST",
+        },
+    );
 };
