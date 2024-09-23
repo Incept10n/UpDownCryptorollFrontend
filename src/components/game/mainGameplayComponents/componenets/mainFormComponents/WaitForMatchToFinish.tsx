@@ -162,6 +162,7 @@ const WaitForMatchToFinish = ({
                         <CurrentMatchTextWithMoney
                             text={t("ifYouWinAlreadyInMatch")}
                             addPlus
+                            formatMoneyOutput
                             amountOfMoney={
                                 currentBet * currentWinningMultiplier
                             }

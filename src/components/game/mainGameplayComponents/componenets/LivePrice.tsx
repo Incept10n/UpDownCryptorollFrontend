@@ -3,6 +3,7 @@ import GradientText from "./common/GradientText";
 import GradientQuestionMark from "./common/GradientQuestionMark";
 import { assets } from "../../../../imagesImports/assets";
 import GradientDollarSign from "./common/GradientDollarSign";
+import { Formatter } from "../../../../helperFunctions/Formater";
 
 const LivePrice = ({
     livePrice,
@@ -36,7 +37,7 @@ const LivePrice = ({
             />
             <div className="flex mt-[7px]">
                 <GradientText
-                    text={"+" + profit.toFixed(2)}
+                    text={"+" + Formatter.formatMoney(profit)}
                     className="text-[30px] font-semibold"
                 />
                 <img

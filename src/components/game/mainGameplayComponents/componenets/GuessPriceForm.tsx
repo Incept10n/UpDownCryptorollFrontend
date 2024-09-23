@@ -65,7 +65,7 @@ const GuessPriceForm = ({
     const [isCurrentlyInMatch, setIsCurrentlyInMatch] =
         useState<boolean>(false);
     const [currentMatch, setCurrentMatch] = useState<Match | null>(null);
-    const [isLastMatchCollected, setIsLastMatchCollected] = useState(false);
+    const [isLastMatchCollected, setIsLastMatchCollected] = useState(true);
 
     const submitForm = async () => {
         if (wallet === null) {
