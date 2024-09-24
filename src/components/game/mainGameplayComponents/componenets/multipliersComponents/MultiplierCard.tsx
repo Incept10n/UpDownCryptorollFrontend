@@ -15,11 +15,11 @@ const MultiplierCard = ({
         >
             <GradientText
                 text={multiplier.toString() + "x"}
-                className="font-semibold text-[40px] leading-[40px]"
+                className="font-semibold text-[40px] leading-[40px] mt-[5px]"
             />
             <GradientText
                 text={text}
-                className="font-semibold text-[20px] leading-[24px] mt-[10px]"
+                className="font-semibold text-[18px] leading-[24px] mt-[10px]"
             />
         </div>
     );

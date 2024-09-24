@@ -22,6 +22,11 @@ const MainGameplay = () => {
         useState<TimeframeChoice>(TimeframeChoice.None);
     const [betValue, setBetValue] = useState("");
 
+    const [isCurrentlyInMatch, setIsCurrentlyInMatch] =
+        useState<boolean>(false);
+    const [isLastMatchCollected, setIsLastMatchCollected] =
+        useState<boolean>(true);
+
     useEffect(() => {
         const getUserLoginStreak = async () => {
             const userInfo = await fetchPlayerInfo(walletAddress);
@@ -70,12 +75,18 @@ const MainGameplay = () => {
                     setCurrentTimeframeChoice={setCurrentTimeframeChoice}
                     betValue={betValue}
                     setBetValue={setBetValue}
+                    isCurrentlyInMatch={isCurrentlyInMatch}
+                    setIsCurrentlyInMatch={setIsCurrentlyInMatch}
+                    isLastMatchCollected={isLastMatchCollected}
+                    setIsLastMatchCollected={setIsLastMatchCollected}
                 />
                 <LivePrice livePrice={livePrice} profit={profit} />
             </div>
             <Multipliers
                 userLoginStreak={userLoginStreak}
                 currentTimeframeChoice={currentTimeframeChoice}
+                isCurrentlyInMatch={isCurrentlyInMatch}
+                isLastMatchCollected={isLastMatchCollected}
             />
         </div>
     );

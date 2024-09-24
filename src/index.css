@@ -102,6 +102,5 @@ input[type="number"] {
 }
 
 .multipliersPolygon {
-    background-color: rgba(217, 217, 217, 0.09);
     clip-path: polygon(0% 0%, 10% 100%, 46% 75%, 100% 100%, 100% 0%);
 }

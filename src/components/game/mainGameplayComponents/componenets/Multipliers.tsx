@@ -6,9 +6,13 @@ import MultiplierCard from "./multipliersComponents/MultiplierCard";
 const Multipliers = ({
     userLoginStreak,
     currentTimeframeChoice,
+    isCurrentlyInMatch,
+    isLastMatchCollected,
 }: {
     userLoginStreak: number;
     currentTimeframeChoice: TimeframeChoice;
+    isCurrentlyInMatch: boolean;
+    isLastMatchCollected: boolean;
 }) => {
     const { t } = useTranslation();
 
@@ -28,10 +32,18 @@ const Multipliers = ({
     };
 
     return (
-        <div className="w-[742px] h-[391px] flex justify-center">
+        <div className="w-[742px] h-[391px] flex justify-center relative">
+            {(isCurrentlyInMatch || !isLastMatchCollected) && (
+                <div
+                    className="absolute z-[20] w-[654px] h-[157px]
+                           left-[50%] top-0 translate-x-[-50%]
+                           multipliersPolygon bg-[#3c3939] bg-opacity-[0.8]"
+                ></div>
+            )}
             <div
-                className="multipliersPolygon w-[654px] h-[157px] 
-                            flex justify-center items-start pt-[14px] space-x-[52px]"
+                className="multipliersPolygon bg-[#d9d9d9] bg-opacity-[0.09] 
+                           w-[654px] h-[157px] 
+                           flex justify-center items-start pt-[14px] space-x-[52px]"
             >
                 <MultiplierCard
                     multiplier={Calculator.getMultiplierFromLoginStreak(

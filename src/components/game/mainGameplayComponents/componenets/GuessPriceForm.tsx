@@ -37,12 +37,20 @@ const GuessPriceForm = ({
     setCurrentTimeframeChoice,
     betValue,
     setBetValue,
+    isCurrentlyInMatch,
+    setIsCurrentlyInMatch,
+    isLastMatchCollected,
+    setIsLastMatchCollected,
 }: {
     livePrice: number;
     currentTimeframeChoice: TimeframeChoice;
     setCurrentTimeframeChoice: Dispatch<SetStateAction<TimeframeChoice>>;
     betValue: string;
     setBetValue: Dispatch<SetStateAction<string>>;
+    isCurrentlyInMatch: boolean;
+    setIsCurrentlyInMatch: Dispatch<SetStateAction<boolean>>;
+    isLastMatchCollected: boolean;
+    setIsLastMatchCollected: Dispatch<SetStateAction<boolean>>;
 }) => {
     const {
         currentBalance,
@@ -62,10 +70,7 @@ const GuessPriceForm = ({
     const wallet = useTonWallet();
     const walletAddress = useTonAddress(false);
 
-    const [isCurrentlyInMatch, setIsCurrentlyInMatch] =
-        useState<boolean>(false);
     const [currentMatch, setCurrentMatch] = useState<Match | null>(null);
-    const [isLastMatchCollected, setIsLastMatchCollected] = useState(true);
 
     const submitForm = async () => {
         if (wallet === null) {
