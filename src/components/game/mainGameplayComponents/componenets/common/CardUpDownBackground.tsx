@@ -1,29 +1,16 @@
 import { assets } from "../../../../../imagesImports/assets";
 
-const CardUpDownBackground = ({
-    widthPx,
-    heightPx,
-    className,
-}: {
-    widthPx: number;
-    heightPx: number;
-    className?: string;
-}) => {
+const CardUpDownBackground = ({ className }: { className?: string }) => {
     return (
         <div className={`${className}`}>
             <div
-                className="gradientBorder flex justify-center items-end"
-                style={{
-                    width: `${widthPx}px`,
-                    height: `${heightPx}px`,
-                }}
+                className="gradientBorder flex justify-center items-end 
+                            pt-[2px] px-[2px] w-full h-full"
             >
                 <div
-                    className="bg-no-repeat rounded-[68px] bg-center"
+                    className="bg-no-repeat rounded-[68px] bg-center w-full h-full"
                     style={{
                         backgroundImage: `url(${assets.images.main.bg})`,
-                        width: `${widthPx - 2}px`,
-                        height: `${heightPx - 2}px`,
                     }}
                 >
                     {

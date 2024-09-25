@@ -56,5 +56,7 @@
 
     "daysStreakMultText": "days streak multiplier",
     "betMultiText": "bet multiplier",
-    "noChoiceMulti": "No choice multiplier"
+    "noChoiceMulti": "No choice multiplier",
+
+    "doTechnicalAnalysis": "Do techical analysis"
 }

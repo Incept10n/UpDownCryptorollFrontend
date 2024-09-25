@@ -56,5 +56,7 @@
 
     "daysStreakMultText": "дневный множитель",
     "betMultiText": "множитель ставки",
-    "noChoiceMulti": "Множитель с невыбранным временем"
+    "noChoiceMulti": "Множитель с невыбранным временем",
+
+    "doTechnicalAnalysis": "Перейти к техническому анализу"
 }
