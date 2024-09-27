@@ -7,7 +7,7 @@ const DoTechicalAnalysisButton = () => {
         <button
             className="buttonGrayGradient w-[181px] h-[41px]
                        border-[1.1px] border-[#747474] rounded-[10px]
-                       text-[16px] text-[#a4a4a4]"
+                       text-[16px] text-[#a4a4a4] md:scale-[1.5] scale-1"
         >
             {t("doTechnicalAnalysis")}
         </button>

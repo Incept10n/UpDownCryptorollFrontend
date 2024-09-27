@@ -16,8 +16,10 @@
     "iWantToBet": "I want to bet",
     "betMobileText": "Bet",
     "that": "that",
+    "thatMobileText": "that in",
     "btcPricein": "Price in",
     "willGo": "Will go",
+    "willGoMobile": "Price will go",
     "minutes": "minutes",
     "hours": "hours",
     "up": "Up",
@@ -56,8 +58,11 @@
     "ok": "ok, :(",
 
     "daysStreakMultText": "days streak multiplier",
+    "daysStreakMultTextMobile": "days streak",
     "betMultiText": "bet multiplier",
+    "betMultiTextMobile": "bet",
     "noChoiceMulti": "No choice multiplier",
+    "noChoiceMultiMobile": "No choice",
 
     "doTechnicalAnalysis": "Do techical analysis"
 }

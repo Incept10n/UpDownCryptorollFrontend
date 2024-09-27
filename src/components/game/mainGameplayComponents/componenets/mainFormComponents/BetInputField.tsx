@@ -19,7 +19,7 @@ const BetInputField = ({
     return (
         <div
             className="relative max-w-[252px] h-[52px] 
-                       min-[1620px]:scale-100 min-[1580px]:scale-[0.8] scale-100
+                       min-[1620px]:scale-100 min-[1580px]:scale-[0.8] sm:scale-100 scale-[0.7]
                        bg-[#0d121d] rounded-[25px] px-[11px]
                        flex justify-between items-center"
         >

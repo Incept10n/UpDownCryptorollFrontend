@@ -17,7 +17,7 @@ const LivePrice = ({
     return (
         <div
             className="min-[1580px]:mt-[0] mt-[21px]
-                       min-[1580px]:w-[236px] md:w-[335px] w-[90%] 
+                       min-[1580px]:w-[236px] w-[335px]
                        min-[1580px]:h-[400px] h-[147px] flex-none"
         >
             <div
@@ -45,11 +45,11 @@ const LivePrice = ({
                 </div>
                 <div className="w-[70%] h-[1px] bg-[#6b6a6a] mt-[30px] min-[1580px]:block hidden" />
                 <GradientText
-                    text={t("ifYouWin")}
                     className="text-center min-[1580px]:text-[25px] text-[22px] 
                                font-semibold w-[80%] min-[1580px]:mt-[30px] mt-0 
-                               min-[1580px]:ml-0 ml-[35px]
+                               min-[1580px]:ml-0 ml-[43px]
                                min-[1580px]:leading-[33px] leading-[28px]"
+                    text={t("ifYouWin")}
                 />
                 <div className="flex min-[1580px]:mt-[7px] mt-0 min-[1580px]:ml-0 ml-[20px]">
                     <GradientText

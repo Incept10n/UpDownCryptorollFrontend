@@ -21,7 +21,7 @@ const MobileButtonsMenu = () => {
     }, []);
 
     return (
-        <div className="lg:hidden block" ref={divRef}>
+        <div className="lg:hidden block z-[20]" ref={divRef}>
             <div onClick={() => setIsExpanded((prevState) => !prevState)}>
                 <img
                     src={

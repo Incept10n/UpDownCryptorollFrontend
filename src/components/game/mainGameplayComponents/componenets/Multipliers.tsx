@@ -19,15 +19,24 @@ const Multipliers = ({
     const { t } = useTranslation();
 
     const getTextBasedOnCurrentTimeframeChoice = () => {
+        const noChoiceText =
+            window.innerWidth >= 640
+                ? t("noChoiceMulti")
+                : t("noChoiceMultiMobile");
+        const betMultiText =
+            window.innerWidth >= 640
+                ? t("betMultiText")
+                : t("betMultiTextMobile");
+
         switch (currentTimeframeChoice) {
             case TimeframeChoice.None:
-                return t("noChoiceMulti");
+                return noChoiceText;
             case TimeframeChoice.Min30:
-                return `30 ${t("minutes")} ${t("betMultiText")}`;
+                return `30 ${t("minutes")} ${betMultiText}`;
             case TimeframeChoice.Hrs4:
-                return `4 ${t("hours")} ${t("betMultiText")}`;
+                return `4 ${t("hours")} ${betMultiText}`;
             case TimeframeChoice.Hrs12:
-                return `12 ${t("hours")} ${t("betMultiText")}`;
+                return `12 ${t("hours")} ${betMultiText}`;
             default:
                 return t("noChoiceMulti");
         }
@@ -43,15 +52,19 @@ const Multipliers = ({
                 ></div>
             )}
             <div
-                className="multipliersPolygon bg-[#d9d9d9] bg-opacity-[0.09] 
-                           w-[654px] h-[157px] 
-                           flex justify-center items-start pt-[14px] space-x-[52px]"
+                className="flex min-[1000px]:multipliersPolygon lg:bg-[#d9d9d9] 
+                           lg:bg-opacity-[0.09] w-[654px] h-[157px] justify-center 
+                            items-start pt-[14px] space-x-[52px]"
             >
                 <MultiplierCard
                     multiplier={Calculator.getMultiplierFromLoginStreak(
                         userLoginStreak,
                     )}
-                    text={`${userLoginStreak} ${t("daysStreakMultText")}`}
+                    text={`${userLoginStreak} ${
+                        window.innerWidth >= 640
+                            ? t("daysStreakMultText")
+                            : t("daysStreakMultTextMobile")
+                    }`}
                 />
                 <MultiplierCard
                     multiplier={Calculator.getMultiplierFromTimeframe(

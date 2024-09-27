@@ -88,7 +88,7 @@ const MainGameplay = () => {
                     setIsLastMatchCollected={setIsLastMatchCollected}
                 />
                 <div
-                    className="flex lg:flex-row flex-col justify-between items-center
+                    className="flex lg:flex-row flex-col-reverse lg:justify-between items-center
                                         space-x-[20px]"
                 >
                     <LivePrice livePrice={livePrice} profit={profit} />
@@ -97,13 +97,13 @@ const MainGameplay = () => {
                         currentTimeframeChoice={currentTimeframeChoice}
                         isCurrentlyInMatch={isCurrentlyInMatch}
                         isLastMatchCollected={isLastMatchCollected}
-                        className="w-[75%] lg:h-[60%] h-[65px] lg:mt-0 mt-[30px] 
-                                   min-[1580px]:hidden block
+                        className="w-[75%] lg:h-[60%] h-[150px] lg:mt-0 md:mt-[30px] mt-[0]
+                                   min-[1580px]:hidden flex justify-center 
                                    min-[1580px]:scale-100 scale-[0.86]"
                     />
                     <div
-                        className="min-[1580px]:hidden w-full h-full
-                                    flex justify-center items-center mt-[44px]"
+                        className="min-[1580px]:hidden min-[1400px]:flex hidden w-full h-full
+                                   justify-center items-center mt-[44px]"
                     >
                         <DoTechicalAnalysisButton />
                     </div>
@@ -117,6 +117,12 @@ const MainGameplay = () => {
                 className="w-[68%] h-[150px] ml-[40px] mt-[8px] 
                            min-[1580px]:block hidden"
             />
+            <div
+                className="min-[1400px]:hidden flex w-full h-full
+                           justify-center items-center mt-[44px]"
+            >
+                <DoTechicalAnalysisButton />
+            </div>
         </div>
     );
 };

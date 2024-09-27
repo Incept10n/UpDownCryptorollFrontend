@@ -20,26 +20,26 @@ const GeneralLayout = () => {
                     className="flex min-[1580px]:flex-row min-[1580px]:justify-start 
                                    flex-col justify-center"
                 >
-                    <CardUpDownBackground className="z-[-10] w-[100%] lg:h-[400px] h-[250px]" />
+                    <CardUpDownBackground className="z-[-10] w-[100%] lg:h-[400px] h-[335px]" />
                     <div
-                        className="flex lg:flex-row flex-col justify-between items-center
+                        className="flex lg:flex-row flex-col-reverse justify-between items-center
                                         space-x-[20px]"
                     >
                         <CardUpDownBackground
                             className="z-[-10] min-[1580px]:ml-[14px] ml-[0px] min-[1580px]:mt-[0] mt-[21px]
-                                   min-[1580px]:w-[236px] md:w-[335px] w-[90%] 
+                                   min-[1580px]:w-[236px] w-[335px] 
                                    min-[1580px]:h-[400px] h-[147px] flex-none"
                         />
                         <div
-                            className="w-[75%] lg:h-[60%] h-[65px] lg:mt-0 mt-[30px] bg-red-200
-                                           bg-opacity-50 min-[1580px]:hidden block"
+                            className="w-[75%] lg:h-[60%] h-[150px] lg:mt-0 
+                                       md:mt-[30px] mt-[0] min-[1580px]:hidden block"
                         ></div>
                         <div className="flex flex-none"></div>
                     </div>
                 </div>
                 <div
                     className="w-[68%] h-[150px] ml-[40px] mt-[8px] 
-                                bg-red-200 bg-opacity-50 min-[1580px]:block hidden"
+                               min-[1580px]:block hidden"
                 ></div>
             </div>
         </div>

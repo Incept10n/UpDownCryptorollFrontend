@@ -38,14 +38,14 @@ const TimeChoiceCard = ({
 
     return (
         <div
-            className="w-[332px] h-[48px] buttonGrayGradient rounded-[14px] 
+            className="w-[332px] h-[48px] buttonGrayGradient sm:rounded-[14px] rounded-full
                        border-[1px] border-[#747474] border-opacity-[0.75]
                        flex justify-around items-center
                        text-[20px] font-semibold relative overflow-hidden
                        "
         >
             <div
-                className={`buttonGrayGradient rounded-[14px] 
+                className={`buttonGrayGradient sm:rounded-[14px] rounded-full
                            h-full z-0 
                            absolute ${currentChoiceBoxStyle}
                            transition-all duration-[0.5] ease-in-out`}
