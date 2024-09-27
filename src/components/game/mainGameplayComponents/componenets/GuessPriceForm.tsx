@@ -155,7 +155,11 @@ const GuessPriceForm = ({
                 <div className="flex justify-between items-center relative">
                     <GradientText
                         text={t("iWantToBet")}
-                        className="text-[40px] font-semibold"
+                        className="text-[40px] font-semibold 2xl:block hidden"
+                    />
+                    <GradientText
+                        text={t("betMobileText")}
+                        className="text-[40px] font-semibold 2xl:hidden block"
                     />
                     <div className="relative">
                         <BetInputField
