@@ -10,6 +10,7 @@ import { TimeframeChoice } from "../../../types/HelperTypes";
 import { useTonAddress } from "@tonconnect/ui-react";
 import { Calculator } from "../../../helperFunctions/Calculator";
 import Multipliers from "./componenets/Multipliers";
+import DoTechicalAnalysisButton from "../tradingViewWidgets/DoTechicalAnalysisButton";
 
 const MainGameplay = () => {
     const { currentGame } = useContext(ApplicationContext)!;
@@ -68,11 +69,11 @@ const MainGameplay = () => {
 
     return (
         <div
-            className="xl:w-[52%] w-[90%] xl:ml-[33px] ml-0 relative
+            className="min-[1580px]:w-[51%] w-[90%] min-[1580px]:ml-[33px] ml-0 relative
                        flex flex-col"
         >
             <div
-                className="flex xl:flex-row xl:justify-start 
+                className="flex min-[1580px]:flex-row min-[1580px]:justify-start 
                                    flex-col justify-center"
             >
                 <GuessPriceForm
@@ -86,13 +87,35 @@ const MainGameplay = () => {
                     isLastMatchCollected={isLastMatchCollected}
                     setIsLastMatchCollected={setIsLastMatchCollected}
                 />
-                <LivePrice livePrice={livePrice} profit={profit} />
+                <div
+                    className="flex lg:flex-row flex-col justify-between items-center
+                                        space-x-[20px]"
+                >
+                    <LivePrice livePrice={livePrice} profit={profit} />
+                    <Multipliers
+                        userLoginStreak={userLoginStreak}
+                        currentTimeframeChoice={currentTimeframeChoice}
+                        isCurrentlyInMatch={isCurrentlyInMatch}
+                        isLastMatchCollected={isLastMatchCollected}
+                        className="w-[75%] lg:h-[60%] h-[65px] lg:mt-0 mt-[30px] 
+                                   min-[1580px]:hidden block
+                                   min-[1580px]:scale-100 scale-[0.86]"
+                    />
+                    <div
+                        className="min-[1580px]:hidden w-full h-full
+                                    flex justify-center items-center mt-[44px]"
+                    >
+                        <DoTechicalAnalysisButton />
+                    </div>
+                </div>
             </div>
             <Multipliers
                 userLoginStreak={userLoginStreak}
                 currentTimeframeChoice={currentTimeframeChoice}
                 isCurrentlyInMatch={isCurrentlyInMatch}
                 isLastMatchCollected={isLastMatchCollected}
+                className="w-[68%] h-[150px] ml-[40px] mt-[8px] 
+                           min-[1580px]:block hidden"
             />
         </div>
     );

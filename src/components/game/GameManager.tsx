@@ -31,13 +31,13 @@ const GameManager = () => {
                 )}
             </div>
             <div
-                className="absolute xl:pl-[64px] pl-0 top-[110px]
-                           flex xl:justify-start justify-center w-full 
-                           xl:pt-[70px] sm:pt-[40px] pt-[10px]"
+                className="absolute min-[1580px]:pl-[64px] pl-0 top-[110px]
+                           flex min-[1580px]:justify-start justify-center w-full 
+                           min-[1580px]:pt-[70px] sm:pt-[40px] pt-[10px]"
             >
                 <div
-                    className="xl:w-[40%] h-[75vh] relative 
-                               xl:block hidden mr-[54px]"
+                    className="min-[1580px]:w-[40%] h-[75vh] relative 
+                               min-[1580px]:block hidden mr-[54px]"
                 >
                     <TradingViewWidget />
                 </div>

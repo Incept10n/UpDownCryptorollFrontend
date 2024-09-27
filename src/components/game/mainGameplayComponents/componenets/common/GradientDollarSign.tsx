@@ -20,6 +20,7 @@ const GradientDollarSign = ({ className }: { className?: string }) => {
                         : assets.icons.livePriceDollarSign.bitcoin
             }
             alt="dollar sign"
+            className={`${className}`}
         />
     );
 };

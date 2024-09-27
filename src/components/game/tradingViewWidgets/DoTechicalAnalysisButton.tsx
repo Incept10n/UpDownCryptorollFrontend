@@ -5,9 +5,9 @@ const DoTechicalAnalysisButton = () => {
 
     return (
         <button
-            className="buttonGrayGradient w-[181px] h-[41px] xl:hidden block
+            className="buttonGrayGradient w-[181px] h-[41px]
                        border-[1.1px] border-[#747474] rounded-[10px]
-                       text-[16px] text-[#a4a4a4] lg:mt-[0] mt-[31px]"
+                       text-[16px] text-[#a4a4a4]"
         >
             {t("doTechnicalAnalysis")}
         </button>

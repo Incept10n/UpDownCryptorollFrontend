@@ -8,11 +8,13 @@ const Multipliers = ({
     currentTimeframeChoice,
     isCurrentlyInMatch,
     isLastMatchCollected,
+    className,
 }: {
     userLoginStreak: number;
     currentTimeframeChoice: TimeframeChoice;
     isCurrentlyInMatch: boolean;
     isLastMatchCollected: boolean;
+    className?: string;
 }) => {
     const { t } = useTranslation();
 
@@ -32,7 +34,7 @@ const Multipliers = ({
     };
 
     return (
-        <div className="w-[742px] h-[391px] flex justify-center relative">
+        <div className={`${className}`}>
             {(isCurrentlyInMatch || !isLastMatchCollected) && (
                 <div
                     className="absolute z-[20] w-[654px] h-[157px]

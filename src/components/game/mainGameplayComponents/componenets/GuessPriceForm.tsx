@@ -155,13 +155,13 @@ const GuessPriceForm = ({
                 <div className="flex justify-between items-center relative">
                     <GradientText
                         text={t("iWantToBet")}
-                        className="min-[1850px]:text-[40px] text-[30px] 
-                                   font-semibold min-[1720px]:block hidden"
+                        className="min-[1890px]:text-[40px] min-[1580px]:text-[30px] text-[40px]
+                                   font-semibold min-[1720px]:block min-[1580px]:hidden block"
                     />
                     <GradientText
                         text={t("betMobileText")}
                         className="min-[1850px]:text-[40px] text-[30px] 
-                                   font-semibold min-[1720px]:hidden block"
+                                   font-semibold min-[1720px]:hidden min-[1580px]:block hidden"
                     />
                     <div className="relative">
                         <BetInputField
@@ -172,15 +172,18 @@ const GuessPriceForm = ({
                     </div>
                     <GradientText
                         text={t("that")}
-                        className="min-[1850px]:text-[40px] text-[30px] font-semibold"
+                        className="min-[1850px]:text-[40px] 
+                                   min-[1580px]:text-[30px] text-[40px] font-semibold"
                     />
                 </div>
                 <div className="flex justify-between items-center">
                     <GradientText
                         text={t("btcPricein")}
-                        className="min-[1850px]:text-[40px] text-[30px] font-semibold flex-none"
+                        className="min-[1850px]:text-[40px] 
+                                   min-[1580px]:text-[30px] text-[40px] 
+                                   font-semibold flex-none"
                     />
-                    <div className="relative min-[1620px]:scale-100 scale-[0.8]">
+                    <div className="relative min-[1620px]:scale-100 min-[1580px]:scale-[0.8] scale-100">
                         <TimeChoiceCard
                             currentTimeframeChoice={currentTimeframeChoice}
                             setCurrentTimeframeChoice={
@@ -195,12 +198,14 @@ const GuessPriceForm = ({
                 <div className="flex justify-between items-center">
                     <GradientText
                         text={t("willGo")}
-                        className="min-[1850px]:text-[40px] text-[30px] font-semibold flex-none"
+                        className="min-[1850px]:text-[40px] 
+                                   min-[1580px]:text-[30px] text-[40px] 
+                                   font-semibold flex-none"
                     />
                     <div className="relative">
                         <div
                             className="min-[1620px]:w-[347px] w-[auto] flex justify-between items-center
-                                       min-[1620px]:scale-100 scale-[0.8]"
+                                       min-[1620px]:scale-100 min-[1580px]:scale-[0.8] scale-100"
                         >
                             <GuessButton
                                 up

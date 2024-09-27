@@ -16,33 +16,45 @@ const LivePrice = ({
 
     return (
         <div
-            className="xl:ml-[14px] ml-[0px] xl:mt-[0] mt-[21px]
-                       xl:w-[236px] md:w-[335px] w-[90%] xl:h-[400px] h-[147px] flex-none"
+            className="min-[1580px]:mt-[0] mt-[21px]
+                       min-[1580px]:w-[236px] md:w-[335px] w-[90%] 
+                       min-[1580px]:h-[400px] h-[147px] flex-none"
         >
-            <div className="flex flex-col items-center py-[52px] relative">
-                <div className="flex justify-between items-center w-[141px]">
+            <div
+                className="min-[1580px]:flex min-[1580px]:flex-col 
+                           grid grid-cols-2
+                           items-center min-[1580px]:py-[52px] py-[26px]"
+            >
+                <div
+                    className="flex min-[1580px]:flex-row flex-row-reverse 
+                               justify-between items-center min-[1580px]:w-[141px] w-[130px]
+                               min-[1580px]:ml-0 ml-[25px]"
+                >
                     <GradientText
-                        className="text-[25px] font-semibold"
+                        className="min-[1580px]:text-[25px] text-[22px] font-semibold"
                         text={t("livePrice")}
                     />
                     <GradientQuestionMark />
                 </div>
-                <div className="flex items-center mt-[33px]">
-                    <GradientDollarSign />
+                <div className="flex items-center min-[1580px]:mt-[33px] min-[1580px]:ml-0 ml-[18px]">
+                    <GradientDollarSign className="min-[1580px]:scale-100 scale-[0.83]" />
                     <GradientText
                         text={livePrice !== -1 ? livePrice.toString() : "..."}
-                        className="text-[40px] font-semibold ml-[7px]"
+                        className="min-[1580px]:text-[40px] text-[26px] font-semibold ml-[7px]"
                     />
                 </div>
-                <div className="w-[70%] h-[1px] bg-[#6b6a6a] mt-[30px]" />
+                <div className="w-[70%] h-[1px] bg-[#6b6a6a] mt-[30px] min-[1580px]:block hidden" />
                 <GradientText
                     text={t("ifYouWin")}
-                    className="text-center text-[25px] font-semibold w-[80%] mt-[30px] leading-[33px]"
+                    className="text-center min-[1580px]:text-[25px] text-[22px] 
+                               font-semibold w-[80%] min-[1580px]:mt-[30px] mt-0 
+                               min-[1580px]:ml-0 ml-[35px]
+                               min-[1580px]:leading-[33px] leading-[28px]"
                 />
-                <div className="flex mt-[7px]">
+                <div className="flex min-[1580px]:mt-[7px] mt-0 min-[1580px]:ml-0 ml-[20px]">
                     <GradientText
                         text={"+" + Formatter.formatMoney(profit)}
-                        className="text-[30px] font-semibold"
+                        className="min-[1580px]:text-[30px] text-[26px] font-semibold"
                     />
                     <img
                         src={assets.images.inputFormCoin}
