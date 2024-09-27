@@ -14,7 +14,7 @@ const GeneralLayout = () => {
             />
             <div
                 className="xl:w-[52%] w-[90%] xl:ml-[33px] ml-0 relative
-                               flex flex-col "
+                               flex flex-col"
             >
                 <div
                     className="flex xl:flex-row xl:justify-start 
@@ -38,7 +38,10 @@ const GeneralLayout = () => {
                         </div>
                     </div>
                 </div>
-                <div className="w-[68%] h-[150px] bg-red-200 bg-opacity-50 xl:block hidden"></div>
+                <div
+                    className="w-[68%] h-[150px] ml-[40px] mt-[8px] 
+                                bg-red-200 bg-opacity-50 xl:block hidden"
+                ></div>
             </div>
         </div>
     );

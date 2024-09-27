@@ -8,11 +8,13 @@ const GuessButton = ({
     setpredictionValue,
     up,
     down,
+    className,
 }: {
     predictionValue: PredictionValue;
     setpredictionValue: Dispatch<SetStateAction<PredictionValue>>;
     up?: boolean;
     down?: boolean;
+    className?: string;
 }) => {
     const { t } = useTranslation();
 
@@ -60,7 +62,8 @@ const GuessButton = ({
                         rounded-br-[100px] rounded-bl-[1000px]
                         flex justify-between items-center
                         ${scaleUp ? "scale-[1.1]" : "scale-[1]"}
-                        transition-all duration-[0.5] ease-in-out`}
+                        transition-all duration-[0.5] ease-in-out
+                        ${className}`}
             onClick={handleOnClick}
         >
             <div

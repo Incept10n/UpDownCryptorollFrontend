@@ -8,6 +8,7 @@ import EthereumGradient from "./gradients/EthereumGradient";
 import TonGradient from "./gradients/TonGradient";
 import TradingViewWidget from "./tradingViewWidgets/TradingViewWidget";
 import GeneralLayout from "./GeneralLayout";
+import MainGameplay from "./mainGameplayComponents/MainGameplay";
 
 const GameManager = () => {
     const { currentGame, setCurrentGame } = useContext(ApplicationContext)!;
@@ -30,15 +31,17 @@ const GameManager = () => {
                 )}
             </div>
             <div
-                className="w-full h-100vh fixed top-[180px] left-[64px]
-                           flex"
+                className="absolute xl:pl-[64px] pl-0 top-[110px]
+                           flex xl:justify-start justify-center w-full 
+                           xl:pt-[70px] sm:pt-[40px] pt-[10px]"
             >
-                <div className="w-[40%] h-[75vh] xl:block hidden">
+                <div
+                    className="xl:w-[40%] h-[75vh] relative 
+                               xl:block hidden mr-[54px]"
+                >
                     <TradingViewWidget />
                 </div>
-                <div className="w-[54%] ml-[33px] relative">
-                    {/* <MainGameplay /> */}
-                </div>
+                <MainGameplay />
             </div>
             <div className="z-[-20]">
                 <GeneralLayout />

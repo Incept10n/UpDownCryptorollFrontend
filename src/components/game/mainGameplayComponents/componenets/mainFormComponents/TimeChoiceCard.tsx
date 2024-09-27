@@ -41,7 +41,8 @@ const TimeChoiceCard = ({
             className="w-[332px] h-[48px] buttonGrayGradient rounded-[14px] 
                        border-[1px] border-[#747474] border-opacity-[0.75]
                        flex justify-around items-center
-                       text-[20px] font-semibold relative overflow-hidden"
+                       text-[20px] font-semibold relative overflow-hidden
+                       "
         >
             <div
                 className={`buttonGrayGradient rounded-[14px] 

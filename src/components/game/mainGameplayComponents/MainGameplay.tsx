@@ -67,8 +67,14 @@ const MainGameplay = () => {
     }, [betValue, currentTimeframeChoice]);
 
     return (
-        <div className="flex flex-col">
-            <div className="flex justify-between w-[1000px]">
+        <div
+            className="xl:w-[52%] w-[90%] xl:ml-[33px] ml-0 relative
+                       flex flex-col"
+        >
+            <div
+                className="flex xl:flex-row xl:justify-start 
+                                   flex-col justify-center"
+            >
                 <GuessPriceForm
                     livePrice={livePrice}
                     currentTimeframeChoice={currentTimeframeChoice}
