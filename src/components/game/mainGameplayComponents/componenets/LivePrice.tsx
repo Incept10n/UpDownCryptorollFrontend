@@ -16,8 +16,9 @@ const LivePrice = ({
 
     return (
         <div
-            className="min-[1580px]:mt-[0] mt-[21px]
-                       min-[1580px]:w-[236px] w-[335px]
+            className="min-[1580px]:ml-[14px] ml-[0px] 
+                       min-[1580px]:mt-[0] md:mt-[21px] sm:mt-[-30px] mt-[-35px]
+                       min-[1580px]:w-[236px] w-[335px] 
                        min-[1580px]:h-[400px] h-[147px] flex-none"
         >
             <div

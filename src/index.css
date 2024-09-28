@@ -104,3 +104,9 @@ input[type="number"] {
 .multipliersPolygon {
     clip-path: polygon(0% 0%, 10% 100%, 46% 75%, 100% 100%, 100% 0%);
 }
+
+@media screen and (max-width: 1024px) {
+    .multipliersPolygon {
+        clip-path: none;
+    }
+}

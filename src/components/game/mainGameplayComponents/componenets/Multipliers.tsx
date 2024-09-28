@@ -52,7 +52,7 @@ const Multipliers = ({
                 ></div>
             )}
             <div
-                className="flex min-[1000px]:multipliersPolygon lg:bg-[#d9d9d9] 
+                className="flex multipliersPolygon lg:bg-[#d9d9d9]
                            lg:bg-opacity-[0.09] w-[654px] h-[157px] justify-center 
                             items-start pt-[14px] space-x-[52px]"
             >
