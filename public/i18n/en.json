@@ -73,5 +73,24 @@
     "upPartOfTitleMobile": "up",
     "downPartOfTitleMobile": "down?",
     "guessThePriceHomePageText": "guess the price",
-    "moreCommingSoon": "more games comming soon"
+    "moreCommingSoon": "more games comming soon",
+
+    "rulesHeader": "Rules of the game",
+    "aboutTheProjectRules": "About the project",
+    "rule1": "1. Select your favorite coin.",
+    "rule2": "2. Do some research, perform technical analysis, and use any other methods to decide whether the price will go UP or DOWN.",
+    "rule3": "3. Enter the number of tokens you want to wager.",
+    "rule4": "4. Choose the time frame for your prediction.",
+    "rule5": "5. Finally, decide if the price will rise or fall.",
+    "rule6": "6. Confirm your choice.",
+
+    "rulesPurpose": "What is the purpose of this game?",
+    "purposeParagraph1": "The main question any user might have is: \"What is the purpose of this app? What role will it play in the future? And why does this app exist instead of the originally conceived Cryptoroll project?\"",
+    "purposeParagraph2": "The cryptoroll app itself is still in development, which is a complex and long process, so we are offering users another child of our ecosystem so that they have the opportunity to reap many rewards and enter the world of the main cryptoroll app more smoothly with all the conveniences and advantages over later players.",
+    "purposeParagraph3": "Everyone has a chance to get great bonuses by playing and earning tokens. Here are examples of what the users with the biggest stacks will get: commission-free deposits and withdrawals, our NFTs, which will have a huge impact on your gaming experience in the future, increased chance of winning for a while, and much more.",
+    "purposeParagraph4": "Very soon you will be able to feel the power and influence of NFT on the gameplay, don't miss this opportunity!",
+
+    "inviteAFriend": "Invite a friend",
+
+    "followUs": "Follow us:"
 }
