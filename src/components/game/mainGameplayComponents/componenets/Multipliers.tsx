@@ -46,9 +46,10 @@ const Multipliers = ({
         <div className={`${className}`}>
             {(isCurrentlyInMatch || !isLastMatchCollected) && (
                 <div
-                    className="absolute z-[20] w-[654px] h-[157px]
-                           left-[50%] top-0 translate-x-[-50%]
-                           multipliersPolygon bg-[#3c3939] bg-opacity-[0.8]"
+                    className="absolute z-[20] multipliersPolygon lg:bg-[#3c3939] lg:bg-opacity-[0.8]
+                               lg:block hidden
+                               w-[654px] h-[157px] justify-center 
+                               items-start pt-[14px] space-x-[52px]"
                 ></div>
             )}
             <div

@@ -34,6 +34,7 @@
     "noPredictionValue": "Choose prediction value",
 
     "alreadyInMatch": "You've already made a prediction",
+    "alreadyInMatchMobile": "You're already in match",
     "betAlreadyInMatch": "Bet:",
     "ifYouLoseAlreadyInMatch": "If you lose:",
     "ifYouWinAlreadyInMatch": "If you win:",

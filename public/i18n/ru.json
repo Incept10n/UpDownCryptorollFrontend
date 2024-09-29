@@ -34,6 +34,7 @@
     "noPredictionValue": "Выберите значение прогноза",
 
     "alreadyInMatch": "Вы уже сделали прогноз",
+    "alreadyInMatchMobile": "Вы уже в матче",
     "betAlreadyInMatch": "Ставка:",
     "ifYouLoseAlreadyInMatch": "Если проиграете:",
     "ifYouWinAlreadyInMatch": "Если выиграете:",

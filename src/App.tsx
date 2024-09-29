@@ -9,6 +9,7 @@ import { ApplicationContext, GameCoice } from "./context/ApplicationContext";
 import "./i18n";
 import { TonConnectUIProvider } from "@tonconnect/ui-react";
 import { manifestUrl } from "./constants";
+import TechnicalAnalysisGraph from "./components/common/TechnicalAnalysisGraph";
 
 function App() {
     const [currentGame, setCurrentGame] = useState<GameCoice>(GameCoice.None);
@@ -35,6 +36,10 @@ function App() {
                             <Route path="play" element={<GameManager />} />
                             <Route path="profile" element={<Profile />}></Route>
                             <Route path="rules" element={<Rules />}></Route>
+                            <Route
+                                path="technical-analysis"
+                                element={<TechnicalAnalysisGraph />}
+                            />
                         </Route>
                     </Routes>
                 </BrowserRouter>

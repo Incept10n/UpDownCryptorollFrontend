@@ -69,7 +69,8 @@ const CollectMatchRewardCard = ({
                         flex justify-center items-center"
         >
             <div
-                className="w-[647px] h-[281px] UpDownDarkBlueBg rounded-[26px]
+                className="min-[1580px]:w-[89%] min-[790px]:w-[647px] w-[89%] 
+                           h-[281px] UpDownDarkBlueBg rounded-[26px]
                            px-[21px] text-[25px] font-semibold"
             >
                 <div className="popupTextGradient text-[25px] text-center mt-[52px] font-semibold">

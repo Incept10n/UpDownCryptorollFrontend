@@ -9,7 +9,10 @@ const PredictionValueErrors = ({
     const { t } = useTranslation();
 
     return (
-        <div className="text-red-300 text-[16px] absolute bottom-[-28px] w-full text-center">
+        <div
+            className="text-red-300 text-[16px] absolute w-full text-center
+                        min-[1850px]:bottom-[-28px] sm:bottom-[-25px] bottom-[-20px]"
+        >
             {validationErrors.find(
                 (err) => err === MainFormValidationMistakes.NoPredictionChosen,
             ) && <div>{t("noPredictionValue")}</div>}

@@ -30,6 +30,7 @@ import TimeChoiceCard from "./mainFormComponents/TimeChoiceCard";
 import GradientText from "./common/GradientText";
 import { Match } from "../../../../types/Match";
 import CollectMatchRewardCard from "./mainFormComponents/CollectMatchRewardCard";
+import TradingViewWidget from "../../tradingViewWidgets/TradingViewWidget";
 
 const GuessPriceForm = ({
     livePrice,
@@ -133,7 +134,7 @@ const GuessPriceForm = ({
     }, [wallet]);
 
     return (
-        <div className="w-[100%] lg:h-[400px] h-[335px]">
+        <div className="relative w-[100%] lg:h-[400px] h-[335px] flex">
             {isCurrentlyInMatch ? (
                 <WaitForMatchToFinish
                     setCurrentMatch={setCurrentMatch}
@@ -151,7 +152,10 @@ const GuessPriceForm = ({
             ) : (
                 ""
             )}
-            <div className="lg:p-[55px] p-[30px] lg:space-y-[27px] space-y-[20px]">
+            <div
+                className="min-[1580px]:w-full min-[1270px]:w-[60%] w-full flex-none
+                            lg:p-[55px] p-[30px] lg:space-y-[27px] space-y-[20px]"
+            >
                 <div className="flex justify-between items-center relative">
                     <GradientText
                         text={t("iWantToBet")}
@@ -252,6 +256,12 @@ const GuessPriceForm = ({
                         />
                     </button>
                 </div>
+            </div>
+            <div
+                className="min-[1580px]:hidden min-[1270px]:block hidden 
+                            p-[20px] w-[500px] h-[400px]"
+            >
+                <TradingViewWidget />
             </div>
         </div>
     );

@@ -57,11 +57,15 @@ const LivePrice = ({
                         text={"+" + Formatter.formatMoney(profit)}
                         className="min-[1580px]:text-[30px] text-[26px] font-semibold"
                     />
-                    <img
-                        src={assets.images.inputFormCoin}
-                        alt="input coin picture"
-                        className="ml-[15px]"
-                    />
+                    <div
+                        className={`${profit.toFixed(2).length >= 6 ? "hidden" : "block"}`}
+                    >
+                        <img
+                            src={assets.images.inputFormCoin}
+                            alt="input coin picture"
+                            className="ml-[15px]"
+                        />
+                    </div>
                 </div>
             </div>
         </div>

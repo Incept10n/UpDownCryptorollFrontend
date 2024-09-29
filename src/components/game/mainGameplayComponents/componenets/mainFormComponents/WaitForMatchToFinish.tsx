@@ -140,33 +140,50 @@ const WaitForMatchToFinish = ({
                         flex justify-center items-center"
         >
             <div
-                className="w-[647px] h-[281px] UpDownDarkBlueBg rounded-[26px]
+                className="min-[1580px]:w-[89%] min-[790px]:w-[647px] w-[89%] 
+                           h-[281px] UpDownDarkBlueBg rounded-[26px]
                            px-[21px] text-[25px] font-semibold"
             >
                 <div
                     className="text-[22px] text-[#ccc3c3] opacity-[0.5] 
-                                font-light text-center my-[5px]"
+                               font-light text-center my-[5px]"
                 >
-                    {t("alreadyInMatch")}
+                    <div className="sm:block hidden">{t("alreadyInMatch")}</div>
+                    <div className="sm:hidden block">
+                        {t("alreadyInMatchMobile")}
+                    </div>
                 </div>
-                <div className="flex justify-between items-start ">
-                    <div>
+                <div
+                    className="flex min-[1750px]:flex-row min-[1580px]:flex-col sm:flex-row flex-col
+                               justify-between 
+                               min-[1750px]:items-start min-[1580px]:items-center 
+                               sm:items-start items-center"
+                >
+                    <div
+                        className="flex flex-col 
+                                   min-[1750px]:items-start min-[1580px]:items-center 
+                                   sm:items-start items-center"
+                    >
                         <CurrentMatchTextWithMoney
                             text={t("betAlreadyInMatch")}
                             amountOfMoney={currentBet}
                         />
-                        <CurrentMatchTextWithMoney
-                            text={t("ifYouLoseAlreadyInMatch")}
-                            amountOfMoney={-currentBet}
-                        />
-                        <CurrentMatchTextWithMoney
-                            text={t("ifYouWinAlreadyInMatch")}
-                            addPlus
-                            formatMoneyOutput
-                            amountOfMoney={
-                                currentBet * currentWinningMultiplier
-                            }
-                        />
+                        <div className="min-[1750px]:block min-[1580px]:hidden sm:block hidden">
+                            <CurrentMatchTextWithMoney
+                                text={t("ifYouLoseAlreadyInMatch")}
+                                amountOfMoney={-currentBet}
+                            />
+                        </div>
+                        <div className="min-[1750px]:block min-[1580px]:hidden sm:block hidden">
+                            <CurrentMatchTextWithMoney
+                                text={t("ifYouWinAlreadyInMatch")}
+                                addPlus
+                                formatMoneyOutput
+                                amountOfMoney={
+                                    currentBet * currentWinningMultiplier
+                                }
+                            />
+                        </div>
                         <CurrentCoinText currentCoin={currentCoin} />
                         <CurrentPredictionText
                             currentPrediction={currentPrediction}
@@ -174,27 +191,37 @@ const WaitForMatchToFinish = ({
                         <EntryPriceText entryPrice={currentEntryPrice} />
                     </div>
                     <div className="w-auto flex flex-col items-end">
-                        <div className="popupTextGradient flex justify-end items-center">
+                        <div className="popupTextGradient flex justify-end items-center mt-[10px]">
                             {currentClock && (
                                 <TimeRemainingCards
                                     currentClock={currentClock}
                                 />
                             )}
                         </div>
-                        <div className="text-[25px] popupTextGradient mr-[2px] mt-[27px]">
+                        <div
+                            className="text-[25px] popupTextGradient mr-[2px] mt-[27px] 
+                                       min-[1750px]:block min-[1580px]:hidden sm:block hidden"
+                        >
                             {t("youAreCurrently")}
                         </div>
                         {isCurrentlyWinning ? (
-                            <div className="text-[25px] text-[#72b83b] mt-[7px]">
+                            <div
+                                className="text-[25px] text-[#72b83b] mt-[7px] 
+                                           min-[1750px]:block min-[1580px]:hidden sm:block hidden"
+                            >
                                 {t("winning")}
                             </div>
                         ) : (
-                            <div className="text-[25px] text-[#de4747] mt-[7px]">
+                            <div
+                                className="text-[25px] text-[#de4747] mt-[7px]
+                                            min-[1750px]:block min-[1580px]:hidden sm:block hidden"
+                            >
                                 {t("losing")}
                             </div>
                         )}
                         <div
-                            className="text-[25px] text-[#72b83b] mt-[7px]"
+                            className="text-[25px] text-[#72b83b] mt-[7px]
+                                       min-[1750px]:block min-[1580px]:hidden sm:block hidden"
                             style={{
                                 color: isCurrentlyWinning
                                     ? "#72b83b"

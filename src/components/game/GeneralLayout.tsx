@@ -1,5 +1,4 @@
 import CardUpDownBackground from "./mainGameplayComponents/componenets/common/CardUpDownBackground";
-import DoTechicalAnalysisButton from "./tradingViewWidgets/DoTechicalAnalysisButton";
 
 const GeneralLayout = () => {
     return (
