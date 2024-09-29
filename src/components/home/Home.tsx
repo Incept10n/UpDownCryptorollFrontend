@@ -17,19 +17,19 @@ const Home = () => {
     }, []);
 
     return (
-        <>
+        <div className="h-[100vh]">
             <HomeBgGradient />
             <div className="flex 2xl:flex-row flex-col">
-                <div className="2xl:w-[60%] w-full 2xl:mt-0 mt-[-90px] h-[80vh] relative">
+                <div className="2xl:w-[60%] w-full 2xl:mt-0 mt-[-90px] h-[70vh] relative">
                     <HomeHeading />
                     <HomeCoins />
                 </div>
-                <div className="2xl:w-[40%] w-full 2xl:h-[100vh] relative 2xl:mt-0 mt-[80px]">
+                <div className="2xl:w-[40%] w-full 2xl:h-[100vh] h-[10vh] relative">
                     <HomeCards />
                     <PlayNowButton />
                 </div>
             </div>
-        </>
+        </div>
     );
 };
 

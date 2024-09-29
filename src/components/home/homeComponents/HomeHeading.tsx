@@ -30,7 +30,7 @@ const HomeHeading = () => {
                                rounded-br-[100px] rounded-bl-[1000px] absolute
                                greenBeanShadow 
                                min-[820px]:left-[46%] left-[-5%]
-                               min-[820px]:top-[43px] top-[30px]"
+                               min-[820px]:top-[43px] top-[27px]"
                 />
                 <div
                     className="min-[820px]:w-[308px] w-[214px]  
@@ -40,7 +40,7 @@ const HomeHeading = () => {
                                rounded-br-[1000px] rounded-bl-[100px] absolute
                                redBeanShadow 
                                min-[820px]:left-[65%] left-[27%] 
-                               min-[820px]:top-[159px] top-[106px]"
+                               min-[820px]:top-[159px] top-[100px]"
                 />
             </div>
         </div>
