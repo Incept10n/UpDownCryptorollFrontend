@@ -3,11 +3,14 @@ import {
     ApplicationContext,
     GameCoice,
 } from "../../context/ApplicationContext";
-import { useNavigate } from "react-router-dom";
+import HomeBgGradient from "./homeComponents/HomeBgGradient";
+import HomeHeading from "./homeComponents/HomeHeading";
+import HomeCoins from "./homeComponents/HomeCoins";
+import PlayNowButton from "./homeComponents/PlayNowButton";
+import HomeCards from "./homeComponents/HomeCards";
 
 const Home = () => {
     const { setCurrentGame } = useContext(ApplicationContext)!;
-    const navigate = useNavigate();
 
     useEffect(() => {
         setCurrentGame(GameCoice.None);
@@ -15,16 +18,17 @@ const Home = () => {
 
     return (
         <>
-            <div>Home</div>
-            <button
-                onClick={() => {
-                    setCurrentGame(GameCoice.Btc);
-                    navigate("/play");
-                }}
-                className="upDownTextWhite border-gray-300 border-[1px] p-2 rounded-[14px]"
-            >
-                Click me
-            </button>
+            <HomeBgGradient />
+            <div className="flex 2xl:flex-row flex-col">
+                <div className="2xl:w-[60%] w-full 2xl:mt-0 mt-[-90px] h-[80vh] relative">
+                    <HomeHeading />
+                    <HomeCoins />
+                </div>
+                <div className="2xl:w-[40%] w-full 2xl:h-[100vh] relative 2xl:mt-0 mt-[80px]">
+                    <HomeCards />
+                    <PlayNowButton />
+                </div>
+            </div>
         </>
     );
 };

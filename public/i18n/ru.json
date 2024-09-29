@@ -64,5 +64,11 @@
     "betMultiTextMobile": "ставка",
     "noChoiceMulti": "Множитель с невыбранным временем",
 
-    "doTechnicalAnalysis": "Перейти к техническому анализу"
+    "doTechnicalAnalysis": "Перейти к техническому анализу",
+
+    "playNow": "Играть сейчас",
+    "upPartOfTitle": "Пойдёт вверх",
+    "downPartOfTitle": "или вниз",
+    "guessThePriceHomePageText": "угадайте цену",
+    "moreCommingSoon": "скоро появятся новые игры"
 }

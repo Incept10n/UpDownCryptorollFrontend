@@ -65,5 +65,13 @@
     "noChoiceMulti": "No choice multiplier",
     "noChoiceMultiMobile": "No choice",
 
-    "doTechnicalAnalysis": "Do techical analysis"
+    "doTechnicalAnalysis": "Do techical analysis",
+
+    "playNow": "Play now",
+    "upPartOfTitle": "Will it go up",
+    "downPartOfTitle": "or down?",
+    "upPartOfTitleMobile": "up",
+    "downPartOfTitleMobile": "down?",
+    "guessThePriceHomePageText": "guess the price",
+    "moreCommingSoon": "more games comming soon"
 }

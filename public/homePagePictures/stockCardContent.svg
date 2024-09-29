@@ -1,0 +1,46 @@
+<svg width="204" height="270" viewBox="0 0 204 270" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M168 75.3889C171.2 78.1111 177.6 80.8333 184 80.8333M184 80.8333C192 80.8333 200 79.4722 200 72.6667C200 65.8611 192.158 64.5 184 64.5M184 80.8333V64.5M184 80.8333V89M184 64.5C176 64.5 168 63.1389 168 56.3333C168 49.5278 176 48.1667 184 48.1667M184 64.5V48.1667M184 48.1667C190.4 48.1667 196.8 50.8889 200 53.6111M184 48.1667V40" stroke="url(#paint0_linear_399_1141)" stroke-width="7"/>
+<line x1="27.5" y1="159" x2="27.5" y2="216" stroke="#28A79B"/>
+<rect x="0.5" y="-0.5" width="5" height="118" transform="matrix(1 0 0 -1 24 161)" fill="#28A79B" stroke="#28A79B"/>
+<line x1="26.5" y1="83" x2="26.5" y2="35" stroke="#28A79B"/>
+<line x1="39.5" y1="88" x2="39.5" y2="127" stroke="#E10000"/>
+<rect x="0.5" y="-0.5" width="5" height="55" transform="matrix(1 0 0 -1 36 87)" fill="#E10000" stroke="#E10000"/>
+<line x1="51.5" y1="106" x2="51.5" y2="120" stroke="#E10000"/>
+<rect x="0.5" y="-0.5" width="5" height="17" transform="matrix(1 0 0 -1 48 105)" fill="#E10000" stroke="#E10000"/>
+<line x1="51.5" y1="75" x2="51.5" y2="89" stroke="#E10000"/>
+<line x1="63.5" y1="124" x2="63.5" y2="187" stroke="#E10000"/>
+<line x1="63.5" y1="64" x2="63.5" y2="111" stroke="#E10000"/>
+<rect x="0.5" y="-0.5" width="5" height="17" transform="matrix(1 0 0 -1 60 123)" fill="#E10000" stroke="#E10000"/>
+<line x1="75.5" y1="142" x2="75.5" y2="156" stroke="#E10000"/>
+<rect x="0.5" y="-0.5" width="5" height="17" transform="matrix(1 0 0 -1 72 141)" fill="#E10000" stroke="#E10000"/>
+<line x1="75.5" y1="85" x2="75.5" y2="124" stroke="#E10000"/>
+<rect x="0.5" y="-0.5" width="5" height="59" transform="matrix(1 0 0 -1 84 201)" fill="#E10000" stroke="#E10000"/>
+<line x1="87.5" y1="202" x2="87.5" y2="216" stroke="#E10000"/>
+<line x1="98.5" y1="220" x2="98.5" y2="234" stroke="#E10000"/>
+<rect x="0.5" y="-0.5" width="5" height="17" transform="matrix(1 0 0 -1 95 219)" fill="#E10000" stroke="#E10000"/>
+<line x1="109.5" y1="131" x2="109.5" y2="108" stroke="#28A79B"/>
+<rect x="0.5" y="-0.5" width="5" height="90" transform="matrix(1 0 0 -1 107 219)" fill="#28A79B" stroke="#28A79B"/>
+<line x1="146.5" y1="216" x2="146.5" y2="173" stroke="#28A79B"/>
+<rect x="0.5" y="-0.5" width="5" height="27" transform="matrix(1 0 0 -1 144 238)" fill="#28A79B" stroke="#28A79B"/>
+<line x1="158.5" y1="162" x2="158.5" y2="119" stroke="#28A79B"/>
+<line x1="158.5" y1="220" x2="158.5" y2="177" stroke="#28A79B"/>
+<rect x="0.5" y="-0.5" width="5" height="57" transform="matrix(1 0 0 -1 156 210)" fill="#28A79B" stroke="#28A79B"/>
+<line x1="123.5" y1="147" x2="123.5" y2="161" stroke="#E10000"/>
+<line x1="123.5" y1="89" x2="123.5" y2="129" stroke="#E10000"/>
+<rect x="0.5" y="-0.5" width="5" height="17" transform="matrix(1 0 0 -1 120 146)" fill="#E10000" stroke="#E10000"/>
+<line x1="134.5" y1="261" x2="134.5" y2="239" stroke="#E10000"/>
+<rect x="0.5" y="-0.5" width="5" height="91" transform="matrix(1 0 0 -1 132 238)" fill="#E10000" stroke="#E10000"/>
+<line x1="135.5" y1="124" x2="135.5" y2="148" stroke="#E10000"/>
+<line x1="3.5" y1="232" x2="3.5" y2="270" stroke="#28A79B"/>
+<rect x="0.5" y="-0.5" width="5" height="63" transform="matrix(1 0 0 -1 0 231)" fill="#28A79B" stroke="#28A79B"/>
+<line x1="2.5" y1="168" x2="2.5" y2="144" stroke="#28A79B"/>
+<line x1="15.5" y1="166" x2="15.5" y2="181" stroke="#28A79B"/>
+<rect x="0.5" y="-0.5" width="5" height="16" transform="matrix(1 0 0 -1 12 167)" fill="#28A79B" stroke="#28A79B"/>
+<line x1="15.5" y1="132" x2="15.5" y2="151" stroke="#28A79B"/>
+<defs>
+<linearGradient id="paint0_linear_399_1141" x1="168.372" y1="53.2881" x2="199.667" y2="53.4597" gradientUnits="userSpaceOnUse">
+<stop offset="0.29" stop-color="#EE9833"/>
+<stop offset="1" stop-color="#C6B419"/>
+</linearGradient>
+</defs>
+</svg>

@@ -21,6 +21,8 @@ import questionMarkTon from "/gameplayImages/questionMark/questionMarkTon.svg";
 import livePriceDollarSignBitcoin from "/gameplayImages/dollarSign/LivePriceDollarSignBitcoin.svg";
 import livePriceDollarSignEth from "/gameplayImages/dollarSign/LivePriceDollarSignEth.svg";
 import livePriceDollarSignTon from "/gameplayImages/dollarSign/LivePriceDollarSignTon.svg";
+import stockCardContent from "/homePagePictures/stockCardContent.svg";
+import futureGameCard from "/homePagePictures/futureGamesCard.svg";
 
 export const assets = {
     icons: {
@@ -57,5 +59,7 @@ export const assets = {
         },
         makePredictionBg: makePredictionBg,
         tonConnectPopupBg: tonConnectPopupBg,
+        stockCardContent: stockCardContent,
+        futureGameCardContent: futureGameCard,
     },
 };

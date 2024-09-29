@@ -50,6 +50,16 @@ body {
     border-radius: 69px;
 }
 
+.homeGradientBorder {
+    background: linear-gradient(
+        to bottom,
+        rgba(164, 162, 162, 1),
+        rgba(153, 153, 153, 0)
+    );
+
+    border-radius: 51px;
+}
+
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
     -webkit-appearance: none;
@@ -75,6 +85,12 @@ input[type="number"] {
 
 .popupTextGradient {
     background: linear-gradient(96deg, #4266c5 28%, #59b0cc 100%);
+    background-clip: text;
+    color: transparent;
+}
+
+.defaultGradientText {
+    background: linear-gradient(98deg, #4266c5 28%, #59b0cc 100%);
     background-clip: text;
     color: transparent;
 }
@@ -109,4 +125,39 @@ input[type="number"] {
     .multipliersPolygon {
         clip-path: none;
     }
+}
+
+.appearAnimation {
+    animation: appearAtTheStartAmination 2s ease-in-out forwards;
+}
+
+.appearAnimationCoins {
+    animation: appearAtTheStartAminationCoins 2s ease-in-out forwards;
+    animation-delay: 1s;
+}
+
+@keyframes appearAtTheStartAmination {
+    0% {
+        opacity: 0%;
+    }
+    100% {
+        opacity: 100%;
+    }
+}
+
+@keyframes appearAtTheStartAminationCoins {
+    0% {
+        opacity: 0%;
+    }
+    100% {
+        opacity: 64%;
+    }
+}
+
+.greenBeanShadow {
+    box-shadow: 0px 0px 35.5px 5px rgba(214, 227, 57, 25%);
+}
+
+.redBeanShadow {
+    box-shadow: 0px 0px 35.5px 5px rgba(253, 82, 84, 42%);
 }
