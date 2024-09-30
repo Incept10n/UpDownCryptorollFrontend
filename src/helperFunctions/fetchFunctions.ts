@@ -122,3 +122,16 @@ export const collectLastMatch = async (walletAddress: string) => {
         },
     );
 };
+
+export const changeUserName = async (
+    walletAddress: string,
+    newName: string,
+) => {
+    await fetch(`${backendUrl}/user?walletAddress=${walletAddress}`, {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ newName: newName }),
+    });
+};

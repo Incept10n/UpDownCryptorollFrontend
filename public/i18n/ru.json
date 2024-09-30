@@ -90,8 +90,53 @@
     "purposeParagraph4": "Уже скоро вы сможете почувствовать силу и влияние NFT на игровой процесс, не упустите эту возможность!",
 
     "inviteAFriend": "Пригласите друга",
-
     "followUs": "Подпишитесь на нас:",
+    "goBack": "Вернуться назад",
 
-    "goBack": "Вернуться назад"
+    "menu": "Меню",
+
+    "profile": "Профиль",
+    "myProfileText": "Мой профиль",
+    "currentBalance": "Текущий баланс",
+    "howToGetMore": "Как получить больше?",
+    "edit": "Редактировать",
+    "changingPfp": "Скоро появится функция изменения фотографии профиля",
+    "saveChanges": "Сохранить изменения",
+
+    "Language": "Язык",
+    "languageText": "Предпочтение языка",
+    "chooseLanguage": "Выберите язык",
+    "currentLanguage": "Текущий язык:",
+
+    "History": "История",
+    "youMatchHistory": "История ваших матчей",
+    "historyCoin": "Монета",
+    "historyEntry": "Вход",
+    "historyDate": "Дата",
+    "historyTime": "Время",
+    "historyPrice": "Цена",
+    "historyPrediction": "Прогноз",
+    "historyDirection": "Направление",
+    "historyTime": "Время",
+    "historyExit": "Выход",
+    "historyResult": "Результат",
+    "historyStatus": "Статус",
+    "historyPayout": "Выплата",
+
+    "Rewards": "Награды",
+    "rewardshowToGetMore": "Как получить монеты и награды",
+    "dailyReward": "Ежедневная награда",
+    "dailyChallenge": "Ежедневный вызов",
+    "forCompletingTasks": "Награды за выполнение заданий",
+    "completeAndGetCoins": "Выполняйте задания и получайте монеты",
+    "task1": "Подписаться на телеграмм",
+    "task2": "Подписаться на X",
+    "task3": "Подписаться на ВК",
+    "task4": "Пригласить друга (макс 10)",
+    "task5": "Прочитать whitepaper",
+    "task6": "Пройти тест",
+    "claim": "Получить",
+    "rewardsCommingSoon": "Скоро вас ждут новые награды!",
+    "day": "День",
+    "andPlusEveryFollowing": "и +60 к каждому последующему дню"
 }

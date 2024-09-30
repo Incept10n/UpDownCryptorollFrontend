@@ -93,8 +93,53 @@
     "purposeParagraph4": "Very soon you will be able to feel the power and influence of NFT on the gameplay, don't miss this opportunity!",
 
     "inviteAFriend": "Invite a friend",
-
     "followUs": "Follow us:",
+    "goBack": "Go back",
 
-    "goBack": "Go back"
+    "menu": "Menu",
+
+    "profile": "Profile",
+    "myProfileText": "My profile",
+    "currentBalance": "Current balance",
+    "howToGetMore": "How to get more?",
+    "edit": "Edit",
+    "changingPfp": "Changing profile picture feature coming soon",
+    "saveChanges": "Save changes",
+
+    "Language": "Language",
+    "languageText": "Language preference",
+    "chooseLanguage": "Choose a language",
+    "currentLanguage": "Current language:",
+
+    "History": "History",
+    "youMatchHistory": "Your match history",
+    "historyCoin": "Coin",
+    "historyEntry": "Entry",
+    "historyDate": "Date",
+    "historyTime": "Time",
+    "historyPrice": "Price",
+    "historyPrediction": "Prediction",
+    "historyDirection": "Direction",
+    "historyTime": "Time",
+    "historyExit": "Exit",
+    "historyResult": "Result",
+    "historyStatus": "Status",
+    "historyPayout": "Payout",
+
+    "Rewards": "Rewards",
+    "rewardshowToGetMore": "How to get coins and rewards",
+    "dailyReward": "Daily reward",
+    "dailyChallenge": "Daily challenge",
+    "forCompletingTasks": "Rewards for completing tasks",
+    "completeAndGetCoins": "Complete tasks and get coins",
+    "task1": "Subscribe to telegram",
+    "task2": "Subscribe to X",
+    "task3": "Subscribe to VK",
+    "task4": "Invite a friend (max 10)",
+    "task5": "Read whitepaper",
+    "task6": "Complete a quiz",
+    "claim": "Claim",
+    "rewardsCommingSoon": "More rewards coming soon!",
+    "day": "Day",
+    "andPlusEveryFollowing": "and +60 to every following day"
 }

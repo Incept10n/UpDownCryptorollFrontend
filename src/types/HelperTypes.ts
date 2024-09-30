@@ -18,3 +18,10 @@ export enum MainFormValidationMistakes {
     NoTimeframeChosen,
     NoPredictionChosen,
 }
+
+export enum ProfilePageType {
+    Profile,
+    Language,
+    History,
+    Rewards,
+}

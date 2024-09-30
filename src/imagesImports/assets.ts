@@ -27,6 +27,11 @@ import telegrammIcon from "/socialMediaIcons/TelegramIcon.svg";
 import twitterIcon from "/socialMediaIcons/TwitterIcon.svg";
 import vkIcon from "/socialMediaIcons/VkIcon.svg";
 import goBackIcon from "/gameplayImages/BackIcon.svg";
+import bookIcon from "/profilePictures/bookIcon.svg";
+import homeIcon from "/profilePictures/homeIcon.svg";
+import rewardIcon from "/profilePictures/rewardIcon.svg";
+import worldIcon from "/profilePictures/worldIcon.svg";
+import pencilIcon from "/profilePictures/pencilIcon.svg";
 
 export const assets = {
     icons: {
@@ -60,6 +65,11 @@ export const assets = {
             vk: vkIcon,
         },
         goBack: goBackIcon,
+        book: bookIcon,
+        home: homeIcon,
+        reward: rewardIcon,
+        world: worldIcon,
+        pencil: pencilIcon,
     },
     images: {
         coin: coinPic,
