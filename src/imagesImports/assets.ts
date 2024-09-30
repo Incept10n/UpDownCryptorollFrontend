@@ -26,6 +26,7 @@ import futureGameCard from "/homePagePictures/futureGamesCard.svg";
 import telegrammIcon from "/socialMediaIcons/TelegramIcon.svg";
 import twitterIcon from "/socialMediaIcons/TwitterIcon.svg";
 import vkIcon from "/socialMediaIcons/VkIcon.svg";
+import goBackIcon from "/gameplayImages/BackIcon.svg";
 
 export const assets = {
     icons: {
@@ -58,6 +59,7 @@ export const assets = {
             twitter: twitterIcon,
             vk: vkIcon,
         },
+        goBack: goBackIcon,
     },
     images: {
         coin: coinPic,

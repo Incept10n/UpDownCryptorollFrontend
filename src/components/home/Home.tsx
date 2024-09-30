@@ -17,7 +17,7 @@ const Home = () => {
     }, []);
 
     return (
-        <div className="h-[100vh]">
+        <div>
             <HomeBgGradient />
             <div className="flex 2xl:flex-row flex-col">
                 <div className="2xl:w-[60%] w-full 2xl:mt-0 mt-[-90px] h-[70vh] relative">

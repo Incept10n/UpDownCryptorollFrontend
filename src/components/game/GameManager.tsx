@@ -14,7 +14,9 @@ const GameManager = () => {
     const { currentGame, setCurrentGame } = useContext(ApplicationContext)!;
 
     useEffect(() => {
-        setCurrentGame(GameCoice.Btc);
+        if (currentGame === GameCoice.None) {
+            setCurrentGame(GameCoice.Btc);
+        }
     }, []);
 
     return (

@@ -119,7 +119,7 @@ const MainGameplay = () => {
             />
             <div
                 className="min-[1400px]:hidden flex w-full h-full
-                           justify-center items-center mt-[44px]"
+                           justify-center items-center my-[44px]"
             >
                 <DoTechicalAnalysisButton />
             </div>
