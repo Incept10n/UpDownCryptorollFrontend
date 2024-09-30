@@ -23,6 +23,9 @@ import livePriceDollarSignEth from "/gameplayImages/dollarSign/LivePriceDollarSi
 import livePriceDollarSignTon from "/gameplayImages/dollarSign/LivePriceDollarSignTon.svg";
 import stockCardContent from "/homePagePictures/stockCardContent.svg";
 import futureGameCard from "/homePagePictures/futureGamesCard.svg";
+import telegrammIcon from "/socialMediaIcons/TelegramIcon.svg";
+import twitterIcon from "/socialMediaIcons/TwitterIcon.svg";
+import vkIcon from "/socialMediaIcons/VkIcon.svg";
 
 export const assets = {
     icons: {
@@ -49,6 +52,11 @@ export const assets = {
             bitcoin: livePriceDollarSignBitcoin,
             ethereum: livePriceDollarSignEth,
             ton: livePriceDollarSignTon,
+        },
+        socialMedia: {
+            tg: telegrammIcon,
+            twitter: twitterIcon,
+            vk: vkIcon,
         },
     },
     images: {
