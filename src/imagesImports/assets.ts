@@ -32,6 +32,7 @@ import homeIcon from "/profilePictures/homeIcon.svg";
 import rewardIcon from "/profilePictures/rewardIcon.svg";
 import worldIcon from "/profilePictures/worldIcon.svg";
 import pencilIcon from "/profilePictures/pencilIcon.svg";
+import doubleArrowRight from "/profilePictures/arrowsRight.svg";
 
 export const assets = {
     icons: {
@@ -70,6 +71,7 @@ export const assets = {
         reward: rewardIcon,
         world: worldIcon,
         pencil: pencilIcon,
+        doubleArrow: doubleArrowRight,
     },
     images: {
         coin: coinPic,

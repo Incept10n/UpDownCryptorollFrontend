@@ -8,6 +8,7 @@ import ProfileMenu from "./profileComponents/ProfileMenu";
 import ProfileInfoScreen from "./profileComponents/ProfileInfoScreen";
 import { ProfilePageType } from "../../types/HelperTypes";
 import { ProfileContext } from "../../context/ProfileContext";
+import ProfileMenuMobile from "./profileComponents/ProfileMenuMobile";
 
 const Profile = () => {
     const { setCurrentGame } = useContext(ApplicationContext)!;
@@ -23,7 +24,8 @@ const Profile = () => {
             value={{ currentProfilePage, setCurrentProfilePage }}
         >
             <HomeBgGradient />
-            <div className="mt-[46px] mx-[61px] h-[78vh] flex">
+            <ProfileMenuMobile />
+            <div className="lg:mt-[46px] mt-[17px] lg:mx-[61px] mx-0 h-[78vh] flex">
                 <ProfileMenu />
                 <ProfileInfoScreen />
             </div>

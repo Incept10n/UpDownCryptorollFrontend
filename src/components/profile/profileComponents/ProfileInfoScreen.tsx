@@ -24,8 +24,8 @@ const ProfileInfoScreen = () => {
 
     return (
         <div
-            className="w-full h-full UpDownDarkBlueBg border-[#999999] 
-                       border-[1px] rounded-[35px] ml-[26px] border-opacity-[70%]"
+            className="w-full h-full lg:bg-[#151820] lg:border-[#999999] 
+                       lg:border-[1px] rounded-[35px] lg:ml-[26px] ml-0 border-opacity-[70%]"
         >
             {chooseScreenToRender()}
         </div>

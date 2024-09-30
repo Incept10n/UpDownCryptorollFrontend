@@ -11,8 +11,12 @@ const CurrentBalanceProfileScreen = () => {
     const { currentBalance } = useContext(ApplicationContext)!;
 
     return (
-        <div className="absolute left-[96px] top-[127px]">
-            <div className="text-[42px] text-[] upDownTextWhite font-semibold">
+        <div
+            className="absolute min-[1280px]:left-[96px] left-[50%] max-[1280px]:translate-x-[-50%] 
+                       min-[1560px]:top-[127px] top-[365px]
+                       flex flex-col min-[1280px]:items-start items-center"
+        >
+            <div className="text-[42px] upDownTextWhite font-semibold">
                 {t("currentBalance")}
             </div>
             <div className="flex justify-start mt-[7px]">
@@ -27,7 +31,7 @@ const CurrentBalanceProfileScreen = () => {
             </div>
             <div
                 className="UpDownGrayText text-[24px] font-light 
-                            underline hover:cursor-pointer mt-[17px]"
+                           underline hover:cursor-pointer mt-[17px]"
                 onClick={() => setCurrentProfilePage(ProfilePageType.Rewards)}
             >
                 {t("howToGetMore")}
