@@ -30,9 +30,9 @@ const ProfileScreen = () => {
                 className="upDownTextWhite lg:text-[25px] text-[16px] 
                            font-semibold border-[1px] 
                            border-[#ccc3c3] text-center rounded-[10px]
-                           lg:w-[193px] lg:h-[46px] w-[131px] h-[27px]
+                           px-[10px] lg:h-[46px] h-[27px]
                            absolute hover:cursor-pointer
-                           lg:left-[112px] left-[10%]
+                           lg:left-[100px] left-[10%]
                            lg:bottom-[88px] lg:top-auto bottom-auto top-[397px]
                            hover:scale-[1.1] scale-[1] transition-all duration-[0.2] ease-in-out
                            xl:block lg:hidden block"

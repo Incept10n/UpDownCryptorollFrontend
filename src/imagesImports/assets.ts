@@ -33,6 +33,8 @@ import rewardIcon from "/profilePictures/rewardIcon.svg";
 import worldIcon from "/profilePictures/worldIcon.svg";
 import pencilIcon from "/profilePictures/pencilIcon.svg";
 import doubleArrowRight from "/profilePictures/arrowsRight.svg";
+import russianFlag from "/profilePictures/flag/russianFlag.svg";
+import usFlag from "/profilePictures/flag/usFlag.svg";
 
 export const assets = {
     icons: {
@@ -72,6 +74,10 @@ export const assets = {
         world: worldIcon,
         pencil: pencilIcon,
         doubleArrow: doubleArrowRight,
+        countryFlag: {
+            us: usFlag,
+            ru: russianFlag,
+        },
     },
     images: {
         coin: coinPic,
