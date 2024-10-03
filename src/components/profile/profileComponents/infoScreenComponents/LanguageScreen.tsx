@@ -13,9 +13,15 @@ const LanguageScreen = () => {
             <div className="flex 2xl:justify-between justify-center w-[91%] mx-auto mt-[58px]">
                 <div
                     className="lg:text-[42px] text-[30px] upDownTextWhite 
-                               font-semibold text-nowrap"
+                               font-semibold text-nowrap lg:block hidden"
                 >
                     {t("chooseLanguage")}
+                </div>
+                <div
+                    className="lg:text-[42px] text-[30px] upDownTextWhite 
+                               font-semibold text-nowrap lg:hidden block"
+                >
+                    {t("language")}
                 </div>
                 <div
                     className="lg:text-[42px] text-[30px] upDownTextWhite 
