@@ -18,18 +18,24 @@ const ProfileScreen = () => {
             <CurrentBalanceProfileScreen />
             <ProfileNameCard />
             <div
-                className="absolute xl:top-[380px] xl:right-[170px]
-                            top-[580px] right-[50%] translate-x-[50%]"
+                className="absolute 
+                           xl:top-[380px] lg:top-[580px] top-[390px]
+                           xl:right-[170px] lg:right-[50%] right-[10%]
+                           lg:translate-x-[50%] translate-x-0"
             >
                 <TonConnectButton />
             </div>
             <FollowUsProfileScreen />
             <div
-                className="upDownTextWhite text-[25px] font-semibold border-[1px] 
-                           border-[#ccc3c3] w-[193px] h-[46px] text-center rounded-[10px]
-                           absolute left-[112px] bottom-[88px] hover:cursor-pointer
+                className="upDownTextWhite lg:text-[25px] text-[16px] 
+                           font-semibold border-[1px] 
+                           border-[#ccc3c3] text-center rounded-[10px]
+                           lg:w-[193px] lg:h-[46px] w-[131px] h-[27px]
+                           absolute hover:cursor-pointer
+                           lg:left-[112px] left-[10%]
+                           lg:bottom-[88px] lg:top-auto bottom-auto top-[397px]
                            hover:scale-[1.1] scale-[1] transition-all duration-[0.2] ease-in-out
-                           xl:block hidden"
+                           xl:block lg:hidden block"
             >
                 {t("inviteAFriend")}
             </div>

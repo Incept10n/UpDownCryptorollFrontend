@@ -12,25 +12,26 @@ const CurrentBalanceProfileScreen = () => {
 
     return (
         <div
-            className="absolute min-[1280px]:left-[96px] left-[50%] max-[1280px]:translate-x-[-50%] 
-                       min-[1560px]:top-[127px] top-[365px]
-                       flex flex-col min-[1280px]:items-start items-center"
+            className="absolute min-[1280px]:left-[96px] lg:left-[50%] left-[10%]
+                       min-[1280px]:translate-x-0 lg:translate-x-[-50%] translate-x-0
+                       min-[1560px]:top-[127px] lg:top-[365px] top-[210px]
+                       flex flex-col min-[1280px]:items-start lg:items-center"
         >
-            <div className="text-[42px] upDownTextWhite font-semibold">
+            <div className="lg:text-[42px] text-[30px] upDownTextWhite font-semibold text-nowrap">
                 {t("currentBalance")}
             </div>
-            <div className="flex justify-start mt-[7px]">
-                <div className="text-[42px] upDownTextWhite font-semibold leading-[42px]">
+            <div className="flex justify-start items-center mt-[7px]">
+                <div className="lg:text-[42px] text-[30px] upDownTextWhite font-semibold leading-[42px]">
                     {currentBalance}
                 </div>
                 <img
                     src={assets.images.coin}
                     alt="coin"
-                    className="w-[42px] h-[42px] ml-[11px]"
+                    className="lg:w-[42px] lg:h-[42px] w-[34px] h-[34px] ml-[11px]"
                 />
             </div>
             <div
-                className="UpDownGrayText text-[24px] font-light 
+                className="UpDownGrayText lg:text-[24px] text-[16px] font-light 
                            underline hover:cursor-pointer mt-[17px]"
                 onClick={() => setCurrentProfilePage(ProfilePageType.Rewards)}
             >

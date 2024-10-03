@@ -6,15 +6,33 @@ const FollowUsProfileScreen = () => {
 
     return (
         <div
-            className="absolute xl:right-[96px] right-[50%] max-xl:translate-x-[50%] bottom-[78px] 
-                        flex justify-start items-center space-x-[16px] min-w-[353px]"
+            className="absolute xl:right-[96px] right-[50%] max-xl:translate-x-[50%] 
+                       lg:bottom-[78px] bottom-[0px]
+                       flex lg:flex-row flex-col-reverse justify-start items-center min-w-[353px]"
         >
-            <div className="upDownTextWhite text-[38px] font-semibold flex-none">
+            <div
+                className="upDownTextWhite lg:text-[38px] text-[16px] 
+                            font-semibold flex-none lg:mt-0 mt-[20px] mr-[16px]"
+            >
                 {t("followUs")}
             </div>
-            <img src={assets.icons.socialMedia.tg} alt="telegramm icon" />
-            <img src={assets.icons.socialMedia.twitter} alt="twitter icon" />
-            <img src={assets.icons.socialMedia.vk} alt="vk icon" />
+            <div className="flex space-x-[16px]">
+                <img
+                    src={assets.icons.socialMedia.tg}
+                    alt="telegramm icon"
+                    className="lg:w-auto lg:h-auto w-[40px] h-[40px]"
+                />
+                <img
+                    src={assets.icons.socialMedia.twitter}
+                    alt="twitter icon"
+                    className="lg:w-auto lg:h-auto w-[40px] h-[40px]"
+                />
+                <img
+                    src={assets.icons.socialMedia.vk}
+                    alt="vk icon"
+                    className="lg:w-auto lg:h-auto w-[40px] h-[40px]"
+                />
+            </div>
         </div>
     );
 };
