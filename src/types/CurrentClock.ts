@@ -19,7 +19,7 @@ export class CurrentClock {
 
     decrementByOneSecond(): void {
         if (this.totalSeconds > 0) {
-            this.totalSeconds -= 0.5;
+            this.totalSeconds -= 1;
         } else {
             this.totalSeconds = 0;
         }

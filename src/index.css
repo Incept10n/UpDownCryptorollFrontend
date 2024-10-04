@@ -92,6 +92,10 @@ input[type="number"] {
     );
 }
 
+.buttonBlueGradient {
+    background: linear-gradient(to bottom, #414f69, #1a1f29);
+}
+
 .popupBackground {
     background-color: rgba(60, 57, 57, 0.7);
 }

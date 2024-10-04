@@ -7,14 +7,20 @@ const FollowUsProfileScreen = () => {
     return (
         <div
             className="absolute xl:right-[96px] right-[50%] max-xl:translate-x-[50%] 
-                       lg:bottom-[78px] bottom-[0px]
+                       lg:bottom-[78px] bottom-[0px] mb-[40px]
                        flex lg:flex-row flex-col-reverse justify-start items-center min-w-[353px]"
         >
             <div
-                className="upDownTextWhite lg:text-[38px] text-[16px] 
+                className="upDownTextWhite lg:text-[38px] text-[16px] min-[1024px]:block hidden
                             font-semibold flex-none lg:mt-0 mt-[20px] mr-[16px]"
             >
                 {t("followUs")}
+            </div>
+            <div
+                className="upDownTextWhite lg:text-[38px] text-[16px] min-[1024px]:hidden block
+                            font-semibold flex-none lg:mt-0 mt-[20px]"
+            >
+                {t("followUsMobile")}
             </div>
             <div className="flex space-x-[16px]">
                 <img

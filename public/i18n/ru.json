@@ -91,6 +91,7 @@
 
     "inviteAFriend": "Пригласите друга",
     "followUs": "Подпишитесь на нас:",
+    "followUsMobile": "Подпишитесь на нас",
     "goBack": "Вернуться назад",
 
     "menu": "Меню",
@@ -110,7 +111,10 @@
 
     "History": "История",
     "youMatchHistory": "История ваших матчей",
+    "youMatchHistoryMobile": "История матчей",
     "historyCoin": "Монета",
+    "historyGuess": "Прогноз",
+    "historyMore": "Ещё",
     "historyEntry": "Вход",
     "historyDate": "Дата",
     "historyTime": "Время",
@@ -122,6 +126,14 @@
     "historyResult": "Результат",
     "historyStatus": "Статус",
     "historyPayout": "Выплата",
+    "loadMore": "Загрузить больше",
+    "endOfHistory": "Конец истории",
+    "historyEntryPrice": "Начальная цена",
+    "historyEntryTime": "Начальное время",
+    "historyEntryDate": "Начальная дата",
+    "historyExitPrice": "Конечная цена",
+    "historyExitTime": "Конечная время",
+    "historyExitDate": "Конечная дата",
 
     "Rewards": "Награды",
     "rewardshowToGetMore": "Как получить монеты и награды",
@@ -138,5 +150,8 @@
     "claim": "Получить",
     "rewardsCommingSoon": "Скоро вас ждут новые награды!",
     "day": "День",
-    "andPlusEveryFollowing": "и +60 к каждому последующему дню"
+    "andPlusEveryFollowing": "и +60 к каждому последующему дню",
+
+    "win": "Победа",
+    "loss": "Поражение"
 }

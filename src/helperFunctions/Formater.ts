@@ -8,4 +8,19 @@ export class Formatter {
 
         return money.toFixed(2);
     };
+
+    static extractDateFromDateTimeString = (dateString: string) => {
+        const [date, _] = dateString.split("T");
+        const [year, month, day] = date.split("-");
+
+        return `${year}/${month}/${day}`;
+    };
+
+    static extractTimeFromDateTimeString = (dateString: string) => {
+        const [_, time] = dateString.split("T");
+
+        const [hour, minute] = time.split(":");
+
+        return `${hour}:${minute}`;
+    };
 }

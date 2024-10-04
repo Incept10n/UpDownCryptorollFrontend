@@ -11,6 +11,12 @@ export enum PredictionValue {
     Down,
 }
 
+export enum PredictionStatus {
+    None,
+    Win,
+    Lose,
+}
+
 export enum MainFormValidationMistakes {
     None,
     BetCannotBeEmpty,

@@ -35,6 +35,7 @@ import pencilIcon from "/profilePictures/pencilIcon.svg";
 import doubleArrowRight from "/profilePictures/arrowsRight.svg";
 import russianFlag from "/profilePictures/flag/russianFlag.svg";
 import usFlag from "/profilePictures/flag/usFlag.svg";
+import whiteClosePopupIcon from "/profilePictures/whiteClosePopupIcon.svg";
 
 export const assets = {
     icons: {
@@ -78,6 +79,7 @@ export const assets = {
             us: usFlag,
             ru: russianFlag,
         },
+        whiteClosePopup: whiteClosePopupIcon,
     },
     images: {
         coin: coinPic,
