@@ -1,4 +1,4 @@
-import { useContext, useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import { MatchHistoryItem } from "../../../../../types/MatchHistoryItem";
 import ActualMatchHistory from "./ActualMatchHistory";
 import MatchHistoryHeader from "./MatchHistoryHeader";
@@ -24,7 +24,7 @@ const MatchHistory = () => {
                 <div
                     className={`${
                         isViewingMatch && currentMatch
-                            ? "h-[60%]"
+                            ? "h-[590px]"
                             : "h-0 translate-y-[5px]"
                     }
                     fixed w-full bottom-0 left-0 z-[15]

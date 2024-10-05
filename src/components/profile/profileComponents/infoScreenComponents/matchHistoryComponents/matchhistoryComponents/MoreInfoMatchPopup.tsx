@@ -9,6 +9,8 @@ import EntryInfo from "./EntryInfo";
 import ExitInfo from "./ExitInfo";
 import UpDownBean from "./UpDownBean";
 import { TimeframeChoice } from "../../../../../../types/HelperTypes";
+import Payout from "./Payout";
+import WinLossBean from "./WinLossBean";
 
 const MoreInfoMatchPopup = () => {
     const { setIsViewingMatch, currentMatch } =
@@ -87,6 +89,33 @@ const MoreInfoMatchPopup = () => {
                 <TextWithUnderlineInfo
                     text={getTimeFrameText()}
                     underlineInfo={t("historyPrediction")}
+                />
+            </div>
+            <div
+                className="absolute top-[340px] left-[50%] translate-x-[-50%] text-[1rem]
+                           text-center rounded-[12px] w-[158px] h-[30px] leading-[1rem]
+                           flex justify-center items-center
+                           border-[1px] border-[#ccc3c3] upDownTextWhite"
+            >
+                {t("historyResult")}
+            </div>
+            <div className="absolute left-[50%] translate-x-[-50%] top-[420px]">
+                <Payout
+                    amount={
+                        currentMatch!.resultPayout === 0
+                            ? -currentMatch!.bet
+                            : currentMatch!.resultPayout
+                    }
+                    className="text-[2rem]"
+                    coinStyle="w-[38px] h-[38px] ml-[4px]"
+                />
+            </div>
+            <div className="absolute left-[50%] translate-x-[-50%] top-[500px]">
+                <WinLossBean
+                    predictionStatus={Converter.getPredictionStatusFromString(
+                        currentMatch!.resultStatus,
+                    )}
+                    className="w-[85px] h-[44px]"
                 />
             </div>
         </div>
