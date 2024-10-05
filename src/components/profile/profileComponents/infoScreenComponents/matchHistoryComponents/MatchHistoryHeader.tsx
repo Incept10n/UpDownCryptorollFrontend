@@ -1,36 +1,15 @@
-import { useTranslation } from "react-i18next";
-import HeaderItem from "./matchhistoryComponents/HeaderItem";
+import MobileHeader from "./matchhistoryComponents/header/MobileHeader";
+import DesktopHeader from "./matchhistoryComponents/header/DesktopHeader";
 
 const MatchHistoryHeader = () => {
-    const { t } = useTranslation();
-
     return (
         <>
-            <div className="grid grid-cols-5 grid-rows-2 gap-[6px] mx-[20px]">
-                <HeaderItem
-                    text={t("historyCoin")}
-                    className="col-span-1 row-span-2"
-                />
-                <HeaderItem
-                    text={t("historyGuess")}
-                    className="col-span-1 row-span-2"
-                />
-                <HeaderItem
-                    text={t("historyResult")}
-                    className="col-span-2 row-span-1"
-                />
-                <HeaderItem
-                    text={t("historyMore")}
-                    className="col-span-1 row-span-2"
-                />
-                <HeaderItem
-                    text={t("historyStatus")}
-                    className="col-span-1 row-span-1"
-                />
-                <HeaderItem
-                    text={t("historyPayout")}
-                    className="col-span-1 row-span-1"
-                />
+            <div
+                className="grid grid-cols-5 grid-rows-2 gap-[6px] xl:gap-x-[20px] mx-[20px] 
+                           lg:grid-cols-[60px_repeat(10,_1fr)]"
+            >
+                <MobileHeader />
+                <DesktopHeader />
             </div>
         </>
     );

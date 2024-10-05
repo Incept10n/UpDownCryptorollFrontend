@@ -23,7 +23,7 @@ const HistoryScreen = () => {
                 {t("youMatchHistoryMobile")}
             </div>
             <MatchHistory />
-            <div className="absolute left-[50%] translate-x-[-50%] bottom-[-170px]">
+            <div className="absolute left-[50%] translate-x-[-50%] bottom-[-170px] min-[1024px]:hidden">
                 <FollowUsProfileScreen />
             </div>
         </div>

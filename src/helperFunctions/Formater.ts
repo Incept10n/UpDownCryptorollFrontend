@@ -9,11 +9,18 @@ export class Formatter {
         return money.toFixed(2);
     };
 
-    static extractDateFromDateTimeString = (dateString: string) => {
+    static extractDateFromDateTimeString = (
+        dateString: string,
+        spaceAfterYear?: boolean,
+    ) => {
         const [date, _] = dateString.split("T");
         const [year, month, day] = date.split("-");
 
-        return `${year}/${month}/${day}`;
+        if (spaceAfterYear) {
+            return `${year} ${month}/${day}`;
+        } else {
+            return `${year}/${month}/${day}`;
+        }
     };
 
     static extractTimeFromDateTimeString = (dateString: string) => {
