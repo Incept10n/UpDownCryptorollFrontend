@@ -3,6 +3,7 @@ import { GameCoice } from "../context/ApplicationContext";
 import { PredictionValue, TimeframeChoice } from "../types/HelperTypes";
 import { Match } from "../types/Match";
 import { MatchHistoryItem } from "../types/MatchHistoryItem";
+import { Task } from "../types/Task";
 import { User } from "../types/User";
 import { Converter } from "./Converter";
 
@@ -134,4 +135,24 @@ export const changeUserName = async (
         },
         body: JSON.stringify({ newName: newName }),
     });
+};
+
+export const fetchUserTasks = async (
+    walletAddress: string,
+): Promise<Task[]> => {
+    const result = await fetch(
+        `${backendUrl}/tasks?walletAddress=${walletAddress}`,
+    );
+
+    const json = await result.json();
+
+    return json.map(
+        (task: any) =>
+            new Task(
+                task.id,
+                task.name,
+                task.reward,
+                Converter.getTaskStateFromString(task.status),
+            ),
+    );
 };

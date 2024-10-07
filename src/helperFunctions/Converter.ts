@@ -2,6 +2,7 @@ import { GameCoice } from "../context/ApplicationContext";
 import {
     PredictionStatus,
     PredictionValue,
+    TaskState,
     TimeframeChoice,
 } from "../types/HelperTypes";
 
@@ -102,6 +103,19 @@ export class Converter {
                 return PredictionStatus.None;
             default:
                 return PredictionStatus.None;
+        }
+    };
+
+    static getTaskStateFromString = (taskState: string) => {
+        switch (taskState.toLowerCase()) {
+            case "completed":
+                return TaskState.Completed;
+            case "uncollected":
+                return TaskState.Uncollected;
+            case "uncompleted":
+                return TaskState.Uncompleted;
+            default:
+                return TaskState.Uncompleted;
         }
     };
 }

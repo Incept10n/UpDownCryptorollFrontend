@@ -2,7 +2,7 @@ import { useTranslation } from "react-i18next";
 import { assets } from "../../../../../../imagesImports/assets";
 import { TaskState } from "../../../../../../types/HelperTypes";
 
-const Task = ({
+const TaskCard = ({
     text,
     reward,
     taskState,
@@ -22,7 +22,7 @@ const Task = ({
             <div className="text-[1rem] ml-[11px] font-semibold">{text}</div>
             <div
                 className={`flex justify-between items-center mr-[6px]
-                            ${taskState === TaskState.NotCompleted ? "w-[130px]" : "w-[140px]"}`}
+                            ${taskState === TaskState.Uncompleted ? "w-[130px]" : "w-[140px]"}`}
             >
                 <div className="flex justify-start items-center">
                     <div className="text-[1rem] font-semibold">+{reward}</div>
@@ -32,7 +32,7 @@ const Task = ({
                         className="w-[24px] h-[24px] ml-[6px]"
                     />
                 </div>
-                {taskState === TaskState.NotCompleted ? (
+                {taskState === TaskState.Uncompleted ? (
                     <button
                         className="w-[29px] h-[27px] flex justify-center items-center
                                buttonGrayGradient border-[#747474] border-[1.2px] rounded-[10px]"
@@ -56,4 +56,4 @@ const Task = ({
     );
 };
 
-export default Task;
+export default TaskCard;

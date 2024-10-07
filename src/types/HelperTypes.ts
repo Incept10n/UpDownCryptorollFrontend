@@ -33,6 +33,7 @@ export enum ProfilePageType {
 }
 
 export enum TaskState {
-    NotCompleted,
     Completed,
+    Uncollected,
+    Uncompleted,
 }
