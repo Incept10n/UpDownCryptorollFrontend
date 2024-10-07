@@ -36,7 +36,7 @@ const ActualMatchHistory = () => {
     return (
         <>
             <div
-                className="grid grid-cols-5 grid-rows-2 gap-[6px] xl:gap-x-[20px]
+                className="grid grid-cols-5 gap-[6px] 2xl:gap-x-[20px]
                            lg:grid-cols-[60px_repeat(10,_1fr)] mx-[20px] mt-[34px] 
                            min-[1024px]:h-[300px] min-[1024px]:overflow-y-scroll lg:hidden"
             >
@@ -45,8 +45,9 @@ const ActualMatchHistory = () => {
                 ))}
             </div>
             <div
-                className="hidden grid-cols-5 grid-rows-2 gap-[6px] xl:gap-x-[20px]
-                           lg:grid-cols-[60px_repeat(10,_1fr)] mx-[20px] mt-[34px] 
+                className="hidden grid-cols-5 gap-[6px] 2xl:gap-x-[20px]
+                           lg:grid-cols-[60px_repeat(10,_1fr)] 
+                           mx-[20px] mt-[34px] 
                            lg:h-[300px] min-[1024px]:overflow-y-scroll lg:grid w-[98%]"
             >
                 {matches.map((match) => (
@@ -55,7 +56,7 @@ const ActualMatchHistory = () => {
             </div>
             <div className="w-full flex justify-center my-[22px]">
                 <button
-                    className={`inline-block text-[1rem] px-[27px] py-[3px] 
+                    className={`inline-block text-[1rem] px-[27px] py-[3px] active:scale-[1.1]
                                 ${!isEndOfHistory && "buttonGrayGradient border-[1px] border-[#747474]"} 
                                 rounded-[10px] upDownTextWhite font-semibold whitespace-nowrap`}
                     onClick={() => loadMoreMatches()}

@@ -21,7 +21,9 @@
     "willGo": "Will go",
     "willGoMobile": "Price will go",
     "minutes": "minutes",
+    "minutesShort": "min",
     "hours": "hours",
+    "hoursShort": "hrs",
     "up": "Up",
     "down": "Down",
     "makePrediction": "Make prediction",
@@ -42,6 +44,7 @@
     "predictionAlreadyInMatch": "Prediction:",
     "entryPriceAlreadyInMatch": "Entry price:",
     "seconds": "seconds",
+    "secondsShort": "sec",
 
     "youAreCurrently": "You are currently",
     "winning": "winning",

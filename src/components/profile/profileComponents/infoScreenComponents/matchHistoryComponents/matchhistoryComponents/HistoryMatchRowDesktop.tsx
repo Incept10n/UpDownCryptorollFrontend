@@ -33,15 +33,15 @@ const HistoryMatchRowDesktop = ({ match }: { match: MatchHistoryItem }) => {
 
         switch (currentMatchTimeFrame!) {
             case TimeframeChoice.Min30:
-                return `30 ${t("minutes")}`;
+                return `30 ${t("minutesShort")}`;
             case TimeframeChoice.Hrs4:
-                return `4 ${t("hours")}`;
+                return `4 ${t("hoursShort")}`;
             case TimeframeChoice.Hrs12:
-                return `12 ${t("hours")}`;
+                return `12 ${t("hoursShort")}`;
             case TimeframeChoice.None:
-                return `15 seconds`;
+                return `15 sec`;
             default:
-                return `15 seconds`;
+                return `15 sec`;
         }
     };
 
@@ -57,7 +57,10 @@ const HistoryMatchRowDesktop = ({ match }: { match: MatchHistoryItem }) => {
                 />
             </HistoryItemContainer>
             <HistoryItemContainer>
-                <div className="text-[1.3rem] font-semibold upDownTextWhite max-w-[86px]">
+                <div
+                    className="xl:text-[1.3rem] text-[1rem] 
+                                font-semibold upDownTextWhite max-w-[86px] text-center"
+                >
                     {Formatter.extractDateFromDateTimeString(
                         match.entryTime,
                         true,
@@ -65,12 +68,13 @@ const HistoryMatchRowDesktop = ({ match }: { match: MatchHistoryItem }) => {
                 </div>
             </HistoryItemContainer>
             <HistoryItemContainer>
-                <div className="text-[1.3rem] font-semibold upDownTextWhite">
+                <div className="xl:text-[1.3rem] text-[1rem] font-semibold upDownTextWhite">
                     {Formatter.extractTimeFromDateTimeString(match.entryTime)}
                 </div>
             </HistoryItemContainer>
             <HistoryItemContainer>
-                <div className="text-[1.3rem] font-semibold upDownTextWhite">
+                <div className="xl:text-[1.3rem] text-[1rem] font-semibold upDownTextWhite">
+                    <span className="xxl:inline hidden">$ </span>
                     {Formatter.formatMoney(match.entryPrice)}
                 </div>
             </HistoryItemContainer>
@@ -79,26 +83,33 @@ const HistoryMatchRowDesktop = ({ match }: { match: MatchHistoryItem }) => {
                     predictionValue={Converter.getPredictionValueFromString(
                         match.predictionValue,
                     )}
-                    className="w-[80%] h-[80%]"
+                    className="2xl:w-[69px] 2xl:h-[44px] w-[46px] h-[29px]"
                 />
             </HistoryItemContainer>
             <HistoryItemContainer>
-                <div className="text-[1.3rem] font-semibold upDownTextWhite">
+                <div className="xl:text-[1.3rem] text-[1rem] font-semibold upDownTextWhite text-center">
                     {getTimeFrameText()}
                 </div>
             </HistoryItemContainer>
             <HistoryItemContainer>
-                <div className="text-[1.3rem] font-semibold upDownTextWhite">
-                    {Formatter.extractDateFromDateTimeString(match.exitTime)}
+                <div
+                    className="xl:text-[1.3rem] text-[1rem] font-semibold 
+                                upDownTextWhite max-w-[86px] text-center"
+                >
+                    {Formatter.extractDateFromDateTimeString(
+                        match.exitTime,
+                        true,
+                    )}
                 </div>
             </HistoryItemContainer>
             <HistoryItemContainer>
-                <div className="text-[1.3rem] font-semibold upDownTextWhite">
+                <div className="xl:text-[1.3rem] text-[1rem] font-semibold upDownTextWhite">
                     {Formatter.extractTimeFromDateTimeString(match.exitTime)}
                 </div>
             </HistoryItemContainer>
             <HistoryItemContainer>
-                <div className="text-[1.3rem] font-semibold upDownTextWhite">
+                <div className="xl:text-[1.3rem] text-[1rem] font-semibold upDownTextWhite">
+                    <span className="xxl:inline hidden">$ </span>
                     {Formatter.formatMoney(match.exitPrice)}
                 </div>
             </HistoryItemContainer>
@@ -107,7 +118,7 @@ const HistoryMatchRowDesktop = ({ match }: { match: MatchHistoryItem }) => {
                     predictionStatus={Converter.getPredictionStatusFromString(
                         match.resultStatus,
                     )}
-                    className="w-[70%] h-[80%]"
+                    className="2xl:w-[85px] 2xl:h-[44px] w-[56px] h-[29px]"
                 />
             </HistoryItemContainer>
             <HistoryItemContainer>
@@ -117,7 +128,8 @@ const HistoryMatchRowDesktop = ({ match }: { match: MatchHistoryItem }) => {
                             ? -match.bet
                             : match.resultPayout
                     }
-                    className="text-[1.4rem]"
+                    className="2xl:text-[20px] text-[15px]"
+                    coinStyle="w-[30px] h-[30px] ml-[5px]"
                 />
             </HistoryItemContainer>
         </>
