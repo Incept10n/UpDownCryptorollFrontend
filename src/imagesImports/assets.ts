@@ -36,6 +36,9 @@ import doubleArrowRight from "/profilePictures/arrowsRight.svg";
 import russianFlag from "/profilePictures/flag/russianFlag.svg";
 import usFlag from "/profilePictures/flag/usFlag.svg";
 import whiteClosePopupIcon from "/profilePictures/whiteClosePopupIcon.svg";
+import checkRing from "/profilePictures/checkRing.svg";
+import trophy from "/profilePictures/trophy.svg";
+import singleArrowRight from "/profilePictures/singleArrowRightRewards.svg";
 
 export const assets = {
     icons: {
@@ -80,6 +83,9 @@ export const assets = {
             ru: russianFlag,
         },
         whiteClosePopup: whiteClosePopupIcon,
+        checkRing: checkRing,
+        trophy: trophy,
+        singleArrowRight: singleArrowRight,
     },
     images: {
         coin: coinPic,

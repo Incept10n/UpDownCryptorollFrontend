@@ -31,3 +31,8 @@ export enum ProfilePageType {
     History,
     Rewards,
 }
+
+export enum TaskState {
+    NotCompleted,
+    Completed,
+}
