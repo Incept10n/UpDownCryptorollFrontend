@@ -39,6 +39,7 @@ import whiteClosePopupIcon from "/profilePictures/whiteClosePopupIcon.svg";
 import checkRing from "/profilePictures/checkRing.svg";
 import trophy from "/profilePictures/trophy.svg";
 import singleArrowRight from "/profilePictures/singleArrowRightRewards.svg";
+import taskCompletedCheckmark from "/profilePictures/taskCompletedCheckmark.svg";
 
 export const assets = {
     icons: {
@@ -86,6 +87,7 @@ export const assets = {
         checkRing: checkRing,
         trophy: trophy,
         singleArrowRight: singleArrowRight,
+        taskCompletedCheckmark: taskCompletedCheckmark,
     },
     images: {
         coin: coinPic,

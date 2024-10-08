@@ -7,3 +7,9 @@ export const manifestUrl =
 
 export const backendUrl = "http://172.27.33.20:5089";
 // export const backendUrl = "http://localhost:5089";
+
+export const tgLink = "https://telegram.org/";
+export const twitterLink = "https://x.com/";
+export const vkLink = "https://vk.com/";
+export const inviteFriendLink = "https://www.google.com/search?q=referal";
+export const whitepaperLink = "https://cryptoroll.su";

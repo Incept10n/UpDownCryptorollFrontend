@@ -1,6 +1,8 @@
-import { useTranslation } from "react-i18next";
 import { assets } from "../../../../../../imagesImports/assets";
 import { TaskState } from "../../../../../../types/HelperTypes";
+import CompletedCheckmarkButton from "./rewardTaskButtons/CompletedCheckmarkButton";
+import ClaimButton from "./rewardTaskButtons/ClaimButton";
+import ArrowRightButton from "./rewardTaskButtons/ArrowRightButton";
 
 const TaskCard = ({
     text,
@@ -11,7 +13,16 @@ const TaskCard = ({
     reward: number;
     taskState: TaskState;
 }) => {
-    const { t } = useTranslation();
+    const getButtonBasedOnTaskState = (taskState: TaskState) => {
+        switch (taskState) {
+            case TaskState.Completed:
+                return <CompletedCheckmarkButton />;
+            case TaskState.Uncollected:
+                return <ClaimButton />;
+            case TaskState.Uncompleted:
+                return <ArrowRightButton />;
+        }
+    };
 
     return (
         <div
@@ -32,25 +43,7 @@ const TaskCard = ({
                         className="w-[24px] h-[24px] ml-[6px]"
                     />
                 </div>
-                {taskState === TaskState.Uncompleted ? (
-                    <button
-                        className="w-[29px] h-[27px] flex justify-center items-center
-                               buttonGrayGradient border-[#747474] border-[1.2px] rounded-[10px]"
-                    >
-                        <img
-                            src={assets.icons.singleArrowRight}
-                            alt="arrow right"
-                            className="w-[17px] h-[16px]"
-                        />
-                    </button>
-                ) : (
-                    <button
-                        className="w-[54px] h-[27px] flex justify-center items-center
-                               buttonGrayGradient border-[#747474] border-[1.2px] rounded-[10px]"
-                    >
-                        {t("claim")}
-                    </button>
-                )}
+                {getButtonBasedOnTaskState(taskState)}
             </div>
         </div>
     );

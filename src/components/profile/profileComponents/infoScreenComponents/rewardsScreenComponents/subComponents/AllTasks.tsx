@@ -20,9 +20,6 @@ const AllTasks = () => {
         return t(`task${taskId}`);
     };
 
-    // TODO: add 'collected state to figma design' (i think of something like gray checkmark)
-    // TODO: add display of this state to the TaskCard
-
     return (
         <div className="flex flex-col space-y-[10px] items-center mt-[39px]">
             {tasks.map((task) => (
