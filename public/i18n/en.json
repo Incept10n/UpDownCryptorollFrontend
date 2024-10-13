@@ -60,6 +60,7 @@
     "unfortunYouLost": "Unfortunately, you lost",
     "collect": "Collect",
     "ok": "ok, :(",
+    "okSmiley": "Ok :)",
 
     "daysStreakMultText": "days streak multiplier",
     "daysStreakMultTextMobile": "days streak",
@@ -158,6 +159,7 @@
     "day": "Day",
     "andPlusEveryFollowing": "and +60 to every following day",
     "tasks": "Tasks",
+    "youveJustClaimed": "You've just claimed",
 
     "win": "Win",
     "loss": "Loss"

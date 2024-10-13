@@ -1,6 +1,10 @@
 import { backendUrl } from "../constants";
 import { GameCoice } from "../context/ApplicationContext";
-import { PredictionValue, TimeframeChoice } from "../types/HelperTypes";
+import {
+    PredictionValue,
+    TaskState,
+    TimeframeChoice,
+} from "../types/HelperTypes";
 import { Match } from "../types/Match";
 import { MatchHistoryItem } from "../types/MatchHistoryItem";
 import { Task } from "../types/Task";
@@ -155,4 +159,18 @@ export const fetchUserTasks = async (
                 Converter.getTaskStateFromString(task.status),
             ),
     );
+};
+
+export const changeTaskState = async (
+    taskId: number,
+    changedStatus: TaskState,
+    walletAddress: string,
+) => {
+    await fetch(`${backendUrl}/tasks?walletAddress=${walletAddress}`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ taskId, changedStatus }),
+    });
 };

@@ -59,6 +59,7 @@
     "unfortunYouLost": "К сожалению, вы проиграли.",
     "collect": "Собрать награду",
     "ok": "ладно, :(",
+    "okSmiley": "Ладно :)",
 
     "daysStreakMultText": "дневный множитель",
     "daysStreakMultTextMobile": "дней",
@@ -154,6 +155,7 @@
     "day": "День",
     "andPlusEveryFollowing": "и +60 к каждому последующему дню",
     "tasks": "Задания",
+    "youveJustClaimed": "Вы только что получили",
 
     "win": "Победа",
     "loss": "Поражение"
