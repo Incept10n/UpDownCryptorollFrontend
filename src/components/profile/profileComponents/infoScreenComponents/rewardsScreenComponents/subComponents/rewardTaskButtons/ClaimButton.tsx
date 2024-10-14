@@ -5,8 +5,10 @@ const ClaimButton = () => {
 
     return (
         <button
-            className="w-[54px] h-[27px] flex justify-center items-center
-                               buttonGrayGradient border-[#747474] border-[1.2px] rounded-[10px]"
+            className="w-auto px-[16px] min-[1450px]:h-[41px] h-[27px] 
+                       flex justify-center items-center
+                       buttonGrayGradient border-[#747474] border-[1.2px] rounded-[10px]
+                       min-[1450px]:text-[1.4rem] font-semibold"
         >
             {t("claim")}
         </button>

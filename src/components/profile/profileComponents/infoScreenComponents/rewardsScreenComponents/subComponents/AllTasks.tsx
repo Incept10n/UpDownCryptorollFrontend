@@ -48,7 +48,10 @@ const AllTasks = () => {
     };
 
     return (
-        <div className="flex flex-col space-y-[10px] items-center mt-[39px]">
+        <div
+            className="flex flex-col min-[1450px]:space-y-[26px] 
+                       space-y-[10px] items-center mt-[39px]"
+        >
             {tasks.length !== 0 && (
                 <>
                     <TaskCardLogicWrapper
@@ -86,7 +89,7 @@ const AllTasks = () => {
                     <TaskCardLogicWrapper
                         task={tasks[4]}
                         onClick={() => {
-                            console.log("nothing for now");
+                            location.href = "https://cryptoroll.su/whitepaper";
                         }}
                         updateUserTasks={updateUserTasks}
                         collectReward={collectReward}

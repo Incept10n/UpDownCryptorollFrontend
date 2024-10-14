@@ -26,21 +26,23 @@ const TaskCard = ({
 
     return (
         <div
-            className="buttonGrayGradient w-[93%] h-[40px] rounded-[10px]
+            className="buttonGrayGradient w-[93%] min-[1450px]:h-[54px] h-[40px] rounded-[10px]
                        border-[#747474] border-[1.2px] 
                        flex justify-between items-center upDownTextWhite"
         >
-            <div className="text-[1rem] ml-[11px] font-semibold">{text}</div>
-            <div
-                className={`flex justify-between items-center mr-[6px]
-                            ${taskState === TaskState.Uncompleted ? "w-[130px]" : "w-[140px]"}`}
-            >
+            <div className="min-[1450px]:text-[1.4rem] text-[1rem] ml-[11px] font-semibold">
+                {text}
+            </div>
+            <div className={`flex justify-between items-center mr-[6px]`}>
                 <div className="flex justify-start items-center">
-                    <div className="text-[1rem] font-semibold">+{reward}</div>
+                    <div className="min-[1450px]:text-[1.4rem] text-[1rem] font-semibold">
+                        +{reward}
+                    </div>
                     <img
                         src={assets.images.inputFormCoin}
                         alt="coin picture"
-                        className="w-[24px] h-[24px] ml-[6px]"
+                        className="min-[1450px]:w-[30px] min-[1450px]:h-[30px]
+                                   w-[24px] h-[24px] ml-[6px] mr-[20px]"
                     />
                 </div>
                 {getButtonBasedOnTaskState(taskState)}
