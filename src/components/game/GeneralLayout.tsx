@@ -19,7 +19,10 @@ const GeneralLayout = () => {
                     className="flex min-[1580px]:flex-row min-[1580px]:justify-start 
                                    flex-col justify-center"
                 >
-                    <CardUpDownBackground className="z-[-10] w-[100%] lg:h-[400px] h-[335px]" />
+                    <CardUpDownBackground
+                        className="z-[-10] w-[100%] lg:h-[400px] h-[335px]"
+                        bgRepeat
+                    />
                     <div
                         className="flex lg:flex-row flex-col-reverse justify-between items-center
                                         space-x-[20px]"

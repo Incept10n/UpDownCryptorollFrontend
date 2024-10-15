@@ -38,7 +38,7 @@ const ActualMatchHistory = () => {
             <div
                 className="grid grid-cols-5 gap-[6px] 2xl:gap-x-[20px]
                            lg:grid-cols-[60px_repeat(10,_1fr)] mx-[20px] mt-[34px] 
-                           min-[1024px]:h-[300px] min-[1024px]:overflow-y-scroll lg:hidden"
+                           min-[1024px]:h-[300px] lg:hidden"
             >
                 {matches.map((match) => (
                     <HistoryMatchRow match={match} key={match.id} />
@@ -48,7 +48,7 @@ const ActualMatchHistory = () => {
                 className="hidden grid-cols-5 gap-[6px] 2xl:gap-x-[20px]
                            lg:grid-cols-[60px_repeat(10,_1fr)] 
                            mx-[20px] mt-[34px] 
-                           lg:h-[300px] min-[1024px]:overflow-y-scroll lg:grid w-[98%]"
+                           lg:grid w-[98%]"
             >
                 {matches.map((match) => (
                     <HistoryMatchRowDesktop match={match} key={match.id} />

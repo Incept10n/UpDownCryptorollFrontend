@@ -25,7 +25,7 @@ const Profile = () => {
         >
             <HomeBgGradient />
             <ProfileMenuMobile />
-            <div className="lg:mt-[46px] mt-[17px] lg:mx-[61px] mx-0 h-[78vh] flex">
+            <div className="lg:mt-[46px] mt-[17px] lg:mx-[61px] mx-0 flex min-h-[74vh]">
                 <ProfileMenu />
                 <ProfileInfoScreen />
             </div>

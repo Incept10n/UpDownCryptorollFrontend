@@ -8,7 +8,7 @@ const RewardsScreen = () => {
     const { t } = useTranslation();
 
     return (
-        <div className="relative w-full h-full lg:p-[35px] p-0 lg:overflow-y-scroll">
+        <div className="relative w-full h-full lg:p-[35px] p-0">
             <div className="text-[24px] UpDownGrayText lg:inline-block hidden ">
                 {t("Rewards")}
             </div>

@@ -1,6 +1,7 @@
 import { useTranslation } from "react-i18next";
 import CurrentLanguageCards from "./languageScreenComponents/CurrentLanguageCards";
-import FollowUsProfileScreen from "../common/FollowUsProfileScreen";
+import InviteFriendButton from "../common/InviteFriendButton";
+import FollowUsProfileTextRegularComponent from "../common/FollowUsProfileTextRegularComponent";
 
 const LanguageScreen = () => {
     const { t, i18n } = useTranslation();
@@ -38,19 +39,14 @@ const LanguageScreen = () => {
                 {t("currentLanguage")} {i18n.language == "en" ? "En" : "Ru"}
             </div>
             <div
-                className="upDownTextWhite lg:text-[25px] text-[16px] 
-                           font-semibold border-[1px] 
-                           border-[#ccc3c3] text-center rounded-[10px]
-                           px-[10px] lg:h-[46px] h-[27px]
-                           absolute hover:cursor-pointer
-                           lg:left-[100px] left-[10%]
-                           lg:bottom-[88px] lg:top-auto bottom-auto top-[397px]
-                           hover:scale-[1.1] scale-[1] transition-all duration-[0.2] ease-in-out
-                           xl:block hidden"
+                className="2xl:ml-[66px] ml-0 flex 2xl:justify-between justify-center 
+                            2xl:mt-[200px] mt-[130px]"
             >
-                {t("inviteAFriend")}
+                <div className="2xl:block hidden">
+                    <InviteFriendButton />
+                </div>
+                <FollowUsProfileTextRegularComponent />
             </div>
-            <FollowUsProfileScreen />
         </div>
     );
 };

@@ -1,6 +1,12 @@
 import { assets } from "../../../../../imagesImports/assets";
 
-const CardUpDownBackground = ({ className }: { className?: string }) => {
+const CardUpDownBackground = ({
+    className,
+    bgRepeat,
+}: {
+    className?: string;
+    bgRepeat?: boolean;
+}) => {
     return (
         <div className={`${className}`}>
             <div
@@ -8,7 +14,8 @@ const CardUpDownBackground = ({ className }: { className?: string }) => {
                             pt-[2px] px-[2px] w-full h-full"
             >
                 <div
-                    className="bg-no-repeat rounded-[68px] bg-center w-full h-full"
+                    className={`${bgRepeat ? "bg-repeat" : "bg-no-repeat "} 
+                                rounded-[68px] bg-center w-full h-full`}
                     style={{
                         backgroundImage: `url(${assets.images.main.bg})`,
                     }}
