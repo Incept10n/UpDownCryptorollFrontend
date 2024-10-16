@@ -16,7 +16,10 @@ const ProfileScreen = () => {
             <div className="text-[30px] text-center text-[#a4a4a4] font-semibold block lg:hidden">
                 {t("myProfileText")}
             </div>
-            <div className="flex 2xl:flex-row flex-col-reverse justify-between w-[95%] mx-auto mt-[50px]">
+            <div
+                className="flex 2xl:flex-row flex-col-reverse justify-between 
+                           lg:w-[95%] w-[80%] mx-auto mt-[50px]"
+            >
                 <div className="flex justify-between 2xl:hidden mt-[80px]">
                     <InviteFriendButton />
                     <TonConnectButton />

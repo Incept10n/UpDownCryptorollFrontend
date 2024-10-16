@@ -40,32 +40,44 @@ const ProfileNameCard = () => {
     return (
         <div
             className="border-[1px] border-[#777777] flex-none
-                       2xl:w-auto lg:w-[530px] w-[80%]
+                       2xl:w-auto lg:w-[530px] w-full
                        lg:h-[203px] h-[47px] lg:rounded-[20px] rounded-[59px]
-                       flex justify-start items-center"
+                       flex justify-between items-center"
         >
-            <div className="lg:ml-[40px] ml-[16px] lg:mr-[40px] mr-[15px] flex-none">
-                <ProfilePicture isEditing={isEditing} />
-            </div>
-            <div
-                className="flex lg:flex-col flex-row lg:justify-center justify-start 
-                           items-center mr-[46px]"
-            >
-                <Username
-                    isEditing={isEditing}
-                    userName={userName}
-                    handleOnChange={handleOnChange}
-                    handleKeyDown={handleKeyDown}
-                />
-                <div className="lg:mt-[23px] mt-0 lg:relative absolute lg:right-auto right-[16px]">
-                    {!isEditing ? (
-                        <EditButton setIsEditing={setIsEditing} />
-                    ) : (
-                        <SaveChangesButton
-                            handleSaveChanges={handleSaveChanges}
-                        />
-                    )}
+            <div className="flex justify-start items-center">
+                <div className="lg:ml-[40px] ml-[16px] lg:mr-[40px] mr-[15px] flex-none">
+                    <ProfilePicture isEditing={isEditing} />
                 </div>
+                <div
+                    className="flex lg:flex-col flex-row lg:justify-center justify-start 
+                           items-center mr-[46px]"
+                >
+                    <Username
+                        isEditing={isEditing}
+                        userName={userName}
+                        handleOnChange={handleOnChange}
+                        handleKeyDown={handleKeyDown}
+                    />
+                    <div
+                        className="lg:mt-[23px] mt-0 lg:relative absolute lg:right-auto right-[16px]
+                                lg:block hidden"
+                    >
+                        {!isEditing ? (
+                            <EditButton setIsEditing={setIsEditing} />
+                        ) : (
+                            <SaveChangesButton
+                                handleSaveChanges={handleSaveChanges}
+                            />
+                        )}
+                    </div>
+                </div>
+            </div>
+            <div className="lg:hidden block mr-[20px]">
+                {!isEditing ? (
+                    <EditButton setIsEditing={setIsEditing} />
+                ) : (
+                    <SaveChangesButton handleSaveChanges={handleSaveChanges} />
+                )}
             </div>
         </div>
     );
