@@ -17,7 +17,7 @@ const ChooseGameButton = () => {
 
     const divRef = useRef<HTMLDivElement>(null);
 
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
 
     const location = useLocation();
 
@@ -43,7 +43,7 @@ const ChooseGameButton = () => {
         };
 
         window.addEventListener("click", handleClickedOutside);
-    }, [currentGame]);
+    }, [currentGame, i18n.language]);
 
     return (
         <div
@@ -66,7 +66,7 @@ const ChooseGameButton = () => {
                         />
                     )}
                     <div
-                        className={`upDownTextWhite md:text-[16px] text-[12px] text-left 
+                        className={`upDownTextWhite md:text-[16px] text-[12px] text-left whitespace-nowrap
                                     ${
                                         currentGame !== GameCoice.None
                                             ? "md:ml-[10px] ml-[3px]"
@@ -94,15 +94,15 @@ const ChooseGameButton = () => {
             >
                 <ChooseGameExpandMenuItem
                     coinIcon={assets.icons.coins.btc}
-                    coinName={"Bitcoin"}
+                    coinName={t("btc")}
                 />
                 <ChooseGameExpandMenuItem
                     coinIcon={assets.icons.coins.eth}
-                    coinName={"Ethereum"}
+                    coinName={t("eth")}
                 />
                 <ChooseGameExpandMenuItem
                     coinIcon={assets.icons.coins.ton}
-                    coinName={"TON"}
+                    coinName={t("ton")}
                     lastChild
                 />
             </div>

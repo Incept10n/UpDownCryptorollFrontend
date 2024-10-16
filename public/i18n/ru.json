@@ -3,7 +3,7 @@
 
     "btc": "Биткоин",
     "eth": "Эфириум",
-    "ton": "Ton",
+    "ton": "Тон",
 
     "makePredictionText": "Делай прогноз",
 
@@ -30,7 +30,7 @@
 
     "plsConnectYourWallet": "Подключите ваш TON кошелёк, чтобы продолжить",
 
-    "emptyBet": "Ставка не может быть пустой или 0",
+    "emptyBet": "Ставка пустая",
     "insufFunds": "Недостаточно средств",
     "noTimeframeChoice": "Выберите время прогнозирования",
     "noPredictionValue": "Выберите значение прогноза",
@@ -50,8 +50,8 @@
     "losing": "проигрываете",
     "fromEntry": "от ставки на момент прогноза",
 
-    "livePrice": "Текущая цена",
-    "ifYouWin": "Если вы выиграете, вы получите",
+    "livePrice": "Цена",
+    "ifYouWin": "Если выиграете",
 
     "questionMarkPopupText": "Цена, которая будет зафиксирована, когда вы сделаете прогноз",
 
@@ -65,11 +65,12 @@
     "daysStreakMultTextMobile": "дней",
     "betMultiText": "множитель ставки",
     "betMultiTextMobile": "ставка",
-    "noChoiceMulti": "Множитель с невыбранным временем",
+    "noChoiceMulti": "Время не выбрано",
+    "noChoiceMultiMobile": "Нет выбора",
 
-    "doTechnicalAnalysis": "Перейти к техническому анализу",
+    "doTechnicalAnalysis": "Перейти к ТА",
 
-    "playNow": "Играть сейчас",
+    "playNow": "Играть",
     "upPartOfTitle": "Пойдёт вверх",
     "downPartOfTitle": "или вниз",
     "guessThePriceHomePageText": "угадайте цену",
@@ -92,10 +93,10 @@
     "purposeParagraph3": "У каждого есть шанс получить отличные бонусы, играя и зарабатывая жетоны. Вот примеры того, что получат пользователи с самыми большими стеками: пополнение и снятие средств без комиссии, наши NFT, которые окажут огромное влияние на ваш игровой опыт в будущем, увеличение шансов на выигрыш на некоторое время и многое другое.",
     "purposeParagraph4": "Уже скоро вы сможете почувствовать силу и влияние NFT на игровой процесс, не упустите эту возможность!",
 
-    "inviteAFriend": "Пригласите друга",
+    "inviteAFriend": "Пригласить друга",
     "followUs": "Подпишитесь на нас:",
     "followUsMobile": "Подпишитесь на нас",
-    "goBack": "Вернуться назад",
+    "goBack": "Назад",
 
     "menu": "Меню",
 
@@ -103,9 +104,9 @@
     "myProfileText": "Мой профиль",
     "currentBalance": "Текущий баланс",
     "howToGetMore": "Как получить больше?",
-    "edit": "Редактировать",
+    "edit": "Ред.",
     "changingPfp": "Скоро появится функция изменения фотографии профиля",
-    "saveChanges": "Сохранить изменения",
+    "saveChanges": "Сохранить",
 
     "Language": "Язык",
     "languageText": "Предпочтение языка",
@@ -115,7 +116,7 @@
     "History": "История",
     "youMatchHistory": "История ваших матчей",
     "youMatchHistoryMobile": "История матчей",
-    "historyCoin": "Монета",
+    "historyCoin": "Коин",
     "historyGuess": "Прогноз",
     "historyMore": "Ещё",
     "historyEntry": "Вход",
@@ -123,7 +124,7 @@
     "historyTime": "Время",
     "historyPrice": "Цена",
     "historyPrediction": "Прогноз",
-    "historyDirection": "Направление",
+    "historyDirection": "Напр.",
     "historyTime": "Время",
     "historyExit": "Выход",
     "historyResult": "Результат",
@@ -141,7 +142,7 @@
     "Rewards": "Награды",
     "rewardshowToGetMore": "Как получить монеты и награды",
     "dailyReward": "Ежедневная награда",
-    "dailyChallenge": "Ежедневный вызов",
+    "dailyChallenge": "Дн. вызов",
     "forCompletingTasks": "Награды за выполнение заданий",
     "completeAndGetCoins": "Выполняйте задания и получайте монеты",
     "task1": "Подписаться на телеграмм",
@@ -157,6 +158,6 @@
     "tasks": "Задания",
     "youveJustClaimed": "Вы только что получили",
 
-    "win": "Победа",
-    "loss": "Поражение"
+    "win": "Win",
+    "loss": "Loss"
 }

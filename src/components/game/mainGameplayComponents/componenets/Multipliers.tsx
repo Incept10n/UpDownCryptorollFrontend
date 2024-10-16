@@ -16,7 +16,7 @@ const Multipliers = ({
     isLastMatchCollected: boolean;
     className?: string;
 }) => {
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
 
     const getTextBasedOnCurrentTimeframeChoice = () => {
         const noChoiceText =
@@ -32,7 +32,11 @@ const Multipliers = ({
             case TimeframeChoice.None:
                 return noChoiceText;
             case TimeframeChoice.Min30:
-                return `30 ${t("minutes")} ${betMultiText}`;
+                if (i18n.language === "en") {
+                    return `30 ${t("minutes")} ${betMultiText}`;
+                } else {
+                    return `30 ${t("minutes")} ${t("betMultiTextMobile")}`;
+                }
             case TimeframeChoice.Hrs4:
                 return `4 ${t("hours")} ${betMultiText}`;
             case TimeframeChoice.Hrs12:

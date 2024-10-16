@@ -35,9 +35,8 @@ const Rules = () => {
                 <div className="flex xl:justify-start justify-center">
                     <button
                         className="buttonGrayGradient border-[1px] border-[#ccc3c3] 
-                                   rounded-[10px] md:text-[25px] text-[16px] font-semibold mt-[47px]
-                                   px-[10px] md:h-[46px] h-[27px] hover:scale-[1.1]
-                                   transition-all duration-[0.2] ease-in-out"
+                               rounded-[10px] md:text-[25px] text-[16px] font-semibold mt-[47px]
+                               md:w-[193px] w-[131px] md:h-[46px] h-[27px]"
                     >
                         {t("inviteAFriend")}
                     </button>

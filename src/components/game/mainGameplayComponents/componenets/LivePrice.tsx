@@ -23,19 +23,21 @@ const LivePrice = ({
         >
             <div
                 className="min-[1580px]:flex min-[1580px]:flex-col 
-                           grid grid-cols-2
+                           inline-grid grid-cols-2
                            items-center min-[1580px]:py-[52px] py-[26px]"
             >
                 <div
                     className="flex min-[1580px]:flex-row flex-row-reverse 
-                               justify-between items-center min-[1580px]:w-[141px] w-[130px]
+                               min-[1580px]:justify-between justify-end items-center
                                min-[1580px]:ml-0 ml-[25px]"
                 >
                     <GradientText
-                        className="min-[1580px]:text-[25px] text-[22px] font-semibold"
+                        className="min-[1580px]:text-[25px] text-[22px] font-semibold whitespace-nowrap"
                         text={t("livePrice")}
                     />
-                    <GradientQuestionMark />
+                    <div className="ml-[10px] min-[1580px]:mr-0 mr-[10px]">
+                        <GradientQuestionMark />
+                    </div>
                 </div>
                 <div className="flex items-center min-[1580px]:mt-[33px] min-[1580px]:ml-0 ml-[18px]">
                     <GradientDollarSign className="min-[1580px]:scale-100 scale-[0.83]" />

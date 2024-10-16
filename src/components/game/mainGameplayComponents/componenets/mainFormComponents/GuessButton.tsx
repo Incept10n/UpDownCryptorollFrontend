@@ -16,7 +16,7 @@ const GuessButton = ({
     down?: boolean;
     className?: string;
 }) => {
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
 
     const [currentText, setCurrentText] = useState("");
     const [currentBgColor, setCurrentBgColor] = useState("");
@@ -84,7 +84,13 @@ const GuessButton = ({
                 />
             </div>
             <div
-                className={`${up ? "mr-[39px]" : "mr-[23px]"} text-[20px] font-semibold`}
+                className={`${
+                    up
+                        ? `${
+                              i18n.language === "en" ? "mr-[39px]" : "mr-[22px]"
+                          }`
+                        : "mr-[23px]"
+                } text-[20px] font-semibold`}
             >
                 {currentText}
             </div>

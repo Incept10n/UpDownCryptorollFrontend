@@ -10,7 +10,7 @@ const TimeChoiceCard = ({
     currentTimeframeChoice: TimeframeChoice;
     setCurrentTimeframeChoice: Dispatch<SetStateAction<TimeframeChoice>>;
 }) => {
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
 
     const [currentChoiceBoxStyle, setCurrentChoiceBoxStyle] =
         useState("hidden");
@@ -22,10 +22,18 @@ const TimeChoiceCard = ({
     useEffect(() => {
         switch (currentTimeframeChoice) {
             case TimeframeChoice.Min30:
-                setCurrentChoiceBoxStyle("left-0 top-0 w-[130px]");
+                if (i18n.language === "en") {
+                    setCurrentChoiceBoxStyle("left-0 top-0 w-[130px]");
+                } else {
+                    setCurrentChoiceBoxStyle("left-0 top-0 w-[120px]");
+                }
                 break;
             case TimeframeChoice.Hrs4:
-                setCurrentChoiceBoxStyle("left-[130px] top-0 w-[95px]");
+                if (i18n.language === "en") {
+                    setCurrentChoiceBoxStyle("left-[130px] top-0 w-[95px]");
+                } else {
+                    setCurrentChoiceBoxStyle("left-[120px] top-0 w-[95px]");
+                }
                 break;
             case TimeframeChoice.Hrs12:
                 setCurrentChoiceBoxStyle("left-[225px] top-0 w-[110px]");

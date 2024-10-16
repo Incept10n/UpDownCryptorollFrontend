@@ -61,7 +61,7 @@ const ActualMatchHistory = () => {
                                 rounded-[10px] upDownTextWhite font-semibold whitespace-nowrap`}
                     onClick={() => loadMoreMatches()}
                 >
-                    {!isEndOfHistory ? t("Load more") : t("endOfHistory")}
+                    {!isEndOfHistory ? t("loadMore") : t("endOfHistory")}
                 </button>
             </div>
         </>
