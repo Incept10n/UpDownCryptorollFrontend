@@ -11,12 +11,7 @@ const CurrentBalanceProfileScreen = () => {
     const { currentBalance } = useContext(ApplicationContext)!;
 
     return (
-        <div
-            className="absolute min-[1280px]:left-[96px] lg:left-[50%] left-[10%]
-                       min-[1280px]:translate-x-0 lg:translate-x-[-50%] translate-x-0
-                       min-[1560px]:top-[127px] lg:top-[365px] top-[210px]
-                       flex flex-col min-[1280px]:items-start lg:items-center"
-        >
+        <div className="flex flex-col 2xl:items-start lg:items-center">
             <div className="lg:text-[42px] text-[30px] upDownTextWhite font-semibold text-nowrap">
                 {t("currentBalance")}
             </div>

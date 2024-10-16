@@ -2,7 +2,8 @@ import { useTranslation } from "react-i18next";
 import CurrentBalanceProfileScreen from "./profileScreenComponents/CurrentBalanceProfileScreen";
 import ProfileNameCard from "./profileScreenComponents/ProfileNameCard";
 import { TonConnectButton } from "@tonconnect/ui-react";
-import FollowUsProfileScreen from "../common/FollowUsProfileScreen";
+import InviteFriendButton from "../common/InviteFriendButton";
+import FollowUsProfileTextRegularComponent from "../common/FollowUsProfileTextRegularComponent";
 
 const ProfileScreen = () => {
     const { t } = useTranslation();
@@ -15,29 +16,30 @@ const ProfileScreen = () => {
             <div className="text-[30px] text-center text-[#a4a4a4] font-semibold block lg:hidden">
                 {t("myProfileText")}
             </div>
-            <CurrentBalanceProfileScreen />
-            <ProfileNameCard />
-            <div
-                className="absolute 
-                           xl:top-[380px] lg:top-[580px] top-[390px]
-                           xl:right-[170px] lg:right-[50%] right-[10%]
-                           lg:translate-x-[50%] translate-x-0"
-            >
-                <TonConnectButton />
+            <div className="flex 2xl:flex-row flex-col-reverse justify-between w-[95%] mx-auto mt-[50px]">
+                <div className="flex justify-between 2xl:hidden mt-[80px]">
+                    <InviteFriendButton />
+                    <TonConnectButton />
+                </div>
+                <div className="2xl:mt-0 mt-[70px]">
+                    <CurrentBalanceProfileScreen />
+                </div>
+                <div className="flex flex-col 2xl:items-end items-center">
+                    <ProfileNameCard />
+                    <div className="mt-[46px] 2xl:block hidden">
+                        <TonConnectButton />
+                    </div>
+                </div>
             </div>
-            <FollowUsProfileScreen />
             <div
-                className="upDownTextWhite lg:text-[25px] text-[16px] 
-                           font-semibold border-[1px] 
-                           border-[#ccc3c3] text-center rounded-[10px]
-                           px-[10px] lg:h-[46px] h-[27px]
-                           absolute hover:cursor-pointer
-                           lg:left-[100px] left-[10%]
-                           lg:bottom-[88px] lg:top-auto bottom-auto top-[397px]
-                           hover:scale-[1.1] scale-[1] transition-all duration-[0.2] ease-in-out
-                           xl:block lg:hidden block"
+                className="flex 2xl:justify-between justify-center  
+                            items-center w-[95%] mx-auto 
+                            2xl:mt-[250px] mt-[100px]"
             >
-                {t("inviteAFriend")}
+                <div className="2xl:block hidden">
+                    <InviteFriendButton />
+                </div>
+                <FollowUsProfileTextRegularComponent />
             </div>
         </div>
     );
