@@ -71,8 +71,10 @@
     "doTechnicalAnalysis": "Перейти к ТА",
 
     "playNow": "Играть",
-    "upPartOfTitle": "Пойдёт вверх",
-    "downPartOfTitle": "или вниз",
+    "upPartOfTitle": "Пойдёт",
+    "downPartOfTitle": "или",
+    "upPartOfTitleMobile": "вверх",
+    "downPartOfTitleMobile": "вниз?",
     "guessThePriceHomePageText": "угадай цену",
     "moreCommingSoon": "скоро появятся новые игры",
 

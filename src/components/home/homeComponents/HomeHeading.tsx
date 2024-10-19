@@ -1,4 +1,6 @@
 import { useTranslation } from "react-i18next";
+import BeanBackgroundGreen from "./BeanBackgroundGreen";
+import BeanBackgroundRed from "./BeanBackgroundRed";
 
 const HomeHeading = () => {
     const { t } = useTranslation();
@@ -6,42 +8,24 @@ const HomeHeading = () => {
     return (
         <div className="w-full h-full flex justify-center items-center appearAnimation">
             <div
-                className="relative min-[820px]:text-[90px] text-[60px] 
+                className="relative min-[820px]:text-[5.6rem] text-[3.75rem] 
                            font-semibold defaultGradientText
-                           lg:scale-[1] min-[820px]:scale-[0.7] sm:scale-[1]"
+                           lg:scale-100 min-[820px]:scale-[0.7] scale-100"
             >
                 <div className="min-[820px]:block hidden">
-                    {t("upPartOfTitle")}
+                    {t("upPartOfTitle")}{" "}
+                    <BeanBackgroundGreen text={t("upPartOfTitleMobile")} />
                 </div>
                 <div className="ml-[435px] min-[820px]:block hidden">
-                    {t("downPartOfTitle")}
+                    {t("downPartOfTitle")}{" "}
+                    <BeanBackgroundRed text={t("downPartOfTitleMobile")} />
                 </div>
                 <div className="min-[820px]:hidden block">
-                    {t("upPartOfTitleMobile")}
+                    <BeanBackgroundGreen text={"up"} />
                 </div>
                 <div className="ml-[90px] min-[820px]:hidden block">
-                    {t("downPartOfTitleMobile")}
+                    <BeanBackgroundRed text={"down"} />
                 </div>
-                <div
-                    className="min-[820px]:w-[155px] w-[102px] 
-                               min-[820px]:h-[84px] h-[55.28px] 
-                               bg-[#ccf751] bg-opacity-[42%] 
-                               rounded-tl-[100px] rounded-tr-[1000px]
-                               rounded-br-[100px] rounded-bl-[1000px] absolute
-                               greenBeanShadow 
-                               min-[820px]:left-[46%] left-[-5%]
-                               min-[820px]:top-[43px] top-[27px]"
-                />
-                <div
-                    className="min-[820px]:w-[308px] w-[214px]  
-                               min-[820px]:h-[104px] h-[72.26px] 
-                               bg-[#fd5254] bg-opacity-[42%] 
-                               rounded-tl-[1000px] rounded-tr-[100px]
-                               rounded-br-[1000px] rounded-bl-[100px] absolute
-                               redBeanShadow 
-                               min-[820px]:left-[65%] left-[27%] 
-                               min-[820px]:top-[159px] top-[100px]"
-                />
             </div>
         </div>
     );

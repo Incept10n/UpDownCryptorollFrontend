@@ -3,11 +3,11 @@ import FutureGamesCard from "./homeCards/FutureGamesCard";
 
 const HomeCards = () => {
     return (
-        <div className="2xl:block hidden">
-            <div className="absolute left-[20px] top-[10%] appearAnimation">
+        <div className="2xl:block hidden relative h-[520px]">
+            <div className="absolute left-0 top-0 appearAnimation">
                 <GuessThePriceCard />
             </div>
-            <div className="absolute left-[240px] top-[28%] appearAnimation">
+            <div className="absolute left-[210px] top-[160px] appearAnimation">
                 <FutureGamesCard />
             </div>
         </div>

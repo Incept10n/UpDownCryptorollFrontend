@@ -22,7 +22,7 @@ const PlayNowButton = () => {
                        border-[1px] border-[#747474] rounded-[24px]
                        hover:scale-[1.1] scale-[1]
                        transition-all duration-[0.3s] ease-in-out 
-                       absolute right-[50%] translate-x-[50%] bottom-0"
+                       relative"
         >
             {t("playNow")}
         </button>

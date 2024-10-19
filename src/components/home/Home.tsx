@@ -24,9 +24,16 @@ const Home = () => {
                     <HomeHeading />
                     <HomeCoins />
                 </div>
-                <div className="2xl:w-[40%] w-full 2xl:h-[80vh] h-[10vh] relative">
-                    <HomeCards />
-                    <PlayNowButton />
+                <div
+                    className="2xl:w-[40%] w-full 2xl:h-[70vh] h-[10vh] relative
+                               flex flex-col justify-between"
+                >
+                    <div className="flex-shrink">
+                        <HomeCards />
+                    </div>
+                    <div className="w-full flex justify-center">
+                        <PlayNowButton />
+                    </div>
                 </div>
             </div>
         </div>
