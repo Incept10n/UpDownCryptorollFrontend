@@ -24,7 +24,7 @@ const Home = () => {
                     <HomeHeading />
                     <HomeCoins />
                 </div>
-                <div className="2xl:w-[40%] w-full 2xl:h-[100vh] h-[10vh] relative">
+                <div className="2xl:w-[40%] w-full 2xl:h-[80vh] h-[10vh] relative">
                     <HomeCards />
                     <PlayNowButton />
                 </div>

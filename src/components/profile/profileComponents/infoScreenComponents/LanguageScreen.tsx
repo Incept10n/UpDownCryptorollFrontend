@@ -22,7 +22,7 @@ const LanguageScreen = () => {
                     className="lg:text-[42px] text-[30px] upDownTextWhite 
                                font-semibold text-nowrap lg:hidden block"
                 >
-                    {t("language")}
+                    {t("Language")}
                 </div>
                 <div
                     className="lg:text-[42px] text-[30px] upDownTextWhite 
