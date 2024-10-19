@@ -8,16 +8,19 @@ import Username from "./profileNameCardComponents/Username";
 import EditButton from "./profileNameCardComponents/EditButton";
 import SaveChangesButton from "./profileNameCardComponents/SaveChangesButton";
 import ProfilePicture from "./profileNameCardComponents/ProfilePicture";
+import LoadingIcon from "../../../../common/LoadingIcon";
 
 const ProfileNameCard = () => {
     const [userName, setUserName] = useState("");
     const walletAddress = useTonAddress(false);
     const [isEditing, setIsEditing] = useState(false);
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
         fetchPlayerInfo(walletAddress).then((result) => {
             if (result) {
                 setUserName(result.username);
+                setIsLoading(false);
             }
         });
     }, [walletAddress]);
@@ -52,21 +55,35 @@ const ProfileNameCard = () => {
                     className="flex lg:flex-col flex-row lg:justify-center justify-start 
                            items-center mr-[46px]"
                 >
-                    <Username
-                        isEditing={isEditing}
-                        userName={userName}
-                        handleOnChange={handleOnChange}
-                        handleKeyDown={handleKeyDown}
-                    />
+                    {isLoading ? (
+                        <div className="lg:scale-100 scale-[0.7]">
+                            <LoadingIcon
+                                width="45px"
+                                height="45px"
+                                borderWidth="5px"
+                            />
+                        </div>
+                    ) : (
+                        <Username
+                            isEditing={isEditing}
+                            userName={userName}
+                            handleOnChange={handleOnChange}
+                            handleKeyDown={handleKeyDown}
+                        />
+                    )}
                     <div
                         className="lg:mt-[23px] mt-0 lg:relative absolute lg:right-auto right-[16px]
                                 lg:block hidden"
                     >
                         {!isEditing ? (
-                            <EditButton setIsEditing={setIsEditing} />
+                            <EditButton
+                                setIsEditing={setIsEditing}
+                                isLoading={isLoading}
+                            />
                         ) : (
                             <SaveChangesButton
                                 handleSaveChanges={handleSaveChanges}
+                                isLoading={isLoading}
                             />
                         )}
                     </div>
@@ -74,9 +91,15 @@ const ProfileNameCard = () => {
             </div>
             <div className="lg:hidden block mr-[20px]">
                 {!isEditing ? (
-                    <EditButton setIsEditing={setIsEditing} />
+                    <EditButton
+                        setIsEditing={setIsEditing}
+                        isLoading={isLoading}
+                    />
                 ) : (
-                    <SaveChangesButton handleSaveChanges={handleSaveChanges} />
+                    <SaveChangesButton
+                        handleSaveChanges={handleSaveChanges}
+                        isLoading={isLoading}
+                    />
                 )}
             </div>
         </div>

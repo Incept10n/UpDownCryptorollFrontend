@@ -6,6 +6,7 @@ import MobileButtonsMenu from "./MobileButtonsMenu";
 import { useTonAddress, useTonWallet } from "@tonconnect/ui-react";
 import { fetchPlayerInfo } from "../../../helperFunctions/fetchFunctions";
 import { ApplicationContext } from "../../../context/ApplicationContext";
+import LoadingIcon from "../LoadingIcon";
 
 const MainHeaderButtons = () => {
     const { t } = useTranslation();
@@ -26,15 +27,15 @@ const MainHeaderButtons = () => {
     useEffect(() => {
         if (!wallet) {
             setCurrentBalance(0);
+            setIsLoading(true);
         } else if (wallet) {
             fetchPlayerInfo(rawAddress).then((result) => {
                 if (result) {
                     setCurrentBalance(result.currentBalance);
+                    setIsLoading(false);
                 }
             });
         }
-
-        setIsLoading(false);
     }, [wallet]);
 
     useEffect(() => {
@@ -70,7 +71,7 @@ const MainHeaderButtons = () => {
                 {t("aboutTheProject")}
             </a>
             <Link to="/rules" className="hover:underline lg:block hidden">
-                {t("Rules")}
+                {t("rules")}
             </Link>
             <div
                 className={`border border-[#ccc3c3] rounded-[10px] py-[8px] px-[9px]
@@ -80,10 +81,10 @@ const MainHeaderButtons = () => {
             >
                 <div className="md:text-[1em] text-[14px]">
                     {isLoading ? (
-                        <img
-                            src={assets.icons.loading}
-                            alt="loading icon"
-                            className="w-full h-full rotateInfinitely"
+                        <LoadingIcon
+                            width="23px"
+                            height="23px"
+                            borderWidth="4px"
                         />
                     ) : (
                         currentBalance

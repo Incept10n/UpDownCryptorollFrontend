@@ -1,14 +1,22 @@
 import { useTranslation } from "react-i18next";
 import { assets } from "../../../../../imagesImports/assets";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { ProfileContext } from "../../../../../context/ProfileContext";
 import { ProfilePageType } from "../../../../../types/HelperTypes";
 import { ApplicationContext } from "../../../../../context/ApplicationContext";
+import LoadingIcon from "../../../../common/LoadingIcon";
 
 const CurrentBalanceProfileScreen = () => {
     const { t } = useTranslation();
     const { setCurrentProfilePage } = useContext(ProfileContext)!;
+    const [isLoading, setIsLoading] = useState(true);
     const { currentBalance } = useContext(ApplicationContext)!;
+
+    useEffect(() => {
+        if (currentBalance !== -1) {
+            setIsLoading(false);
+        }
+    }, [currentBalance]);
 
     return (
         <div className="flex flex-col 2xl:items-start lg:items-center">
@@ -17,7 +25,15 @@ const CurrentBalanceProfileScreen = () => {
             </div>
             <div className="flex justify-start items-center mt-[7px]">
                 <div className="lg:text-[42px] text-[30px] upDownTextWhite font-semibold leading-[42px]">
-                    {currentBalance}
+                    {isLoading ? (
+                        <LoadingIcon
+                            width="40px"
+                            height="40px"
+                            borderWidth="5px"
+                        />
+                    ) : (
+                        currentBalance
+                    )}
                 </div>
                 <img
                     src={assets.images.coin}

@@ -20,7 +20,7 @@ const ProfileMenu = () => {
             >
                 <ProfileMenuItem
                     icon={assets.icons.home}
-                    text={t("Profile")}
+                    text={t("profile")}
                     pageType={ProfilePageType.Profile}
                 />
                 <ProfileMenuItem
@@ -35,7 +35,7 @@ const ProfileMenu = () => {
                 />
                 <ProfileMenuItem
                     icon={assets.icons.reward}
-                    text={t("Reward")}
+                    text={t("Rewards")}
                     pageType={ProfilePageType.Rewards}
                 />
             </ul>

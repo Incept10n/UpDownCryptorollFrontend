@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import HistoryMatchRow from "./matchhistoryComponents/HistoryMatchRow";
 import { useTranslation } from "react-i18next";
 import HistoryMatchRowDesktop from "./matchhistoryComponents/HistoryMatchRowDesktop";
+import LoadingIcon from "../../../../common/LoadingIcon";
 
 const ActualMatchHistory = () => {
     const walletAddress = useTonAddress(false);
@@ -12,14 +13,17 @@ const ActualMatchHistory = () => {
     const [offset, setOffset] = useState(0);
     const { t } = useTranslation();
     const [isEndOfHistory, setIsEndOfHistory] = useState(false);
+    const [isLoading, setIsLoading] = useState(true);
 
     const loadMatches = async (offset: number) => {
+        setIsLoading(true);
         fetchMatchHistory(walletAddress, offset, 7).then((result) => {
             setMatches((prevMatches) => {
                 if (prevMatches.length === prevMatches.length + result.length) {
                     setIsEndOfHistory(true);
                 }
 
+                setIsLoading(false);
                 return [...prevMatches, ...result];
             });
         });
@@ -54,16 +58,22 @@ const ActualMatchHistory = () => {
                     <HistoryMatchRowDesktop match={match} key={match.id} />
                 ))}
             </div>
-            <div className="w-full flex justify-center my-[22px]">
-                <button
-                    className={`inline-block text-[1rem] px-[27px] py-[3px] active:scale-[1.1]
+            {isLoading ? (
+                <div className="w-full flex justify-center my-[22px]">
+                    <LoadingIcon width="40px" height="40px" borderWidth="8px" />
+                </div>
+            ) : (
+                <div className="w-full flex justify-center my-[22px]">
+                    <button
+                        className={`inline-block text-[1rem] px-[27px] py-[3px] active:scale-[1.1]
                                 ${!isEndOfHistory && "buttonGrayGradient border-[1px] border-[#747474]"} 
                                 rounded-[10px] upDownTextWhite font-semibold whitespace-nowrap`}
-                    onClick={() => loadMoreMatches()}
-                >
-                    {!isEndOfHistory ? t("loadMore") : t("endOfHistory")}
-                </button>
-            </div>
+                        onClick={() => loadMoreMatches()}
+                    >
+                        {!isEndOfHistory ? t("loadMore") : t("endOfHistory")}
+                    </button>
+                </div>
+            )}
         </>
     );
 };

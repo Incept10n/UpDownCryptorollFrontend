@@ -15,7 +15,7 @@ function App() {
     const [currentGame, setCurrentGame] = useState<GameCoice>(GameCoice.None);
     const [displayTonConnectPopup, setDisplayTonConnectPopup] =
         useState<boolean>(false);
-    const [currentBalance, setCurrentBalance] = useState(0);
+    const [currentBalance, setCurrentBalance] = useState(-1);
 
     return (
         <ApplicationContext.Provider

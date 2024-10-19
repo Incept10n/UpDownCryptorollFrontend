@@ -3,6 +3,7 @@ import {
     ApplicationContext,
     GameCoice,
 } from "../../../context/ApplicationContext";
+import LoadingIcon from "../../common/LoadingIcon";
 
 function TradingViewWidget() {
     const container = useRef<HTMLDivElement>(null);
@@ -50,15 +51,23 @@ function TradingViewWidget() {
     }, [currentGame]);
 
     return (
-        <div
-            className="tradingview-widget-container z-[10]"
-            ref={container}
-            style={{ height: "100%", width: "100%" }}
-        >
+        <div className="w-full h-full relative">
             <div
-                className="tradingview-widget-container__widget"
-                style={{ height: "calc(100% - 32px)", width: "100%" }}
-            ></div>
+                className="w-full h-full absolute bg-[#131722]
+                            flex justify-center items-center z-0"
+            >
+                <LoadingIcon width="50px" height="50px" borderWidth="3px" />
+            </div>
+            <div
+                className="absolute tradingview-widget-container z-10"
+                ref={container}
+                style={{ height: "100%", width: "100%" }}
+            >
+                <div
+                    className="tradingview-widget-container__widget"
+                    style={{ height: "calc(100% - 32px)", width: "100%" }}
+                ></div>
+            </div>
         </div>
     );
 }
