@@ -24,9 +24,10 @@ export class Formatter {
     };
 
     static extractTimeFromDateTimeString = (dateString: string) => {
-        const [_, time] = dateString.split("T");
+        const dateObj = new Date(dateString);
 
-        const [hour, minute] = time.split(":");
+        const hour = dateObj.getHours().toString().padStart(2, "0");
+        const minute = dateObj.getMinutes().toString().padStart(2, "0");
 
         return `${hour}:${minute}`;
     };

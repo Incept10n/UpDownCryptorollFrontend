@@ -80,17 +80,7 @@ const MainHeaderButtons = () => {
                             ${!isDisplayingButtons && "hidden"}`}
             >
                 <div className="md:text-[1em] text-[14px]">
-                    {isLoading ? (
-                        <div className="md:scale-100 scale-[0.8]">
-                            <LoadingIcon
-                                width="23px"
-                                height="23px"
-                                borderWidth="4px"
-                            />
-                        </div>
-                    ) : (
-                        currentBalance
-                    )}
+                    {currentBalance}
                 </div>
                 <img
                     src={assets.images.coin}

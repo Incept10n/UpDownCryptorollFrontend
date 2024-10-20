@@ -26,6 +26,8 @@ const LivePrice = ({
             fetchCurrentUserMatch(walletAddress).then((result) => {
                 setCurrentProfit(result.bet * result.winningMultiplier);
             });
+        } else {
+            setCurrentProfit(null);
         }
     }, [isCurrentlyInMatch, walletAddress]);
 
