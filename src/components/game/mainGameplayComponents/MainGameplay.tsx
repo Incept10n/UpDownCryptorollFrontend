@@ -65,7 +65,7 @@ const MainGameplay = () => {
         } else {
             setProfit(0);
         }
-    }, [betValue, currentTimeframeChoice]);
+    }, [betValue, currentTimeframeChoice, userLoginStreak]);
 
     return (
         <div
@@ -91,7 +91,11 @@ const MainGameplay = () => {
                     className="flex lg:flex-row flex-col-reverse lg:justify-between items-center
                                         space-x-[20px]"
                 >
-                    <LivePrice livePrice={livePrice} profit={profit} />
+                    <LivePrice
+                        livePrice={livePrice}
+                        profit={profit}
+                        isCurrentlyInMatch={isCurrentlyInMatch}
+                    />
                     <Multipliers
                         userLoginStreak={userLoginStreak}
                         currentTimeframeChoice={currentTimeframeChoice}

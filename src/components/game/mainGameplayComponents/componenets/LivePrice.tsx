@@ -4,15 +4,30 @@ import GradientQuestionMark from "./common/GradientQuestionMark";
 import { assets } from "../../../../imagesImports/assets";
 import GradientDollarSign from "./common/GradientDollarSign";
 import { Formatter } from "../../../../helperFunctions/Formater";
+import { useEffect, useState } from "react";
+import { fetchCurrentUserMatch } from "../../../../helperFunctions/fetchFunctions";
+import { useTonAddress } from "@tonconnect/ui-react";
 
 const LivePrice = ({
     livePrice,
     profit,
+    isCurrentlyInMatch,
 }: {
     livePrice: number;
     profit: number;
+    isCurrentlyInMatch: boolean;
 }) => {
     const { t } = useTranslation();
+    const walletAddress = useTonAddress(false);
+    const [currentProfit, setCurrentProfit] = useState<number | null>(null);
+
+    useEffect(() => {
+        if (isCurrentlyInMatch && walletAddress) {
+            fetchCurrentUserMatch(walletAddress).then((result) => {
+                setCurrentProfit(result.bet * result.winningMultiplier);
+            });
+        }
+    }, [isCurrentlyInMatch, walletAddress]);
 
     return (
         <div
@@ -56,7 +71,9 @@ const LivePrice = ({
                 />
                 <div className="flex min-[1580px]:mt-[7px] mt-0 min-[1580px]:ml-0 ml-[20px]">
                     <GradientText
-                        text={"+" + Formatter.formatMoney(profit)}
+                        text={
+                            "+" + Formatter.formatMoney(currentProfit ?? profit)
+                        }
                         className="min-[1580px]:text-[30px] text-[26px] font-semibold"
                     />
                     <div
