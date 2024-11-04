@@ -10,6 +10,7 @@ import { useContext } from "react";
 import { FormInformationContext } from "../../context/FormInfoContext";
 import { logIn, signUp } from "../../../../helperFunctions/fetchFunctions";
 import LoadingLoginButtonAnimation from "../other/LoadingLoginButtonAnimation";
+import { ApplicationContext } from "../../../../context/ApplicationContext";
 
 const LoginSignupButton = ({
     currentFormState,
@@ -26,6 +27,8 @@ const LoginSignupButton = ({
         isLoading,
         setIsLoading,
     } = useContext(FormInformationContext);
+
+    const { setDisplayLoginSignupPopup } = useContext(ApplicationContext)!;
 
     const getTextBasedOnFormState = () => {
         return currentFormState === FormState.Login
@@ -46,7 +49,7 @@ const LoginSignupButton = ({
                 PasswordValidationResult.IncorrectUsernameOrPassword,
             );
         } else {
-            console.log("logged in succesfully");
+            setDisplayLoginSignupPopup(false);
         }
     };
 
@@ -60,7 +63,7 @@ const LoginSignupButton = ({
                 UsernameValidationResult.UserWithThisNameAlreadyExists,
             );
         } else {
-            console.log("signed up succesfully");
+            setDisplayLoginSignupPopup(false);
         }
     };
 

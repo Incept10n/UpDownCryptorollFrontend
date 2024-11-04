@@ -17,8 +17,10 @@ function App() {
         useState<boolean>(false);
     const [currentBalance, setCurrentBalance] = useState(-1);
 
-    // TODO: update ton popup for login/register form
-    // TODO: add validation of changing of the username in the profile
+    // TODO: make form dissapear and feedback about succesfull login or signup
+    //                  load stuff in the header after logging in / signing up
+    // TODO: redesign changing user info in the profile (add validation and everything)
+    // TODO: don't forget sign out button in the profile
 
     return (
         <ApplicationContext.Provider

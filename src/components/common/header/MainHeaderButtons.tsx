@@ -33,7 +33,7 @@ const MainHeaderButtons = () => {
                 }
             });
         }
-    }, []);
+    }, [getCurrentUsername()]);
 
     useEffect(() => {
         setIsDisplayingButtons(location.pathname !== "/");

@@ -12,7 +12,6 @@ import { User } from "../types/User";
 import { Converter } from "./Converter";
 import { getJwtToken, saveJwtToken } from "./jwtTokenFuncions";
 
-// untested!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 export const signUp = async (username: string, password: string) => {
     const response = await fetch(`${backendUrl}/signup`, {
         method: "POST",

@@ -22,7 +22,7 @@ const ProfileNameCard = () => {
                 setIsLoading(false);
             }
         });
-    }, []);
+    }, [getCurrentUsername()]);
 
     const handleOnChange = (ev: ChangeEvent<HTMLInputElement>) => {
         setUserName(ev.target.value);
