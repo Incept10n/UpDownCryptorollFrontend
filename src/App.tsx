@@ -13,17 +13,20 @@ import TechnicalAnalysisGraph from "./components/common/TechnicalAnalysisGraph";
 
 function App() {
     const [currentGame, setCurrentGame] = useState<GameCoice>(GameCoice.None);
-    const [displayTonConnectPopup, setDisplayTonConnectPopup] =
+    const [displayLoginSignupPopup, setDisplayLoginSignupPopup] =
         useState<boolean>(false);
     const [currentBalance, setCurrentBalance] = useState(-1);
+
+    // TODO: update ton popup for login/register form
+    // TODO: add validation of changing of the username in the profile
 
     return (
         <ApplicationContext.Provider
             value={{
                 currentGame,
                 setCurrentGame,
-                displayTonConnectPopup,
-                setDisplayTonConnectPopup,
+                displayLoginSignupPopup,
+                setDisplayLoginSignupPopup,
                 currentBalance,
                 setCurrentBalance,
             }}

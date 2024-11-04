@@ -10,8 +10,8 @@ export const enum GameCoice {
 export interface ApplicationContextInterface {
     currentGame: GameCoice;
     setCurrentGame: React.Dispatch<React.SetStateAction<GameCoice>>;
-    displayTonConnectPopup: boolean;
-    setDisplayTonConnectPopup: Dispatch<SetStateAction<boolean>>;
+    displayLoginSignupPopup: boolean;
+    setDisplayLoginSignupPopup: Dispatch<SetStateAction<boolean>>;
     currentBalance: number;
     setCurrentBalance: Dispatch<SetStateAction<number>>;
 }

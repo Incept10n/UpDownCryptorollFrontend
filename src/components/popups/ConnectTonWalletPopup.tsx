@@ -4,8 +4,8 @@ import { assets } from "../../imagesImports/assets";
 import { useTranslation } from "react-i18next";
 import { TonConnectButton, useTonWallet } from "@tonconnect/ui-react";
 
-const ConnectTonWalletPopup = () => {
-    const { displayTonConnectPopup, setDisplayTonConnectPopup } =
+const SignupLoginPopup = () => {
+    const { displayLoginSignupPopup, setDisplayLoginSignupPopup } =
         useContext(ApplicationContext)!;
 
     const { t } = useTranslation();
@@ -13,7 +13,7 @@ const ConnectTonWalletPopup = () => {
 
     useEffect(() => {
         if (wallet !== null) {
-            setDisplayTonConnectPopup(false);
+            setDisplayLoginSignupPopup(false);
         }
     }, [wallet]);
 
@@ -21,7 +21,7 @@ const ConnectTonWalletPopup = () => {
         <div
             className={`popupBackground w-full h-full fixed top-0 left-0 overflow-hidden
                         flex justify-center items-center 
-                        ${!displayTonConnectPopup ? "opacity-0 z-[-20]" : "opacity-100 z-[20]"}
+                        ${!displayLoginSignupPopup ? "opacity-0 z-[-20]" : "opacity-100 z-[20]"}
                         transition-all duration-[0.5] ease-in-out`}
         >
             <div
@@ -43,7 +43,7 @@ const ConnectTonWalletPopup = () => {
                 <button
                     className="absolute right-[30px] top-[30px] hover:scale-[1.1] scale-[1]
                                transition-all duration-[0.3] ease-in-out"
-                    onClick={() => setDisplayTonConnectPopup(false)}
+                    onClick={() => setDisplayLoginSignupPopup(false)}
                 >
                     <img
                         src={assets.icons.popupCloseBtn}
@@ -65,4 +65,4 @@ const ConnectTonWalletPopup = () => {
     );
 };
 
-export default ConnectTonWalletPopup;
+export default SignupLoginPopup;

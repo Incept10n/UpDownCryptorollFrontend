@@ -1,7 +1,7 @@
 import { ChangeEvent, KeyboardEvent, useEffect, useState } from "react";
 import { useTonAddress } from "@tonconnect/ui-react";
 import {
-    changeUserName,
+    changeUserInfo,
     fetchPlayerInfo,
 } from "../../../../../helperFunctions/fetchFunctions";
 import Username from "./profileNameCardComponents/Username";
@@ -30,7 +30,7 @@ const ProfileNameCard = () => {
     };
 
     const handleSaveChanges = () => {
-        changeUserName(walletAddress, userName);
+        changeUserInfo(userName);
         setIsEditing(false);
     };
 

@@ -10,11 +10,78 @@ import { MatchHistoryItem } from "../types/MatchHistoryItem";
 import { Task } from "../types/Task";
 import { User } from "../types/User";
 import { Converter } from "./Converter";
+import { getJwtToken, saveJwtToken } from "./jwtTokenFuncions";
 
-export const fetchPlayerInfo = async (walletAddress: string) => {
-    const response = await fetch(
-        `${backendUrl}/user?walletAddress=${walletAddress}`,
-    );
+// untested!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+export const signUp = async (username: string, password: string) => {
+    const response = await fetch(`${backendUrl}/signup`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ username, password }),
+    });
+
+    if (!response.ok) {
+        return null;
+    }
+
+    const jsonResult = await response.json();
+
+    saveJwtToken(jsonResult.jwtToken);
+
+    return {
+        user: new User(
+            jsonResult.username,
+            jsonResult.currentBalance,
+            jsonResult.loginStreakCount,
+            jsonResult.isLastMatchCollected,
+        ),
+        jwtToken: jsonResult.jwtToken,
+    };
+};
+
+// untested!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+export const logIn = async (username: string, password: string) => {
+    const result = await fetch(`${backendUrl}/login`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ username, password }),
+    });
+
+    if (!result.ok) {
+        return null;
+    }
+
+    const jsonResult = await result.json();
+
+    saveJwtToken(jsonResult.jwtToken);
+
+    return {
+        user: new User(
+            jsonResult.username,
+            jsonResult.currentBalance,
+            jsonResult.loginStreakCount,
+            jsonResult.isLastMatchCollected,
+        ),
+        jwtToken: jsonResult.jwtToken,
+    };
+};
+
+export const fetchPlayerInfo = async (username: string) => {
+    const jwtToken = getJwtToken();
+
+    if (!jwtToken) {
+        throw new Error("JWT token not found. Please log in.");
+    }
+
+    const response = await fetch(`${backendUrl}/user?username=${username}`, {
+        headers: {
+            Authorization: `Bearer ${jwtToken}`,
+        },
+    });
 
     if (response.ok) {
         const result = await response.json();
@@ -28,30 +95,40 @@ export const fetchPlayerInfo = async (walletAddress: string) => {
 };
 
 export const postMatch = async (
-    walletAddress: string,
+    username: string,
     currentGameChoice: GameCoice,
     predictionAmount: number,
     predictionTimeFrame: TimeframeChoice,
     predictionValue: PredictionValue,
 ) => {
     const body = {
-        WalletAddress: walletAddress,
-        Coin: Converter.getCoinFromGameChoice(currentGameChoice),
-        PredictionAmount: predictionAmount,
-        PredictionTimeframe: "00:00:15",
+        username: username,
+        coin: Converter.getCoinFromGameChoice(currentGameChoice),
+        predictionAmount: predictionAmount,
+        predictionTimeframe: "00:00:15",
         // Converter.getTimeFromTimeFrame(predictionTimeFrame), //"00:00:15",
-        PredictionValue:
+        predictionValue:
             Converter.getStringValueFrompredictionValue(predictionValue),
     };
 
+    const jwtToken = getJwtToken();
+
+    if (!jwtToken) {
+        throw new Error("JWT token not found. Please log in.");
+    }
+
     try {
-        const response = await fetch(`${backendUrl}/match/createMatch`, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
+        const response = await fetch(
+            `${backendUrl}/match/createMatch?username=${username}`,
+            {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    Authorization: `Bearer ${jwtToken}`,
+                },
+                body: JSON.stringify(body),
             },
-            body: JSON.stringify(body),
-        });
+        );
 
         if (!response.ok) {
             throw new Error(`Error while creating a match: ${response.status}`);
@@ -61,12 +138,24 @@ export const postMatch = async (
     }
 };
 
-export const fetchCurrentUserMatch = async (walletAddress: string) => {
+export const fetchCurrentUserMatch = async (username: string) => {
+    const jwtToken = getJwtToken();
+
+    if (!jwtToken) {
+        throw new Error("JWT token not found. Please log in.");
+    }
+
     const response = await fetch(
-        `${backendUrl}/match/current?walletAddress=${walletAddress}`,
+        `${backendUrl}/match/current?username=${username}`,
+        {
+            headers: {
+                Authorization: `Bearer ${jwtToken}`,
+            },
+        },
     );
 
     const result = await response.json();
+
     return new Match(
         result.id,
         result.bet,
@@ -91,12 +180,23 @@ export const fetchCurrentPrice: (coin: GameCoice) => Promise<number> = async (
 };
 
 export const fetchMatchHistory = async (
-    walletAddress: string,
+    username: string,
     offset: number,
     limit: number,
 ) => {
+    const jwtToken = getJwtToken();
+
+    if (!jwtToken) {
+        throw new Error("JWT token not found. Please log in.");
+    }
+
     const response = await fetch(
-        `${backendUrl}/match/history?walletAddress=${walletAddress}&offset=${offset}&limit=${limit}`,
+        `${backendUrl}/match/history?username=${username}&offset=${offset}&limit=${limit}`,
+        {
+            headers: {
+                Authorization: `Bearer ${jwtToken}`,
+            },
+        },
     );
 
     const matches: MatchHistoryItem[] = (await response.json()).map(
@@ -119,34 +219,61 @@ export const fetchMatchHistory = async (
     return matches;
 };
 
-export const collectLastMatch = async (walletAddress: string) => {
-    await fetch(
-        `${backendUrl}/user/collectLastMatch?walletAddress=${walletAddress}`,
-        {
-            method: "POST",
-        },
-    );
-};
+export const collectLastMatch = async (username: string) => {
+    const jwtToken = getJwtToken();
 
-export const changeUserName = async (
-    walletAddress: string,
-    newName: string,
-) => {
-    await fetch(`${backendUrl}/user?walletAddress=${walletAddress}`, {
-        method: "PUT",
+    if (!jwtToken) {
+        throw new Error("JWT token not found. Please log in.");
+    }
+
+    await fetch(`${backendUrl}/user/collectLastMatch?username=${username}`, {
+        method: "POST",
         headers: {
-            "Content-Type": "application/json",
+            Authorization: `Bearer ${jwtToken}`,
         },
-        body: JSON.stringify({ newName: newName }),
     });
 };
 
-export const fetchUserTasks = async (
-    walletAddress: string,
-): Promise<Task[]> => {
-    const result = await fetch(
-        `${backendUrl}/tasks?walletAddress=${walletAddress}`,
-    );
+export const changeUserInfo = async (
+    currentUsername: string,
+    newInfo: {
+        newName?: string;
+        newPassword?: string;
+        newWalletAddress?: string;
+    } | null = null,
+) => {
+    const jwtToken = getJwtToken();
+
+    if (!jwtToken) {
+        throw new Error("JWT token not found. Please log in.");
+    }
+
+    await fetch(`${backendUrl}/user?username=${currentUsername}`, {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${jwtToken}`,
+        },
+        body: JSON.stringify({
+            name: newInfo?.newName,
+            password: newInfo?.newPassword,
+            walletAddress: newInfo?.newWalletAddress,
+        }),
+    });
+};
+
+export const fetchUserTasks = async (username: string): Promise<Task[]> => {
+    const jwtToken = getJwtToken();
+
+    if (!jwtToken) {
+        throw new Error("JWT token not found. Please log in.");
+    }
+
+    const result = await fetch(`${backendUrl}/tasks?username=${username}`, {
+        headers: {
+            Authorization: `Bearer ${jwtToken}`,
+        },
+    });
 
     const json = await result.json();
 
@@ -164,12 +291,19 @@ export const fetchUserTasks = async (
 export const changeTaskState = async (
     taskId: number,
     changedStatus: TaskState,
-    walletAddress: string,
+    username: string,
 ) => {
-    await fetch(`${backendUrl}/tasks?walletAddress=${walletAddress}`, {
+    const jwtToken = getJwtToken();
+
+    if (!jwtToken) {
+        throw new Error("JWT token not found. Please log in.");
+    }
+
+    await fetch(`${backendUrl}/tasks?username=${username}`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
+            Authorization: `Bearer ${jwtToken}`,
         },
         body: JSON.stringify({ taskId, changedStatus }),
     });

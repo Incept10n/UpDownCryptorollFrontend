@@ -6,7 +6,6 @@ import MobileButtonsMenu from "./MobileButtonsMenu";
 import { useTonAddress, useTonWallet } from "@tonconnect/ui-react";
 import { fetchPlayerInfo } from "../../../helperFunctions/fetchFunctions";
 import { ApplicationContext } from "../../../context/ApplicationContext";
-import LoadingIcon from "../LoadingIcon";
 
 const MainHeaderButtons = () => {
     const { t } = useTranslation();
@@ -19,20 +18,17 @@ const MainHeaderButtons = () => {
     const [isDisplayingButtons, setIsDisplayingButtons] = useState(
         location.pathname !== "/",
     );
-    const [isLoading, setIsLoading] = useState(true);
 
-    const { currentBalance, setCurrentBalance, setDisplayTonConnectPopup } =
+    const { currentBalance, setCurrentBalance, setDisplayLoginSignupPopup } =
         useContext(ApplicationContext)!;
 
     useEffect(() => {
         if (!wallet) {
             setCurrentBalance(0);
-            setIsLoading(true);
         } else if (wallet) {
             fetchPlayerInfo(rawAddress).then((result) => {
                 if (result) {
                     setCurrentBalance(result.currentBalance);
-                    setIsLoading(false);
                 }
             });
         }
@@ -44,7 +40,7 @@ const MainHeaderButtons = () => {
 
     const handleGoToProfile = () => {
         if (!wallet) {
-            setDisplayTonConnectPopup(true);
+            setDisplayLoginSignupPopup(true);
         } else if (wallet) {
             navigate("/profile");
         }
