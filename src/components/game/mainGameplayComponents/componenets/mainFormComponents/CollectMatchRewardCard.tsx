@@ -1,7 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { assets } from "../../../../../imagesImports/assets";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
-import { useTonAddress } from "@tonconnect/ui-react";
 import {
     collectLastMatch,
     fetchMatchHistory,
@@ -9,6 +8,7 @@ import {
     fetchCurrentUserMatch,
 } from "../../../../../helperFunctions/fetchFunctions";
 import { Match } from "../../../../../types/Match";
+import { getCurrentUsername } from "../../../../../helperFunctions/jwtTokenFuncions";
 
 const CollectMatchRewardCard = ({
     setCurrentBalance,
@@ -22,20 +22,19 @@ const CollectMatchRewardCard = ({
     setIsCurrentlyInMatch: Dispatch<SetStateAction<boolean>>;
 }) => {
     const { t } = useTranslation();
-    const walletAddress = useTonAddress(false);
 
     const [isMatchWon, setIsMatchWon] = useState(false);
     const [payout, setPayout] = useState(0);
 
     const handleOnCollect = () => {
-        collectLastMatch(walletAddress).then(() => {
-            fetchPlayerInfo(walletAddress).then((result) => {
+        collectLastMatch(getCurrentUsername()!).then(() => {
+            fetchPlayerInfo(getCurrentUsername()!).then((result) => {
                 if (result) {
                     setCurrentBalance(result.currentBalance);
                     setIsLastMatchCollected(result.isLastMatchCollected);
                 }
             });
-            fetchCurrentUserMatch(walletAddress).then((result) => {
+            fetchCurrentUserMatch(getCurrentUsername()!).then((result) => {
                 setCurrentMatch(result);
                 setIsCurrentlyInMatch(result?.id !== -1);
             });
@@ -44,9 +43,9 @@ const CollectMatchRewardCard = ({
 
     useEffect(() => {
         const getMatchData = async () => {
-            if (walletAddress) {
+            if (getCurrentUsername()!) {
                 const latestMatch = (
-                    await fetchMatchHistory(walletAddress, 0, 1)
+                    await fetchMatchHistory(getCurrentUsername()!, 0, 1)
                 )[0];
 
                 setIsMatchWon(latestMatch.resultStatus === "Win");
@@ -60,7 +59,7 @@ const CollectMatchRewardCard = ({
         };
 
         getMatchData();
-    }, [walletAddress]);
+    }, []);
 
     return (
         <div

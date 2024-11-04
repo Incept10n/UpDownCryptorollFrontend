@@ -1,0 +1,57 @@
+.leftOuterCutRectange {
+    display: inline;
+
+    position: relative;
+
+    clip-path: polygon(0% 0%, calc(100% - 14px) 0%, 100% 100%, 0 100%);
+    background: linear-gradient(96deg, #4266c5 28%, #59b0cc 100%);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 2px;
+}
+
+.leftInnerCutRectange {
+    position: relative;
+
+    clip-path: polygon(
+        0% 0%,
+        calc(100% - 13px) 0%,
+        calc(100% - 2px) 100%,
+        0 100%
+    );
+}
+
+.rightOuterCutRectange {
+    display: inline;
+
+    position: relative;
+
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 14px 100%);
+    background: linear-gradient(96deg, #4266c5 28%, #59b0cc 100%);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 2px;
+}
+
+.rightInnerCutRectange {
+    position: relative;
+
+    clip-path: polygon(2px 0%, 100% 0%, 100% 100%, 14px 100%);
+}
+
+.activeChoiceBg {
+    background-color: #292929;
+}
+
+input::placeholder {
+    font-weight: 300;
+    color: #868686;
+    font-size: 20px;
+    transform: translateY(-2px);
+}

@@ -1,13 +1,13 @@
 import { Outlet } from "react-router-dom";
 import Header from "./Header";
-import ConnectTonWalletPopup from "../popups/ConnectTonWalletPopup";
+import { SignupLoginPopupManager } from "../../features/authentication";
 
 const Layout = () => {
     return (
         <div>
             <Header />
             <Outlet />
-            <ConnectTonWalletPopup />
+            <SignupLoginPopupManager />
         </div>
     );
 };

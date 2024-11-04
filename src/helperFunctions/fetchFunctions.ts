@@ -41,7 +41,6 @@ export const signUp = async (username: string, password: string) => {
     };
 };
 
-// untested!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 export const logIn = async (username: string, password: string) => {
     const result = await fetch(`${backendUrl}/login`, {
         method: "POST",

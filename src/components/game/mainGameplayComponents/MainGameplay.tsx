@@ -7,15 +7,14 @@ import {
     fetchPlayerInfo,
 } from "../../../helperFunctions/fetchFunctions";
 import { TimeframeChoice } from "../../../types/HelperTypes";
-import { useTonAddress } from "@tonconnect/ui-react";
 import { Calculator } from "../../../helperFunctions/Calculator";
 import Multipliers from "./componenets/Multipliers";
 import DoTechicalAnalysisButton from "../tradingViewWidgets/DoTechicalAnalysisButton";
+import { getCurrentUsername } from "../../../helperFunctions/jwtTokenFuncions";
 
 const MainGameplay = () => {
     const { currentGame } = useContext(ApplicationContext)!;
     const [livePrice, setLivePrice] = useState<number>(-1);
-    const walletAddress = useTonAddress(false);
     const [userLoginStreak, setUserLoginStreak] = useState(1);
     const [profit, setProfit] = useState(0);
 
@@ -30,7 +29,7 @@ const MainGameplay = () => {
 
     useEffect(() => {
         const getUserLoginStreak = async () => {
-            const userInfo = await fetchPlayerInfo(walletAddress);
+            const userInfo = await fetchPlayerInfo(getCurrentUsername()!);
 
             if (userInfo) {
                 setUserLoginStreak(userInfo.loginStreakCount);

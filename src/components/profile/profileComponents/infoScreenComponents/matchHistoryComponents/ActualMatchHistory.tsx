@@ -1,14 +1,13 @@
 import { fetchMatchHistory } from "../../../../../helperFunctions/fetchFunctions";
-import { useTonAddress } from "@tonconnect/ui-react";
 import { MatchHistoryItem } from "../../../../../types/MatchHistoryItem";
 import { useEffect, useState } from "react";
 import HistoryMatchRow from "./matchhistoryComponents/HistoryMatchRow";
 import { useTranslation } from "react-i18next";
 import HistoryMatchRowDesktop from "./matchhistoryComponents/HistoryMatchRowDesktop";
 import LoadingIcon from "../../../../common/LoadingIcon";
+import { getCurrentUsername } from "../../../../../helperFunctions/jwtTokenFuncions";
 
 const ActualMatchHistory = () => {
-    const walletAddress = useTonAddress(false);
     const [matches, setMatches] = useState<MatchHistoryItem[]>([]);
     const [offset, setOffset] = useState(0);
     const { t } = useTranslation();
@@ -17,7 +16,7 @@ const ActualMatchHistory = () => {
 
     const loadMatches = async (offset: number) => {
         setIsLoading(true);
-        fetchMatchHistory(walletAddress, offset, 7).then((result) => {
+        fetchMatchHistory(getCurrentUsername()!, offset, 7).then((result) => {
             setMatches((prevMatches) => {
                 if (prevMatches.length === prevMatches.length + result.length) {
                     setIsEndOfHistory(true);

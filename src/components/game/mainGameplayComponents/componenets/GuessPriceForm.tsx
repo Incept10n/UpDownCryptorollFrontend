@@ -13,7 +13,6 @@ import {
     PredictionValue,
     TimeframeChoice,
 } from "../../../../types/HelperTypes";
-import { useTonAddress, useTonWallet } from "@tonconnect/ui-react";
 import { validateFormValues } from "../../../../helperFunctions/validationFunctions";
 import {
     fetchPlayerInfo,
@@ -31,6 +30,10 @@ import GradientText from "./common/GradientText";
 import { Match } from "../../../../types/Match";
 import CollectMatchRewardCard from "./mainFormComponents/CollectMatchRewardCard";
 import TradingViewWidget from "../../tradingViewWidgets/TradingViewWidget";
+import {
+    getCurrentUsername,
+    isUserLoggedIn,
+} from "../../../../helperFunctions/jwtTokenFuncions";
 
 const GuessPriceForm = ({
     livePrice,
@@ -57,7 +60,7 @@ const GuessPriceForm = ({
         currentBalance,
         setCurrentBalance,
         currentGame,
-        setDisplayTonConnectPopup,
+        setDisplayLoginSignupPopup,
     } = useContext(ApplicationContext)!;
 
     const [predictionValue, setpredictionValue] = useState<PredictionValue>(
@@ -68,14 +71,11 @@ const GuessPriceForm = ({
     >([]);
 
     const { t } = useTranslation();
-    const wallet = useTonWallet();
-    const walletAddress = useTonAddress(false);
-
     const [currentMatch, setCurrentMatch] = useState<Match | null>(null);
 
     const submitForm = async () => {
-        if (wallet === null) {
-            setDisplayTonConnectPopup(true);
+        if (!isUserLoggedIn()) {
+            setDisplayLoginSignupPopup(true);
             return;
         }
 
@@ -97,20 +97,20 @@ const GuessPriceForm = ({
         );
 
         await postMatch(
-            walletAddress,
+            getCurrentUsername()!,
             currentGame,
             Number.parseFloat(betValue),
             currentTimeframeChoice,
             predictionValue,
         );
 
-        fetchPlayerInfo(walletAddress).then((result) => {
+        fetchPlayerInfo(getCurrentUsername()!).then((result) => {
             if (result) {
                 setCurrentBalance(result.currentBalance);
                 setIsLastMatchCollected(result.isLastMatchCollected);
             }
         });
-        fetchCurrentUserMatch(walletAddress).then((result) => {
+        fetchCurrentUserMatch(getCurrentUsername()!).then((result) => {
             setCurrentMatch(result);
             setIsCurrentlyInMatch(result?.id !== -1);
         });
@@ -119,19 +119,19 @@ const GuessPriceForm = ({
     };
 
     useEffect(() => {
-        if (wallet) {
-            fetchPlayerInfo(walletAddress).then((result) => {
+        if (isUserLoggedIn()) {
+            fetchPlayerInfo(getCurrentUsername()!).then((result) => {
                 if (result) {
                     setCurrentBalance(result.currentBalance);
                     setIsLastMatchCollected(result.isLastMatchCollected);
                 }
             });
-            fetchCurrentUserMatch(walletAddress).then((result) => {
+            fetchCurrentUserMatch(getCurrentUsername()!).then((result) => {
                 setCurrentMatch(result);
                 setIsCurrentlyInMatch(result?.id !== -1);
             });
         }
-    }, [wallet]);
+    }, []);
 
     return (
         <div className="relative w-[100%] lg:h-[400px] h-[335px] flex">

@@ -162,5 +162,21 @@
     "youveJustClaimed": "You've just claimed",
 
     "win": "Win",
-    "loss": "Loss"
+    "loss": "Loss",
+
+    "loginText": "Log in",
+    "signupText": "Sign up",
+    "loginToContinueText": "Log in to continue",
+    "usernamePlaceholder": "username",
+    "passwordPlaceholder": "password",
+
+    "usernameCannotBeEmpty": "Username cannot be empty or contain only spaces",
+    "usernameCanOnlyContain": "Only: A-Z, a-z, 0-9, _, space",
+    "passwordCannotBeEmpty": "Password cannot be empty or contain only spaces",
+    "passwordCannotContainSpaces": "Password cannot contain spaces",
+    "passwordCannotBeShorterThan": "Password cannot be shorter than 6 symbols",
+    "loginLoadingText": "Logging in...",
+    "signupLoadingText": "Signning up...",
+    "incorrectUsernameOrPassword": "Incorrect username or password",
+    "userWithThisNameAlreadyExists": "User with this name already exists"
 }

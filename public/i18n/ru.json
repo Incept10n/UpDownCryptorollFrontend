@@ -161,5 +161,21 @@
     "youveJustClaimed": "Вы только что получили",
 
     "win": "Win",
-    "loss": "Loss"
+    "loss": "Loss",
+
+    "loginText": "Войти",
+    "signupText": "Зарегистрироваться",
+    "loginToContinueText": "Войдите, чтобы продолжить",
+    "usernamePlaceholder": "имя",
+    "passwordPlaceholder": "пароль",
+
+    "usernameCannotBeEmpty": "Имя не может быть пустым или содержать только пробелы",
+    "usernameCanOnlyContain": "Только: A-Z, a-z, 0-9, _, пробел",
+    "passwordCannotBeEmpty": "Пароль не может быть пустым или содержать только пробелы",
+    "passwordCannotContainSpaces": "Пароль не может содержать пробелы",
+    "passwordCannotBeShorterThan": "Пароль не может быть короче 6 символов",
+    "loginLoadingText": "Вход в систему...",
+    "signupLoadingText": "Регистрация...",
+    "incorrectUsernameOrPassword": "Неправильное имя или пароль",
+    "userWithThisNameAlreadyExists": "Пользователь с таким именем уже существует"
 }

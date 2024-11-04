@@ -189,6 +189,10 @@ input[type="number"] {
     box-shadow: 0px 0px 35.5px 5px rgba(253, 82, 84, 42%);
 }
 
+.whitePopupShadow {
+    box-shadow: 0px 0px 18.6px 0 rgba(255, 255, 255, 25%);
+}
+
 .loadingAnimation {
     border: 8px solid #ccc3c3;
     border-top: 8px solid #3498db;

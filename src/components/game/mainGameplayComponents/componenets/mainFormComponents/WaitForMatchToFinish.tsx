@@ -17,12 +17,12 @@ import {
     fetchPlayerInfo,
     fetchCurrentUserMatch,
 } from "../../../../../helperFunctions/fetchFunctions";
-import { useTonAddress } from "@tonconnect/ui-react";
 import CurrentMatchTextWithMoney from "./waitForMatchPopupComponents/CurrentMatchTextWithMoney";
 import CurrentCoinText from "./waitForMatchPopupComponents/CurrentCoinText";
 import CurrentPredictionText from "./waitForMatchPopupComponents/CurrentPredictionText";
 import EntryPriceText from "./EntryPriceText";
 import { Match } from "../../../../../types/Match";
+import { getCurrentUsername } from "../../../../../helperFunctions/jwtTokenFuncions";
 
 const WaitForMatchToFinish = ({
     currentMatch,
@@ -52,8 +52,6 @@ const WaitForMatchToFinish = ({
     const [isCurrentlyWinning, setIsCurrentlyWinning] = useState(true);
     const [currentDeviationFromEntryPrice, setCurrentDeviationFromEntryPrice] =
         useState(() => calculateDeviationFromCurrentPrice());
-
-    const walletAddress = useTonAddress(false);
 
     const { setCurrentBalance } = useContext(ApplicationContext)!;
 
@@ -94,12 +92,16 @@ const WaitForMatchToFinish = ({
                         prevClock.decrementByOneSecond();
 
                         if (prevClock.totalSeconds === 0) {
-                            fetchPlayerInfo(walletAddress).then((result) => {
-                                if (result) {
-                                    setCurrentBalance(result.currentBalance);
-                                }
-                            });
-                            fetchCurrentUserMatch(walletAddress).then(
+                            fetchPlayerInfo(getCurrentUsername()!).then(
+                                (result) => {
+                                    if (result) {
+                                        setCurrentBalance(
+                                            result.currentBalance,
+                                        );
+                                    }
+                                },
+                            );
+                            fetchCurrentUserMatch(getCurrentUsername()!).then(
                                 (result) => {
                                     setCurrentMatch(result);
                                     setIsCurrentlyInMatch(result?.id !== -1);

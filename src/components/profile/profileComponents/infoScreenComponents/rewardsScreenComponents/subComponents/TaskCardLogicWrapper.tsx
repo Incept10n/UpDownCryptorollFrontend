@@ -1,9 +1,9 @@
-import { useTonAddress } from "@tonconnect/ui-react";
 import { changeTaskState } from "../../../../../../helperFunctions/fetchFunctions";
 import { TaskState } from "../../../../../../types/HelperTypes";
 import TaskCard from "./TaskCard";
 import { useTranslation } from "react-i18next";
 import { Task } from "../../../../../../types/Task";
+import { getCurrentUsername } from "../../../../../../helperFunctions/jwtTokenFuncions";
 
 const TaskCardLogicWrapper = ({
     task,
@@ -16,7 +16,6 @@ const TaskCardLogicWrapper = ({
     updateUserTasks: () => void;
     collectReward: (task: Task) => void;
 }) => {
-    const walletAddress = useTonAddress(false);
     const { t } = useTranslation();
 
     const handleTaskOnClick = async () => {
@@ -25,7 +24,7 @@ const TaskCardLogicWrapper = ({
                 await changeTaskState(
                     task.id,
                     TaskState.Uncollected,
-                    walletAddress,
+                    getCurrentUsername()!,
                 );
                 onClick();
                 break;
@@ -33,7 +32,7 @@ const TaskCardLogicWrapper = ({
                 await changeTaskState(
                     task.id,
                     TaskState.Completed,
-                    walletAddress,
+                    getCurrentUsername()!,
                 );
                 collectReward(task);
                 break;

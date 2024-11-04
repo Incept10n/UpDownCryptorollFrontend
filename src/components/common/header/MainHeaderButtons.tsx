@@ -3,14 +3,15 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { assets } from "../../../imagesImports/assets";
 import { useContext, useEffect, useState } from "react";
 import MobileButtonsMenu from "./MobileButtonsMenu";
-import { useTonAddress, useTonWallet } from "@tonconnect/ui-react";
 import { fetchPlayerInfo } from "../../../helperFunctions/fetchFunctions";
 import { ApplicationContext } from "../../../context/ApplicationContext";
+import {
+    getCurrentUsername,
+    isUserLoggedIn,
+} from "../../../helperFunctions/jwtTokenFuncions";
 
 const MainHeaderButtons = () => {
     const { t } = useTranslation();
-    const wallet = useTonWallet();
-    const rawAddress = useTonAddress(false);
 
     const location = useLocation();
     const navigate = useNavigate();
@@ -23,25 +24,25 @@ const MainHeaderButtons = () => {
         useContext(ApplicationContext)!;
 
     useEffect(() => {
-        if (!wallet) {
+        if (!isUserLoggedIn() || !getCurrentUsername()) {
             setCurrentBalance(0);
-        } else if (wallet) {
-            fetchPlayerInfo(rawAddress).then((result) => {
+        } else {
+            fetchPlayerInfo(getCurrentUsername()!).then((result) => {
                 if (result) {
                     setCurrentBalance(result.currentBalance);
                 }
             });
         }
-    }, [wallet]);
+    }, []);
 
     useEffect(() => {
         setIsDisplayingButtons(location.pathname !== "/");
     }, [location.pathname]);
 
     const handleGoToProfile = () => {
-        if (!wallet) {
+        if (!isUserLoggedIn()) {
             setDisplayLoginSignupPopup(true);
-        } else if (wallet) {
+        } else {
             navigate("/profile");
         }
     };

@@ -6,7 +6,10 @@ import GradientDollarSign from "./common/GradientDollarSign";
 import { Formatter } from "../../../../helperFunctions/Formater";
 import { useEffect, useState } from "react";
 import { fetchCurrentUserMatch } from "../../../../helperFunctions/fetchFunctions";
-import { useTonAddress } from "@tonconnect/ui-react";
+import {
+    getCurrentUsername,
+    isUserLoggedIn,
+} from "../../../../helperFunctions/jwtTokenFuncions";
 
 const LivePrice = ({
     livePrice,
@@ -18,18 +21,17 @@ const LivePrice = ({
     isCurrentlyInMatch: boolean;
 }) => {
     const { t } = useTranslation();
-    const walletAddress = useTonAddress(false);
     const [currentProfit, setCurrentProfit] = useState<number | null>(null);
 
     useEffect(() => {
-        if (isCurrentlyInMatch && walletAddress) {
-            fetchCurrentUserMatch(walletAddress).then((result) => {
+        if (isCurrentlyInMatch && isUserLoggedIn()) {
+            fetchCurrentUserMatch(getCurrentUsername()!).then((result) => {
                 setCurrentProfit(result.bet * result.winningMultiplier);
             });
         } else {
             setCurrentProfit(null);
         }
-    }, [isCurrentlyInMatch, walletAddress]);
+    }, [isCurrentlyInMatch]);
 
     return (
         <div

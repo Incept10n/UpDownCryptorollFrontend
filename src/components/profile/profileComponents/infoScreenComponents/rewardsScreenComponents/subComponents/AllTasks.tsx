@@ -3,16 +3,15 @@ import {
     fetchPlayerInfo,
     fetchUserTasks,
 } from "../../../../../../helperFunctions/fetchFunctions";
-import { useTonAddress } from "@tonconnect/ui-react";
 import { Task } from "../../../../../../types/Task";
 import { tgLink, twitterLink, vkLink } from "../../../../../../constants";
 import TaskCardLogicWrapper from "./TaskCardLogicWrapper";
 import RewardToCollectPopup from "./RewardToCollectPopup";
 import { ApplicationContext } from "../../../../../../context/ApplicationContext";
 import LoadingIcon from "../../../../../common/LoadingIcon";
+import { getCurrentUsername } from "../../../../../../helperFunctions/jwtTokenFuncions";
 
 const AllTasks = () => {
-    const walletAddress = useTonAddress(false);
     const [tasks, setTasks] = useState<Task[]>([]);
 
     const [displayClaimPopup, setDisplayClaimPopup] = useState(false);
@@ -27,7 +26,7 @@ const AllTasks = () => {
     }, []);
 
     const updateUserTasks = () => {
-        fetchUserTasks(walletAddress).then((result) => {
+        fetchUserTasks(getCurrentUsername()!).then((result) => {
             setTasks(result);
             setIsLoading(false);
         });
@@ -43,7 +42,7 @@ const AllTasks = () => {
 
     const claimButtonAction = () => {
         setDisplayClaimPopup(false);
-        fetchPlayerInfo(walletAddress).then((playerInfo) => {
+        fetchPlayerInfo(getCurrentUsername()!).then((playerInfo) => {
             if (playerInfo) {
                 setCurrentBalance(playerInfo.currentBalance);
             }

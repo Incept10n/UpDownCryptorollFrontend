@@ -1,5 +1,4 @@
 import { ChangeEvent, KeyboardEvent, useEffect, useState } from "react";
-import { useTonAddress } from "@tonconnect/ui-react";
 import {
     changeUserInfo,
     fetchPlayerInfo,
@@ -9,21 +8,21 @@ import EditButton from "./profileNameCardComponents/EditButton";
 import SaveChangesButton from "./profileNameCardComponents/SaveChangesButton";
 import ProfilePicture from "./profileNameCardComponents/ProfilePicture";
 import LoadingIcon from "../../../../common/LoadingIcon";
+import { getCurrentUsername } from "../../../../../helperFunctions/jwtTokenFuncions";
 
 const ProfileNameCard = () => {
     const [userName, setUserName] = useState("");
-    const walletAddress = useTonAddress(false);
     const [isEditing, setIsEditing] = useState(false);
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        fetchPlayerInfo(walletAddress).then((result) => {
+        fetchPlayerInfo(getCurrentUsername()!).then((result) => {
             if (result) {
                 setUserName(result.username);
                 setIsLoading(false);
             }
         });
-    }, [walletAddress]);
+    }, []);
 
     const handleOnChange = (ev: ChangeEvent<HTMLInputElement>) => {
         setUserName(ev.target.value);
