@@ -94,7 +94,7 @@ const MainHeaderButtons = () => {
                     alt="profile picture pic"
                 />
             </button>
-            <MobileButtonsMenu />
+            <MobileButtonsMenu handleGoToProfile={handleGoToProfile} />
         </div>
     );
 };

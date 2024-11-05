@@ -16,12 +16,6 @@ const SignupLoginPopupManager = () => {
         FormState.Login,
     );
 
-    // useEffect(() => {
-    //     if (isUserLoggedIn()) {
-    //         setDisplayLoginSignupPopup(false);
-    //     }
-    // }, []);
-
     return (
         <div
             className={`popupBackground w-full h-full fixed top-0 left-0 overflow-hidden

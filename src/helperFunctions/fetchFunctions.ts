@@ -246,18 +246,31 @@ export const changeUserInfo = async (
         throw new Error("JWT token not found. Please log in.");
     }
 
-    await fetch(`${backendUrl}/user?username=${currentUsername}`, {
-        method: "PUT",
-        headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${jwtToken}`,
+    const result = await fetch(
+        `${backendUrl}/user?username=${currentUsername}`,
+        {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${jwtToken}`,
+            },
+            body: JSON.stringify({
+                name: newInfo?.newName,
+                password: newInfo?.newPassword,
+                walletAddress: newInfo?.newWalletAddress,
+            }),
         },
-        body: JSON.stringify({
-            name: newInfo?.newName,
-            password: newInfo?.newPassword,
-            walletAddress: newInfo?.newWalletAddress,
-        }),
-    });
+    );
+
+    if (!result.ok) {
+        return false;
+    }
+
+    const json = await result.json();
+
+    saveJwtToken(json.newToken);
+
+    return true;
 };
 
 export const fetchUserTasks = async (username: string): Promise<Task[]> => {

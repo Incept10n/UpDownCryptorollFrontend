@@ -1,9 +1,9 @@
 import { useTranslation } from "react-i18next";
 import CurrentBalanceProfileScreen from "./profileScreenComponents/CurrentBalanceProfileScreen";
-import ProfileNameCard from "./profileScreenComponents/ProfileNameCard";
 import { TonConnectButton } from "@tonconnect/ui-react";
 import InviteFriendButton from "../common/InviteFriendButton";
 import FollowUsProfileTextRegularComponent from "../common/FollowUsProfileTextRegularComponent";
+import { ProfileInfoChangeCard } from "../../../../features/authentication";
 
 const ProfileScreen = () => {
     const { t } = useTranslation();
@@ -28,7 +28,7 @@ const ProfileScreen = () => {
                     <CurrentBalanceProfileScreen />
                 </div>
                 <div className="flex flex-col 2xl:items-end items-center">
-                    <ProfileNameCard />
+                    <ProfileInfoChangeCard />
                     <div className="mt-[46px] 2xl:block hidden">
                         <TonConnectButton />
                     </div>

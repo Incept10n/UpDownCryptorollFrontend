@@ -3,7 +3,11 @@ import { assets } from "../../../imagesImports/assets";
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 
-const MobileButtonsMenu = () => {
+const MobileButtonsMenu = ({
+    handleGoToProfile,
+}: {
+    handleGoToProfile: () => void;
+}) => {
     const { t } = useTranslation()!;
 
     const [isExpanded, setIsExpanded] = useState(false);
@@ -41,9 +45,12 @@ const MobileButtonsMenu = () => {
                            ${!isExpanded && "hidden"}`}
                 onClick={() => setIsExpanded(false)}
             >
-                <Link to="/profile" className="mt-[10px] underline">
+                <button
+                    className="mt-[10px] underline"
+                    onClick={handleGoToProfile}
+                >
                     {t("profileText")}
-                </Link>
+                </button>
                 <Link to="/rules" className="mt-[10px] underline">
                     {t("rules")}
                 </Link>

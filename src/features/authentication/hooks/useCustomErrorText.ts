@@ -40,6 +40,8 @@ export const useCutomErrorText = () => {
                 return t("passwordCannotBeShorterThan");
             case PasswordValidationResult.IncorrectUsernameOrPassword:
                 return t("incorrectUsernameOrPassword");
+            case PasswordValidationResult.OldPasswordIncorrect:
+                return t("oldPasswordIncorrect");
             default:
                 return "";
         }

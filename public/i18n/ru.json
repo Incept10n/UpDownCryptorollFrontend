@@ -109,6 +109,7 @@
     "edit": "Ред.",
     "changingPfp": "Скоро появится функция изменения фотографии профиля",
     "saveChanges": "Сохранить",
+    "cancel": "Отменить",
 
     "Language": "Язык",
     "languageText": "Предпочтение языка",
@@ -169,13 +170,18 @@
     "usernamePlaceholder": "имя",
     "passwordPlaceholder": "пароль",
 
-    "usernameCannotBeEmpty": "Имя не может быть пустым или содержать только пробелы",
+    "usernameCannotBeEmpty": "Имя не может быть пустым",
     "usernameCanOnlyContain": "Только: A-Z, a-z, 0-9, _, пробел",
-    "passwordCannotBeEmpty": "Пароль не может быть пустым или содержать только пробелы",
+    "passwordCannotBeEmpty": "Пароль не может быть пустым",
     "passwordCannotContainSpaces": "Пароль не может содержать пробелы",
-    "passwordCannotBeShorterThan": "Пароль не может быть короче 6 символов",
+    "passwordCannotBeShorterThan": "Не менее 6 символов",
     "loginLoadingText": "Вход в систему...",
     "signupLoadingText": "Регистрация...",
+    "checking": "Проверяем...",
     "incorrectUsernameOrPassword": "Неправильное имя или пароль",
-    "userWithThisNameAlreadyExists": "Пользователь с таким именем уже существует"
+    "userWithThisNameAlreadyExists": "Пользователь с таким именем уже существует",
+    "oldPasswordIncorrect": "Неверный старый пароль ",
+
+    "enterYourOldPassword": "Введите старый пароль",
+    "enterYourNewPassword": "Введите новый пароль"
 }

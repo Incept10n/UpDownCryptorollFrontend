@@ -51,7 +51,7 @@
 
 input::placeholder {
     font-weight: 300;
-    color: #868686;
+    color: #868686 !important;
     font-size: 20px;
     transform: translateY(-2px);
 }

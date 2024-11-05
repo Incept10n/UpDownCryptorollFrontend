@@ -4,7 +4,7 @@ import {
     UsernameValidationResult,
 } from "../types/enums";
 
-interface FormContext {
+export interface FormContext {
     username: string;
     password: string;
     usernameValidationErrors: UsernameValidationResult;

@@ -110,6 +110,7 @@
     "edit": "Edit",
     "changingPfp": "Changing profile picture feature coming soon",
     "saveChanges": "Save",
+    "cancel": "Cancel",
 
     "Language": "Language",
     "languageText": "Language preference",
@@ -170,13 +171,18 @@
     "usernamePlaceholder": "username",
     "passwordPlaceholder": "password",
 
-    "usernameCannotBeEmpty": "Username cannot be empty or contain only spaces",
+    "usernameCannotBeEmpty": "Username cannot be empty",
     "usernameCanOnlyContain": "Only: A-Z, a-z, 0-9, _, space",
-    "passwordCannotBeEmpty": "Password cannot be empty or contain only spaces",
+    "passwordCannotBeEmpty": "Password cannot be empty",
     "passwordCannotContainSpaces": "Password cannot contain spaces",
-    "passwordCannotBeShorterThan": "Password cannot be shorter than 6 symbols",
+    "passwordCannotBeShorterThan": "At least 6 symbols",
     "loginLoadingText": "Logging in...",
     "signupLoadingText": "Signning up...",
+    "checking": "Checking...",
     "incorrectUsernameOrPassword": "Incorrect username or password",
-    "userWithThisNameAlreadyExists": "User with this name already exists"
+    "userWithThisNameAlreadyExists": "User with this name already exists",
+    "oldPasswordIncorrect": "Old password is incorrect",
+
+    "enterYourOldPassword": "Enter your old password",
+    "enterYourNewPassword": "Enter your new password"
 }

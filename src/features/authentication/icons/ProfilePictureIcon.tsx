@@ -1,4 +1,4 @@
-const ProfilePicture = () => {
+const ProfilePictureIcon = () => {
     return (
         <div className="bg-[#d9d9d9] rounded-[7px] w-[92px] h-[92px] relative">
             <div
@@ -14,4 +14,4 @@ const ProfilePicture = () => {
     );
 };
 
-export default ProfilePicture;
+export default ProfilePictureIcon;

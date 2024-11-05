@@ -17,4 +17,5 @@ export enum PasswordValidationResult {
     PasswordCannotContainSpaces,
     PasswordCannotBeShorterThan,
     IncorrectUsernameOrPassword,
+    OldPasswordIncorrect,
 }
