@@ -6,7 +6,9 @@ import UsernameInputFieldUnderlined from "../forms/formFields/UsernameInputField
 const UsernamePasswordForm = ({ user }: { user: User }) => {
     return (
         <div className="flex">
-            <ProfilePictureIcon />
+            <div className="flex justify-start items-end">
+                <ProfilePictureIcon />
+            </div>
             <div className="ml-[38px]">
                 <UsernameInputFieldUnderlined user={user} />
                 <PasswordInputFieldUnderlined />

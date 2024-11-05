@@ -18,4 +18,5 @@ export enum PasswordValidationResult {
     PasswordCannotBeShorterThan,
     IncorrectUsernameOrPassword,
     OldPasswordIncorrect,
+    OldNewPasswordsAreTheSame,
 }

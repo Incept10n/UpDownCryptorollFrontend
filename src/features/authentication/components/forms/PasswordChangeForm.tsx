@@ -45,6 +45,20 @@ const PasswordChangeForm = ({
             return;
         }
 
+        if (newPassword === oldPassword) {
+            setOldPasswordErrMsg(
+                getPasswordErrorText(
+                    PasswordValidationResult.OldNewPasswordsAreTheSame,
+                ),
+            );
+            setNewPasswordErrMsg(
+                getPasswordErrorText(
+                    PasswordValidationResult.OldNewPasswordsAreTheSame,
+                ),
+            );
+            return;
+        }
+
         setIsLoading(true);
 
         const isCorrectOldPassword =

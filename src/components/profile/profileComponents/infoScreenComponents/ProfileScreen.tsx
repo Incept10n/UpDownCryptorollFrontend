@@ -22,16 +22,12 @@ const ProfileScreen = () => {
             >
                 <div className="flex justify-between 2xl:hidden mt-[80px]">
                     <InviteFriendButton />
-                    <TonConnectButton />
                 </div>
                 <div className="2xl:mt-0 mt-[70px]">
                     <CurrentBalanceProfileScreen />
                 </div>
                 <div className="flex flex-col 2xl:items-end items-center">
                     <ProfileInfoChangeCard />
-                    <div className="mt-[46px] 2xl:block hidden">
-                        <TonConnectButton />
-                    </div>
                 </div>
             </div>
             <div

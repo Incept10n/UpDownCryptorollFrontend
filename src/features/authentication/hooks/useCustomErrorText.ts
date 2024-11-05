@@ -42,6 +42,8 @@ export const useCutomErrorText = () => {
                 return t("incorrectUsernameOrPassword");
             case PasswordValidationResult.OldPasswordIncorrect:
                 return t("oldPasswordIncorrect");
+            case PasswordValidationResult.OldNewPasswordsAreTheSame:
+                return t("oldNewPasswordsAreTheSame");
             default:
                 return "";
         }

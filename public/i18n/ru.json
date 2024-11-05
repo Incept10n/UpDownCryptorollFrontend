@@ -166,6 +166,7 @@
 
     "loginText": "Войти",
     "signupText": "Зарегистрироваться",
+    "signOutText": "Выйти",
     "loginToContinueText": "Войдите, чтобы продолжить",
     "usernamePlaceholder": "имя",
     "passwordPlaceholder": "пароль",
@@ -181,7 +182,10 @@
     "incorrectUsernameOrPassword": "Неправильное имя или пароль",
     "userWithThisNameAlreadyExists": "Пользователь с таким именем уже существует",
     "oldPasswordIncorrect": "Неверный старый пароль ",
+    "oldNewPasswordsAreTheSame": "Старый и новый пароли одинаковы",
 
     "enterYourOldPassword": "Введите старый пароль",
-    "enterYourNewPassword": "Введите новый пароль"
+    "enterYourNewPassword": "Введите новый пароль",
+
+    "connWalletToReceiveRewards": "Подключите кошелек, чтобы получить награды в будущем"
 }

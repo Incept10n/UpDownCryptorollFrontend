@@ -167,6 +167,7 @@
 
     "loginText": "Log in",
     "signupText": "Sign up",
+    "signOutText": "Sign out",
     "loginToContinueText": "Log in to continue",
     "usernamePlaceholder": "username",
     "passwordPlaceholder": "password",
@@ -182,7 +183,10 @@
     "incorrectUsernameOrPassword": "Incorrect username or password",
     "userWithThisNameAlreadyExists": "User with this name already exists",
     "oldPasswordIncorrect": "Old password is incorrect",
+    "oldNewPasswordsAreTheSame": "Old and new passwords are the same",
 
     "enterYourOldPassword": "Enter your old password",
-    "enterYourNewPassword": "Enter your new password"
+    "enterYourNewPassword": "Enter your new password",
+
+    "connWalletToReceiveRewards": "Connect wallet to receive more rewards in the future"
 }

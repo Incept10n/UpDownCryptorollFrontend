@@ -10,6 +10,10 @@ export const isUserLoggedIn = () => {
     return localStorage.getItem("jwtToken") ? true : false;
 };
 
+export const removeJwtToken = () => {
+    localStorage.removeItem("jwtToken");
+};
+
 export const getCurrentUsername: () => string | null = () => {
     const token = getJwtToken();
 
