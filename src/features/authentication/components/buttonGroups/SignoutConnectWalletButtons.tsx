@@ -1,17 +1,37 @@
 import { useTranslation } from "react-i18next";
 import WhiteBorderButton from "../buttons/WhiteBorderButton";
-import { TonConnectButton } from "@tonconnect/ui-react";
-import { removeJwtToken } from "../../../../helperFunctions/jwtTokenFuncions";
+import {
+    TonConnectButton,
+    useTonAddress,
+    useTonWallet,
+} from "@tonconnect/ui-react";
+import {
+    getCurrentUsername,
+    removeJwtToken,
+} from "../../../../helperFunctions/jwtTokenFuncions";
 import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+import { changeUserInfo } from "../../../../helperFunctions/fetchFunctions";
 
 const SignoutConnectWalletButtons = () => {
     const { t } = useTranslation();
     const navigate = useNavigate();
 
+    const wallet = useTonWallet();
+    const walletAddress = useTonAddress(false);
+
     const handleOnLogOut = () => {
         removeJwtToken();
         navigate("/");
     };
+
+    useEffect(() => {
+        if (wallet && walletAddress) {
+            changeUserInfo(getCurrentUsername()!, {
+                newWalletAddress: walletAddress,
+            });
+        }
+    }, [wallet, walletAddress, getCurrentUsername()]);
 
     return (
         <div>

@@ -14,8 +14,8 @@ const PopupButton = ({
     return (
         <button
             className="buttonGrayGradient rounded-[8px]
-                               border-[1.3px] border-[#747474] hover:scale-[1.1] active:scale-[1.1]
-                               transition-all duration-[0.3s] ease-in-out"
+                       border-[1.3px] border-[#747474] hover:scale-[1.1] active:scale-[1.1]
+                       transition-all duration-[0.3s] ease-in-out"
             style={{
                 width: width,
                 height: height,

@@ -8,7 +8,6 @@ import { fetchPlayerInfo } from "../../../helperFunctions/fetchFunctions";
 import LoadingIcon from "../../../components/common/LoadingIcon";
 import UsernamePasswordForm from "./buttonGroups/UsernamePasswordForm";
 import SignoutConnectWalletButtons from "./buttonGroups/SignoutConnectWalletButtons";
-import UserChangeInfoContextProvider from "./contextProviders/UserChangeInfoContextProvider";
 
 const ProfileInfoChangeCard = () => {
     const [userInfo, setUserInfo] = useState<User>();
@@ -28,24 +27,18 @@ const ProfileInfoChangeCard = () => {
     }, [isUserLoggedIn(), getCurrentUsername()]);
 
     return (
-        <UserChangeInfoContextProvider>
-            <div className="flex flex-col">
-                {!userInfo ? (
-                    <div className="w-[300px] h-[100px] flex justify-center items-center">
-                        <LoadingIcon
-                            width="40px"
-                            height="40px"
-                            borderWidth="8px"
-                        />
-                    </div>
-                ) : (
-                    <>
-                        <UsernamePasswordForm user={userInfo!} />
-                        <SignoutConnectWalletButtons />
-                    </>
-                )}
-            </div>
-        </UserChangeInfoContextProvider>
+        <div className="flex flex-col">
+            {!userInfo ? (
+                <div className="w-[300px] h-[100px] flex justify-center items-center">
+                    <LoadingIcon width="40px" height="40px" borderWidth="8px" />
+                </div>
+            ) : (
+                <>
+                    <UsernamePasswordForm user={userInfo!} />
+                    <SignoutConnectWalletButtons />
+                </>
+            )}
+        </div>
     );
 };
 

@@ -1,19 +1,15 @@
 const PopupBackground = ({
     children,
-    width,
-    height,
+    className,
 }: {
     children: React.ReactNode;
-    width: string;
-    height: string;
+    className?: string;
 }) => {
     return (
         <div
-            className="UpDownDarkBlueBg whitePopupShadow rounded-[28px] relative"
-            style={{
-                width,
-                height,
-            }}
+            className={`UpDownDarkBlueBg w-[387px] h-[431px] 
+                        whitePopupShadow rounded-[28px] relative 
+                        ${className}`}
         >
             {children}
         </div>

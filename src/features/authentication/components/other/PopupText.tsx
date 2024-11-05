@@ -6,7 +6,7 @@ const PopupText = ({ currentFormState }: { currentFormState: FormState }) => {
 
     return (
         <h1
-            className="text-[1.6rem] popupTextGradient font-semibold text-center 
+            className="sm:text-[1.6rem] text-[1.4rem] popupTextGradient font-semibold text-center 
                        mt-[55px] relative"
         >
             {currentFormState === FormState.Login

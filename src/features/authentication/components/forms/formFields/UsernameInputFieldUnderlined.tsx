@@ -79,33 +79,36 @@ const UsernameInputFieldUnderlined = ({ user }: { user: User }) => {
                     disabled={!isEditing || isLoading}
                     ref={inputFieldRef}
                 />
-                {isLoading ? (
-                    <div className="flex justify-start items-center">
-                        <LoadingIcon
-                            width="21px"
-                            height="21px"
-                            borderWidth="4px"
-                        />
-                        <div className="text-[0.8rem] text-white font-light ml-[5px]">
-                            {t("checking")}
+                <div className="flex justify-end">
+                    {isLoading ? (
+                        <div className="flex justify-start items-center">
+                            <LoadingIcon
+                                width="21px"
+                                height="21px"
+                                borderWidth="4px"
+                            />
+                            <div className="text-[0.8rem] text-white font-light ml-[5px]">
+                                {t("checking")}
+                            </div>
                         </div>
-                    </div>
-                ) : isEditing ? (
-                    <WhiteBorderButton
-                        width="60px"
-                        height="auto"
-                        text={t("saveChanges")}
-                        fontSize="1rem"
-                        handleOnClick={handleSave}
-                    />
-                ) : (
-                    <img
-                        src={assets.icons.pencil}
-                        alt="edit icon"
-                        className="w-[30px] h-[30px] hover:cursor-pointer"
-                        onClick={() => setIsEditing(true)}
-                    />
-                )}
+                    ) : isEditing ? (
+                        <WhiteBorderButton
+                            width="auto"
+                            height="auto"
+                            text={t("saveChanges")}
+                            fontSize="1rem"
+                            paddingX="10px"
+                            handleOnClick={handleSave}
+                        />
+                    ) : (
+                        <img
+                            src={assets.icons.pencil}
+                            alt="edit icon"
+                            className="w-[30px] h-[30px] hover:cursor-pointer"
+                            onClick={() => setIsEditing(true)}
+                        />
+                    )}
+                </div>
             </div>
             <div
                 className={`h-[1px] w-full bg-white ${isLoading && "opacity-[0.5]"}`}

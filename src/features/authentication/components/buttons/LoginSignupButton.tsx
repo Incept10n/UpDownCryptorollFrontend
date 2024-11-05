@@ -100,13 +100,26 @@ const LoginSignupButton = ({
                     currentFormState={currentFormState}
                 />
             ) : (
-                <PopupButton
-                    text={getTextBasedOnFormState()}
-                    width="175px"
-                    height="37px"
-                    fontSize="1.3rem"
-                    onClick={handleOnClick}
-                />
+                <div>
+                    <div className="hidden sm:block">
+                        <PopupButton
+                            text={getTextBasedOnFormState()}
+                            width="175px"
+                            height="37px"
+                            fontSize="1.3rem"
+                            onClick={handleOnClick}
+                        />
+                    </div>
+                    <div className="block sm:hidden">
+                        <PopupButton
+                            text={getTextBasedOnFormState()}
+                            width="98px"
+                            height="30px"
+                            fontSize="1rem"
+                            onClick={handleOnClick}
+                        />
+                    </div>
+                </div>
             )}
         </div>
     );

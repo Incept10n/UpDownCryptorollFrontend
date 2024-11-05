@@ -23,16 +23,16 @@ const SignupLoginPopupManager = () => {
                         ${!displayLoginSignupPopup ? "opacity-0 z-[-20]" : "opacity-100 z-[20]"}
                         transition-all duration-[0.5] ease-in-out`}
         >
-            <PopupBackground width="387px" height="431px">
-                <div className="left-[50%] -translate-x-1/2 top-[-50px] absolute">
-                    <PopupLogo widthPx={82} heightPx={82} />
+            <PopupBackground className="sm:w-[387px] sm:h-[431px] w-[310px] h-[431px]">
+                <div className="left-[50%] -translate-x-1/2 sm:top-[-50px] top-[-40px] absolute">
+                    <PopupLogo className="sm:w-[82px] sm:h-[82px] w-[72px] h-[72px]" />
                 </div>
                 <ClosePopupButton
                     handleOnClick={() => setDisplayLoginSignupPopup(false)}
                 />
                 <PopupText currentFormState={currentFormState} />
                 <LoginSignupForm currentFormState={currentFormState} />
-                <div className="absolute left-1/2 -translate-x-1/2 bottom-[31px]">
+                <div className="absolute left-1/2 -translate-x-1/2 bottom-[31px] sm:scale-100 scale-[0.9]">
                     <FormStateSwitchButton
                         currentFormState={currentFormState}
                         setCurrentFormState={setCurrentFormState}

@@ -17,10 +17,7 @@ function App() {
         useState<boolean>(false);
     const [currentBalance, setCurrentBalance] = useState(-1);
 
-    // TODO: make form dissapear and feedback about succesfull login or signup
-    //                  load stuff in the header after logging in / signing up
-    // TODO: redesign changing user info in the profile (add validation and everything)
-    // TODO: don't forget sign out button in the profile
+    // TODO: save button on username is bugging with width when switching on russian language
 
     return (
         <ApplicationContext.Provider

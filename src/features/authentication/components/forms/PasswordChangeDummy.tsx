@@ -16,12 +16,14 @@ const PasswordChangeDummy = ({
                     value={"******"}
                     disabled={true}
                 />
-                <img
-                    src={assets.icons.pencil}
-                    alt="edit icon"
-                    className="w-[30px] h-[30px] hover:cursor-pointer"
-                    onClick={handleOnClickEdit}
-                />
+                <div className="flex justify-end w-full">
+                    <img
+                        src={assets.icons.pencil}
+                        alt="edit icon"
+                        className="w-[30px] h-[30px] hover:cursor-pointer"
+                        onClick={handleOnClickEdit}
+                    />
+                </div>
             </div>
             <div className="h-[1px] w-full bg-white "></div>
         </div>

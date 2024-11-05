@@ -114,11 +114,12 @@ const PasswordChangeForm = ({
                     </div>
                 ) : (
                     <WhiteBorderButton
-                        width="98px"
+                        width="auto"
                         height="30px"
                         text={t("saveChanges")}
                         fontSize="1.25rem"
                         rounded="9px"
+                        paddingX="18px"
                         handleOnClick={handleOnClick}
                     />
                 )}

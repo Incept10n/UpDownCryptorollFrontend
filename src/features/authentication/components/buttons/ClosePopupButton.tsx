@@ -7,7 +7,11 @@ const ClosePopupButton = ({ handleOnClick }: { handleOnClick: () => void }) => {
                                transition-all duration-[0.3] ease-in-out"
             onClick={handleOnClick}
         >
-            <img src={assets.icons.popupCloseBtn} alt="popup close button" />
+            <img
+                src={assets.icons.popupCloseBtn}
+                alt="popup close button"
+                className="sm:w-[52px] sm:h-[54px] w-[40px] h-[42px]"
+            />
         </button>
     );
 };
