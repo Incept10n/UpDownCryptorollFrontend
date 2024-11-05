@@ -70,7 +70,8 @@ const UsernameInputFieldUnderlined = ({ user }: { user: User }) => {
             <div className="flex justify-start items-center">
                 <input
                     type="text"
-                    className={`text-[1.9rem] upDownTextWhite bg-transparent outline-none w-[210px]
+                    className={`text-[1.9rem] upDownTextWhite bg-transparent outline-none 
+                                sm:w-[210px] w-[90%]
                                 ${isLoading && "opacity-[0.5]"}`}
                     maxLength={13}
                     value={currentUsername}

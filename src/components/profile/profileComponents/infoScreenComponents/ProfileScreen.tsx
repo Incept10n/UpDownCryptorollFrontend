@@ -1,6 +1,5 @@
 import { useTranslation } from "react-i18next";
 import CurrentBalanceProfileScreen from "./profileScreenComponents/CurrentBalanceProfileScreen";
-import { TonConnectButton } from "@tonconnect/ui-react";
 import InviteFriendButton from "../common/InviteFriendButton";
 import FollowUsProfileTextRegularComponent from "../common/FollowUsProfileTextRegularComponent";
 import { ProfileInfoChangeCard } from "../../../../features/authentication";
@@ -20,7 +19,7 @@ const ProfileScreen = () => {
                 className="flex 2xl:flex-row flex-col-reverse justify-between 
                            lg:w-[95%] w-[80%] mx-auto mt-[50px]"
             >
-                <div className="flex justify-between 2xl:hidden mt-[80px]">
+                <div className="flex sm:justify-center justify-start 2xl:hidden mt-[33px]">
                     <InviteFriendButton />
                 </div>
                 <div className="2xl:mt-0 mt-[70px]">

@@ -10,7 +10,8 @@ const PasswordChangeDummy = ({
             <div className="flex justify-start items-center">
                 <input
                     type="password"
-                    className="text-[1.9rem] upDownTextWhite bg-transparent outline-none w-[210px]"
+                    className="text-[1.9rem] upDownTextWhite bg-transparent outline-none 
+                               sm:w-[210px] w-[90%]"
                     maxLength={13}
                     value={"******"}
                     disabled={true}

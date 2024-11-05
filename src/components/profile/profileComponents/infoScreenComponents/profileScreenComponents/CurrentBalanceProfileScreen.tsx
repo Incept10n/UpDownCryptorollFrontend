@@ -19,7 +19,7 @@ const CurrentBalanceProfileScreen = () => {
     }, [currentBalance]);
 
     return (
-        <div className="flex flex-col 2xl:items-start lg:items-center">
+        <div className="flex flex-col 2xl:items-start sm:items-center">
             <div className="lg:text-[42px] text-[30px] upDownTextWhite font-semibold text-nowrap">
                 {t("currentBalance")}
             </div>
