@@ -1,0 +1,8 @@
+.shieldShapeContainer {
+    filter: drop-shadow(0px 0px 18.6px rgba(255, 255, 255, 25%));
+}
+
+.shieldShape {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 50% 100%, 0% 75%);
+    border-radius: 15px;
+}

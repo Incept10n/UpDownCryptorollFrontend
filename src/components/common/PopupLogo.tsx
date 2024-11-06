@@ -1,4 +1,4 @@
-import { assets } from "../../../../imagesImports/assets";
+import { assets } from "../../imagesImports/assets";
 
 const PopupLogo = ({ className }: { className?: string }) => {
     return (

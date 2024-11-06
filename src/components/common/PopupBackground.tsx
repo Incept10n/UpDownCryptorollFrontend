@@ -8,7 +8,7 @@ const PopupBackground = ({
     return (
         <div
             className={`UpDownDarkBlueBg w-[387px] h-[431px] 
-                        whitePopupShadow rounded-[28px] relative 
+                        whitePopupShadow rounded-[28px] relative
                         ${className}`}
         >
             {children}

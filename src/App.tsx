@@ -17,8 +17,6 @@ function App() {
         useState<boolean>(false);
     const [currentBalance, setCurrentBalance] = useState(-1);
 
-    // TODO: save button on username is bugging with width when switching on russian language
-
     return (
         <ApplicationContext.Provider
             value={{

@@ -1,13 +1,14 @@
 import { useContext, useState } from "react";
 import { ApplicationContext } from "../../../context/ApplicationContext";
-import ClosePopupButton from "./buttons/ClosePopupButton";
-import PopupLogo from "./other/PopupLogo";
 import PopupBackground from "../../../components/common/PopupBackground";
-import PopupText from "./other/PopupText";
 import FormStateSwitchButton from "./buttons/FormStateSwitchButton";
 import "../styles/authenticationStyles.css";
 import LoginSignupForm from "./forms/LoginSignupForm";
 import { FormState } from "../types/enums";
+import PopupLogo from "../../../components/common/PopupLogo";
+import { useTranslation } from "react-i18next";
+import PopupText from "../../../components/common/PopupText";
+import ClosePopupButton from "../../../components/common/ClosePopupButton";
 
 const SignupLoginPopupManager = () => {
     const { displayLoginSignupPopup, setDisplayLoginSignupPopup } =
@@ -15,6 +16,8 @@ const SignupLoginPopupManager = () => {
     const [currentFormState, setCurrentFormState] = useState<FormState>(
         FormState.Login,
     );
+
+    const { t } = useTranslation();
 
     return (
         <div
@@ -30,7 +33,13 @@ const SignupLoginPopupManager = () => {
                 <ClosePopupButton
                     handleOnClick={() => setDisplayLoginSignupPopup(false)}
                 />
-                <PopupText currentFormState={currentFormState} />
+                <PopupText
+                    text={
+                        currentFormState === FormState.Login
+                            ? t("loginToContinueText")
+                            : t("signupText")
+                    }
+                />
                 <LoginSignupForm currentFormState={currentFormState} />
                 <div className="absolute left-1/2 -translate-x-1/2 bottom-[31px] sm:scale-100 scale-[0.9]">
                     <FormStateSwitchButton
