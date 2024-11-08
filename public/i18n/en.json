@@ -188,5 +188,11 @@
     "enterYourOldPassword": "Enter your old password",
     "enterYourNewPassword": "Enter your new password",
 
-    "connWalletToReceiveRewards": "Connect wallet to receive more rewards in the future"
+    "connWalletToReceiveRewards": "Connect wallet to receive more rewards in the future",
+
+    "yourReferralLink": "Your referral link",
+    "copyLink": "Copy link",
+    "copied": "Copied",
+    "get": "Get",
+    "afterInvitingFriends": "after inviting 10 friends"
 }

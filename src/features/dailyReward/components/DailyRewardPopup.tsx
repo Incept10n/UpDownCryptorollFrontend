@@ -1,5 +1,4 @@
 import { useContext, useEffect, useState } from "react";
-import PopupBackground from "../../../components/common/PopupBackground";
 import {
     getCurrentUsername,
     isUserLoggedIn,

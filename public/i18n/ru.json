@@ -187,5 +187,11 @@
     "enterYourOldPassword": "Введите старый пароль",
     "enterYourNewPassword": "Введите новый пароль",
 
-    "connWalletToReceiveRewards": "Подключите кошелек, чтобы получить награды в будущем"
+    "connWalletToReceiveRewards": "Подключите кошелек, чтобы получить награды в будущем",
+
+    "yourReferralLink": "Ваша реферальная ссылка",
+    "copyLink": "Копировать",
+    "copied": "Скопировано",
+    "get": "Получи",
+    "afterInvitingFriends": "после приглашения 10 друзей"
 }
