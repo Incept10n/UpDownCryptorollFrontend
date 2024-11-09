@@ -194,5 +194,43 @@
     "copyLink": "Копировать",
     "copied": "Скопировано",
     "get": "Получи",
-    "afterInvitingFriends": "после приглашения 10 друзей"
+    "afterInvitingFriends": "после приглашения 10 друзей",
+
+    "quiz": "Квиз",
+    "askToGetRewards": "Ответьте на вопросы, чтобы получить награду",
+
+    "question1": "Почему существует приложение \"UP and Down\"?",
+    "question1Answer1": "Приложение \"UP and Down\" является предшественником основной игры CryptoRoll, которая будет анонсирована в ближайшее время.",
+    "question1Answer2": "Предоставляет пользователям возможность заработать NFT",
+    "question1Answer3": "Это помогает создать комьюнити для улучшения будущего опыта CryptoRoll.",
+    "question1Answer4": "Все вышеперечисленное",
+
+    "question2": "Какая из перечисленных ниже функций НЕ является ключевой функцией будущего приложения CryptoRoll?",
+    "question2Answer1": "Децентрализация",
+    "question2Answer2": "NFT для улучшенного опыта",
+    "question2Answer3": "Бонусы и награды",
+    "question2Answer4": "Бесплатные токены и листинги",
+    "question2Answer5": "Возможности ставок",
+
+    "question3": "Какой первый запланированный шаг в экосистеме CryptoRoll?",
+    "question3Answer1": "Запустить приложение для азартных игр",
+    "question3Answer2": "Выпуск NFT",
+    "question3Answer3": "Запуск стейкинга",
+    "question3Answer4": "Выпуск токена",
+
+    "question4": "Какой блокчейн будет использовать будущее приложение CryptoRoll?",
+    "question4Answer1": "Эфириум",
+    "question4Answer2": "Тон",
+    "question4Answer3": "Солана",
+    "question4Answer4": "Трон",
+
+    "question5": "К какому типу приложений будет относиться CryptoRoll?",
+    "question5Answer1": "Централизованное приложение с некоторой интеграцией NFT",
+    "question5Answer2": "Web3 P2P игра с низкими комиссиями и интеграцией NFT",
+    "question5Answer3": "Игра-кликер с выпадением дропов",
+
+    "checkQuiz": "Проверить квиз",
+    "collectReward": "Собрать награду",
+    "youHaveMistakes": "В ваших ответах есть ошибки",
+    "allAnswersCorrect": "Все ответы верны!"
 }

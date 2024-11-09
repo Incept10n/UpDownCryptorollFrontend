@@ -195,5 +195,43 @@
     "copyLink": "Copy link",
     "copied": "Copied",
     "get": "Get",
-    "afterInvitingFriends": "after inviting 10 friends"
+    "afterInvitingFriends": "after inviting 10 friends",
+
+    "quiz": "Quiz",
+    "askToGetRewards": "Answer questions to get the reward",
+
+    "question1": "Why does the \"UP and Down\" app exist?",
+    "question1Answer1": "The \"UP and Down\" app is a precursor to the main CryptoRoll game, which will be announced soon",
+    "question1Answer2": "It provides users with opportunities to earn NFTs",
+    "question1Answer3": "It helps build a community to enhance the future CryptoRoll experience",
+    "question1Answer4": "All of the above",
+
+    "question2": "Which of the following is NOT a key feature planned for the future CryptoRoll app?",
+    "question2Answer1": "Decentralization",
+    "question2Answer2": "NFTs for Enhanced Experience",
+    "question2Answer3": "Bonuses and Rewards",
+    "question2Answer4": "Free tokens and listings",
+    "question2Answer5": "Staking opportunities",
+
+    "question3": "What is the first planned step in the CryptoRoll ecosystem?",
+    "question3Answer1": "Launch Gambling App",
+    "question3Answer2": "Launch NFTs",
+    "question3Answer3": "Launch Staking Program",
+    "question3Answer4": "Launch Token",
+
+    "question4": "Which blockchain will the future CryptoRoll app use?",
+    "question4Answer1": "Ethereum",
+    "question4Answer2": "TON",
+    "question4Answer3": "Solana",
+    "question4Answer4": "TRON",
+
+    "question5": "What type of application will CryptoRoll be?",
+    "question5Answer1": "A centralized app with some NFT integration",
+    "question5Answer2": "A Web3 P2P game with low fees and NFT integration",
+    "question5Answer3": "A clicker game with token drops",
+
+    "checkQuiz": "Check quiz",
+    "collectReward": "Collect reward",
+    "youHaveMistakes": "You have mistakes in your answers",
+    "allAnswersCorrect": "All answers are correct!"
 }

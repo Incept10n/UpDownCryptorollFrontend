@@ -11,6 +11,7 @@ import { TonConnectUIProvider } from "@tonconnect/ui-react";
 import { manifestUrl } from "./constants";
 import TechnicalAnalysisGraph from "./components/common/TechnicalAnalysisGraph";
 import { CheckReferralLinkOnLogin } from "./features/referralLink";
+import QuizPage from "./components/QuizPage";
 
 function App() {
     const [currentGame, setCurrentGame] = useState<GameCoice>(GameCoice.None);
@@ -45,6 +46,7 @@ function App() {
                                     path="technical-analysis"
                                     element={<TechnicalAnalysisGraph />}
                                 />
+                                <Route path="quiz" element={<QuizPage />} />
                             </Route>
                         </Routes>
                     </BrowserRouter>

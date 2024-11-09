@@ -7,8 +7,6 @@ export const tryVisitIfReferralLink = async () => {
     const visitorName = getCurrentUsername();
     const referralSalt = params.get("referral");
 
-    console.log("visitor name: ", visitorName, " referralSalt ", referralSalt);
-
     if (visitorName && referralSalt) {
         await fetchVisitReferralLink(visitorName, referralSalt);
     }

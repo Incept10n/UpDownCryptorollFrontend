@@ -1,7 +1,11 @@
 import { useTranslation } from "react-i18next";
 import PlayNowButton from "../../home/homeComponents/PlayNowButton";
 
-const UpDownText = () => {
+const UpDownText = ({
+    displayPlayNowButton,
+}: {
+    displayPlayNowButton?: boolean;
+}) => {
     const { t } = useTranslation();
 
     return (
@@ -32,7 +36,10 @@ const UpDownText = () => {
                                left-[20%] 
                                top-[155px]"
             />
-            <div className="absolute top-[410px] left-[50%] translate-x-[-50%] 2xl:block hidden">
+            <div
+                className={`absolute top-[410px] left-[50%] translate-x-[-50%]
+                            ${displayPlayNowButton ? "2xl:block hidden" : "2xl:hidden"}`}
+            >
                 <PlayNowButton />
             </div>
         </div>
