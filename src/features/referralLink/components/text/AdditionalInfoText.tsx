@@ -7,7 +7,7 @@ const AdditionalInfoText = ({
 }) => {
     return (
         <div
-            className={`text-[#a4a4a4] text-[1rem] font-semibold inline-block
+            className={`text-[#a4a4a4] md:text-[1rem] text-[0.75rem] font-semibold inline-block
                         text-left relative ${className}`}
         >
             {text}

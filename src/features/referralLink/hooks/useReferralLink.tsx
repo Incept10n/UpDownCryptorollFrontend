@@ -15,7 +15,9 @@ const useRefferalLink = () => {
                 getCurrentUsername()!,
             );
 
-            setUserReferralLink(`${currentHost}?referral=${referralLinkSalt}`);
+            setUserReferralLink(
+                `${currentHost}/profile?referral=${referralLinkSalt}`,
+            );
 
             setIsLoading(false);
         };

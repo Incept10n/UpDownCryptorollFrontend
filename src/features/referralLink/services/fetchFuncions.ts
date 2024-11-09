@@ -15,3 +15,20 @@ export const fetchUserReferalLinkSalt = async (username: string) => {
 
     return await result.text();
 };
+
+export const fetchVisitReferralLink = async (
+    visitorName: string,
+    referralSalt: string,
+) => {
+    const token = getJwtToken();
+
+    await fetch(
+        `${backendUrl}/referralLinks/visit?visitorName=${visitorName}&referralSalt=${referralSalt}`,
+        {
+            method: "POST",
+            headers: {
+                Authorization: `Bearer ${token}`,
+            },
+        },
+    );
+};

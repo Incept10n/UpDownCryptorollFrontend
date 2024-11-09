@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { ProfileContext } from "../../../context/ProfileContext";
 import { ProfilePageType } from "../../../types/HelperTypes";
 import ProfileScreen from "./infoScreenComponents/ProfileScreen";
@@ -7,7 +7,18 @@ import HistoryScreen from "./infoScreenComponents/HistoryScreen";
 import RewardsScreen from "./infoScreenComponents/RewardsScreen";
 
 const ProfileInfoScreen = () => {
-    const { currentProfilePage } = useContext(ProfileContext)!;
+    const { currentProfilePage, setCurrentProfilePage } =
+        useContext(ProfileContext)!;
+
+    useEffect(() => {
+        const params = new URLSearchParams(location.search);
+
+        const value = params.get("page");
+
+        if (value === "rewards") {
+            setCurrentProfilePage(ProfilePageType.Rewards);
+        }
+    }, [location.search]);
 
     const chooseScreenToRender = () => {
         switch (currentProfilePage) {

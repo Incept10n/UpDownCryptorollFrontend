@@ -11,8 +11,9 @@ const CopyField = () => {
 
     return (
         <div
-            className="border-[1px] border-[#ccc3c3] rounded-[18px] w-[603px] h-[70px]
-                        flex justify-between items-center"
+            className="border-[1px] border-[#ccc3c3] md:rounded-[18px] rounded-[10px]
+                       md:w-[603px] md:h-[70px] w-full h-[36px]
+                       flex justify-between items-center"
         >
             {isLoading ? (
                 <div className="ml-[16px]">
@@ -20,8 +21,9 @@ const CopyField = () => {
                 </div>
             ) : (
                 <div
-                    className="text-[1.25rem] upDownTextWhite max-w-[360px] ml-[16px]
-                            overflow-hidden whitespace-nowrap text-ellipsis"
+                    className="md:text-[1.25rem] text-[0.87rem] 
+                               upDownTextWhite md:max-w-[360px] max-w-[256px] ml-[16px]
+                               overflow-hidden whitespace-nowrap text-ellipsis font-semibold"
                 >
                     {userReferralLink}
                 </div>

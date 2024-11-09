@@ -1,5 +1,6 @@
 import { backendUrl } from "../constants";
 import { GameCoice } from "../context/ApplicationContext";
+import { AdditionalInfo } from "../types/AdditionalInfo";
 import {
     PredictionValue,
     TaskState,
@@ -7,6 +8,7 @@ import {
 } from "../types/HelperTypes";
 import { Match } from "../types/Match";
 import { MatchHistoryItem } from "../types/MatchHistoryItem";
+import { RewardTaskWithAdditionalInfo } from "../types/RewardTaskWithAdditionalInfo";
 import { Task } from "../types/Task";
 import { User } from "../types/User";
 import { Converter } from "./Converter";
@@ -273,7 +275,9 @@ export const changeUserInfo = async (
     return true;
 };
 
-export const fetchUserTasks = async (username: string): Promise<Task[]> => {
+export const fetchUserTasks = async (
+    username: string,
+): Promise<RewardTaskWithAdditionalInfo> => {
     const jwtToken = getJwtToken();
 
     if (!jwtToken) {
@@ -286,9 +290,9 @@ export const fetchUserTasks = async (username: string): Promise<Task[]> => {
         },
     });
 
-    const json = await result.json();
+    const json: RewardTaskWithAdditionalInfo = await result.json();
 
-    return json.map(
+    const tasks = json.tasks.map(
         (task: any) =>
             new Task(
                 task.id,
@@ -297,6 +301,13 @@ export const fetchUserTasks = async (username: string): Promise<Task[]> => {
                 Converter.getTaskStateFromString(task.status),
             ),
     );
+
+    const additionalInfos = json.additionalInfo.map(
+        (value: AdditionalInfo) =>
+            new AdditionalInfo(value.taskId, value.additionalInfo),
+    );
+
+    return new RewardTaskWithAdditionalInfo(tasks, additionalInfos);
 };
 
 export const changeTaskState = async (

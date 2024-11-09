@@ -4,17 +4,16 @@ import {
     GameCoice,
 } from "../../context/ApplicationContext";
 import HomeBgGradient from "../home/homeComponents/HomeBgGradient";
-import { useTranslation } from "react-i18next";
 import RulesOfTheGame from "./rulesComponents/RulesOfTheGame";
 import RulesHeading from "./rulesComponents/RulesHeading";
 import PurposeHeading from "./rulesComponents/PurposeHeading";
 import PurposesParagraphs from "./rulesComponents/PurposesParagraphs";
 import FollowUsFooter from "./rulesComponents/FollowUsFooter";
 import UpDownText from "./rulesComponents/UpDownText";
+import InviteFriendButton from "../profile/profileComponents/common/InviteFriendButton";
 
 const Rules = () => {
     const { setCurrentGame } = useContext(ApplicationContext)!;
-    const { t } = useTranslation();
 
     useEffect(() => {
         setCurrentGame(GameCoice.None);
@@ -32,15 +31,8 @@ const Rules = () => {
                 <RulesOfTheGame />
                 <PurposeHeading />
                 <PurposesParagraphs />
-                <div className="flex xl:justify-start justify-center">
-                    <button
-                        className="buttonGrayGradient border-[1px] border-[#ccc3c3] 
-                                   rounded-[10px] md:text-[25px] text-[16px] font-semibold mt-[47px]
-                                   px-[10px] md:h-[46px] h-[27px] hover:scale-[1.1]
-                                   transition-all duration-[0.2] ease-in-out"
-                    >
-                        {t("inviteAFriend")}
-                    </button>
+                <div className="flex xl:justify-start justify-center mt-[47px]">
+                    <InviteFriendButton />
                 </div>
             </div>
             <FollowUsFooter />

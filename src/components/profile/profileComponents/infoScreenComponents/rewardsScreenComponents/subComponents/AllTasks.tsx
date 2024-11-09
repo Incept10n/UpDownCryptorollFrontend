@@ -10,9 +10,11 @@ import RewardToCollectPopup from "./RewardToCollectPopup";
 import { ApplicationContext } from "../../../../../../context/ApplicationContext";
 import LoadingIcon from "../../../../../common/LoadingIcon";
 import { getCurrentUsername } from "../../../../../../helperFunctions/jwtTokenFuncions";
+import { RewardTaskWithAdditionalInfo } from "../../../../../../types/RewardTaskWithAdditionalInfo";
 
 const AllTasks = () => {
-    const [tasks, setTasks] = useState<Task[]>([]);
+    const [rewardInfo, setRewardInfo] =
+        useState<RewardTaskWithAdditionalInfo>();
 
     const [displayClaimPopup, setDisplayClaimPopup] = useState(false);
     const [popupTaskReward, setPopupTaskReward] = useState(0);
@@ -21,21 +23,18 @@ const AllTasks = () => {
 
     const { setCurrentBalance } = useContext(ApplicationContext)!;
 
-    useEffect(() => {
-        updateUserTasks();
-    }, []);
-
     const updateUserTasks = () => {
         fetchUserTasks(getCurrentUsername()!).then((result) => {
-            setTasks(result);
+            setRewardInfo(result);
             setIsLoading(false);
         });
     };
 
+    useEffect(() => {
+        updateUserTasks();
+    }, []);
+
     const collectReward = (task: Task) => {
-        console.log(
-            `collecting task with id: ${task.id} and name: ${task.name}`,
-        );
         setDisplayClaimPopup(true);
         setPopupTaskReward(task.reward);
     };
@@ -58,10 +57,10 @@ const AllTasks = () => {
             {isLoading ? (
                 <LoadingIcon width="40px" height="40px" borderWidth="8px" />
             ) : (
-                tasks.length !== 0 && (
+                rewardInfo && (
                     <>
                         <TaskCardLogicWrapper
-                            task={tasks[0]}
+                            task={rewardInfo.tasks[0]}
                             onClick={() => {
                                 location.href = tgLink;
                             }}
@@ -69,7 +68,7 @@ const AllTasks = () => {
                             collectReward={collectReward}
                         />
                         <TaskCardLogicWrapper
-                            task={tasks[1]}
+                            task={rewardInfo.tasks[1]}
                             onClick={() => {
                                 location.href = twitterLink;
                             }}
@@ -77,7 +76,7 @@ const AllTasks = () => {
                             collectReward={collectReward}
                         />
                         <TaskCardLogicWrapper
-                            task={tasks[2]}
+                            task={rewardInfo.tasks[2]}
                             onClick={() => {
                                 location.href = vkLink;
                             }}
@@ -85,15 +84,16 @@ const AllTasks = () => {
                             collectReward={collectReward}
                         />
                         <TaskCardLogicWrapper
-                            task={tasks[3]}
+                            task={rewardInfo.tasks[3]}
                             onClick={() => {
                                 console.log("nothing for now");
                             }}
                             updateUserTasks={updateUserTasks}
                             collectReward={collectReward}
+                            additionalInfo={rewardInfo.additionalInfo[0]}
                         />
                         <TaskCardLogicWrapper
-                            task={tasks[4]}
+                            task={rewardInfo.tasks[4]}
                             onClick={() => {
                                 location.href =
                                     "https://cryptoroll.su/whitepaper";
@@ -102,7 +102,7 @@ const AllTasks = () => {
                             collectReward={collectReward}
                         />
                         <TaskCardLogicWrapper
-                            task={tasks[5]}
+                            task={rewardInfo.tasks[5]}
                             onClick={() => {
                                 console.log("nothing for now");
                             }}

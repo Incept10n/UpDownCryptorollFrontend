@@ -9,15 +9,26 @@ import ProfileInfoScreen from "./profileComponents/ProfileInfoScreen";
 import { ProfilePageType } from "../../types/HelperTypes";
 import { ProfileContext } from "../../context/ProfileContext";
 import ProfileMenuMobile from "./profileComponents/ProfileMenuMobile";
+import { isUserLoggedIn } from "../../helperFunctions/jwtTokenFuncions";
 
 const Profile = () => {
-    const { setCurrentGame } = useContext(ApplicationContext)!;
+    const {
+        setCurrentGame,
+        displayLoginSignupPopup,
+        setDisplayLoginSignupPopup,
+    } = useContext(ApplicationContext)!;
     const [currentProfilePage, setCurrentProfilePage] =
         useState<ProfilePageType>(ProfilePageType.Profile);
 
     useEffect(() => {
         setCurrentGame(GameCoice.None);
-    }, []);
+
+        if (!isUserLoggedIn()) {
+            setDisplayLoginSignupPopup(true);
+        } else {
+            setDisplayLoginSignupPopup(false);
+        }
+    }, [isUserLoggedIn(), displayLoginSignupPopup]);
 
     return (
         <ProfileContext.Provider

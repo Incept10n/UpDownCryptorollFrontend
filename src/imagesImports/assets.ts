@@ -41,6 +41,7 @@ import trophy from "/profilePictures/trophy.svg";
 import singleArrowRight from "/profilePictures/singleArrowRightRewards.svg";
 import taskCompletedCheckmark from "/profilePictures/taskCompletedCheckmark.svg";
 import copyIcon from "/popupImages/CopyIcon.svg";
+import returnIcon from "/popupImages/Return.svg";
 
 export const assets = {
     icons: {
@@ -90,6 +91,7 @@ export const assets = {
         singleArrowRight: singleArrowRight,
         taskCompletedCheckmark: taskCompletedCheckmark,
         copy: copyIcon,
+        return: returnIcon,
     },
     images: {
         coin: coinPic,

@@ -3,9 +3,11 @@ import { assets } from "../../imagesImports/assets";
 const ClosePopupButton = ({
     handleOnClick,
     className,
+    imgClassName,
 }: {
     handleOnClick: () => void;
     className?: string;
+    imgClassName?: string;
 }) => {
     return (
         <button
@@ -16,7 +18,7 @@ const ClosePopupButton = ({
             <img
                 src={assets.icons.popupCloseBtn}
                 alt="popup close button"
-                className="sm:w-[52px] sm:h-[54px] w-[40px] h-[42px]"
+                className={`sm:w-[52px] sm:h-[54px] w-[40px] h-[42px] ${imgClassName}`}
             />
         </button>
     );

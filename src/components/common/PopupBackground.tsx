@@ -7,7 +7,7 @@ const PopupBackground = ({
 }) => {
     return (
         <div
-            className={`UpDownDarkBlueBg w-[387px] h-[431px] 
+            className={`UpDownDarkBlueBg
                         whitePopupShadow rounded-[28px] relative
                         ${className}`}
         >

@@ -10,6 +10,7 @@ import "./i18n";
 import { TonConnectUIProvider } from "@tonconnect/ui-react";
 import { manifestUrl } from "./constants";
 import TechnicalAnalysisGraph from "./components/common/TechnicalAnalysisGraph";
+import { CheckReferralLinkOnLogin } from "./features/referralLink";
 
 function App() {
     const [currentGame, setCurrentGame] = useState<GameCoice>(GameCoice.None);
@@ -29,20 +30,25 @@ function App() {
             }}
         >
             <TonConnectUIProvider manifestUrl={manifestUrl}>
-                <BrowserRouter>
-                    <Routes>
-                        <Route path="/" element={<Layout />}>
-                            <Route index element={<Home />} />
-                            <Route path="play" element={<GameManager />} />
-                            <Route path="profile" element={<Profile />}></Route>
-                            <Route path="rules" element={<Rules />}></Route>
-                            <Route
-                                path="technical-analysis"
-                                element={<TechnicalAnalysisGraph />}
-                            />
-                        </Route>
-                    </Routes>
-                </BrowserRouter>
+                <CheckReferralLinkOnLogin>
+                    <BrowserRouter>
+                        <Routes>
+                            <Route path="/" element={<Layout />}>
+                                <Route index element={<Home />} />
+                                <Route path="play" element={<GameManager />} />
+                                <Route
+                                    path="profile"
+                                    element={<Profile />}
+                                ></Route>
+                                <Route path="rules" element={<Rules />}></Route>
+                                <Route
+                                    path="technical-analysis"
+                                    element={<TechnicalAnalysisGraph />}
+                                />
+                            </Route>
+                        </Routes>
+                    </BrowserRouter>
+                </CheckReferralLinkOnLogin>
             </TonConnectUIProvider>
         </ApplicationContext.Provider>
     );

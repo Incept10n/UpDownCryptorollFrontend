@@ -4,17 +4,20 @@ import TaskCard from "./TaskCard";
 import { useTranslation } from "react-i18next";
 import { Task } from "../../../../../../types/Task";
 import { getCurrentUsername } from "../../../../../../helperFunctions/jwtTokenFuncions";
+import { AdditionalInfo } from "../../../../../../types/AdditionalInfo";
 
 const TaskCardLogicWrapper = ({
     task,
     onClick,
     updateUserTasks,
     collectReward,
+    additionalInfo,
 }: {
     task: Task;
     onClick: () => void;
     updateUserTasks: () => void;
     collectReward: (task: Task) => void;
+    additionalInfo?: AdditionalInfo;
 }) => {
     const { t } = useTranslation();
 
@@ -44,6 +47,12 @@ const TaskCardLogicWrapper = ({
     };
 
     const getTaskText = (taskId: number) => {
+        if (additionalInfo && additionalInfo.taskId === task.id) {
+            if (task.id === 4) {
+                return `${t("task4")} (${additionalInfo.additionalInfo.friendsInvited} ${t("task4OutOf")} 10)`;
+            }
+        }
+
         return t(`task${taskId}`);
     };
 

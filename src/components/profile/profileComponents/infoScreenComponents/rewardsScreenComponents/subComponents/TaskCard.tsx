@@ -13,7 +13,7 @@ const TaskCard = ({
     reward: number;
     taskState: TaskState;
 }) => {
-    const getButtonBasedOnTaskState = (taskState: TaskState) => {
+    const getButtonBasedOnTaskState = () => {
         switch (taskState) {
             case TaskState.Completed:
                 return <CompletedCheckmarkButton />;
@@ -45,7 +45,7 @@ const TaskCard = ({
                                    w-[24px] h-[24px] ml-[6px] mr-[20px]"
                     />
                 </div>
-                {getButtonBasedOnTaskState(taskState)}
+                {getButtonBasedOnTaskState()}
             </div>
         </div>
     );
