@@ -11,7 +11,6 @@ const CheckReferralLinkOnLogin = ({
     children: React.ReactNode;
 }) => {
     useEffect(() => {
-        console.log("we are here trying to visit referral link");
         tryVisitIfReferralLink();
     }, [isUserLoggedIn(), getCurrentUsername()]);
 

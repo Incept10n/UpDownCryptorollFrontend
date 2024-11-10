@@ -1,7 +1,8 @@
 const QuestionHeading = ({ text, num }: { text: string; num: number }) => {
     return (
         <h1
-            className="text-[2rem] upDownTextWhite font-semibold max-w-[991px]
+            className="md:text-[2rem] text-[1.25rem] 
+                       upDownTextWhite font-semibold md:max-w-[991px] max-w-[400px]
                        flex justify-start space-x-[1rem]"
         >
             <div>{num}.</div>

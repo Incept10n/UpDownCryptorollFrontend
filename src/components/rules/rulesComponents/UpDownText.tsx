@@ -38,7 +38,7 @@ const UpDownText = ({
             />
             <div
                 className={`absolute top-[410px] left-[50%] translate-x-[-50%]
-                            ${displayPlayNowButton ? "2xl:block hidden" : "2xl:hidden"}`}
+                            ${displayPlayNowButton ? "2xl:block hidden" : "2xl:hidden hidden"}`}
             >
                 <PlayNowButton />
             </div>
