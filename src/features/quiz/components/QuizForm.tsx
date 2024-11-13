@@ -7,7 +7,8 @@ import CheckQuizButton from "./buttons/CheckQuizButton";
 const QuizForm = () => {
     const { t } = useTranslation();
 
-    const { quizData, changeQuestionAnswer } = useQuiz();
+    const { quizData, changeQuestionAnswer, changeQuestionAnswerStates } =
+        useQuiz();
 
     return (
         <div
@@ -23,7 +24,12 @@ const QuizForm = () => {
                 quizData={quizData}
                 changeQuestionAnswer={changeQuestionAnswer}
             />
-            <CheckQuizButton quizData={quizData} />
+            <div className="md:max-w-[991px] max-w-[400px] md:mx-0 mx-auto md:mt-[100px] mt-[61px]">
+                <CheckQuizButton
+                    quizData={quizData}
+                    changeQuestinonAnswerStates={changeQuestionAnswerStates}
+                />
+            </div>
         </div>
     );
 };

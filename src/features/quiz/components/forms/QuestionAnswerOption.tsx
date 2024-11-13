@@ -13,7 +13,7 @@ const QuestionAnswerOption = ({
     handleOnClick: () => void;
     answerState: QuestionAnswerState;
 }) => {
-    const [bgColor, setBgColor] = useState("");
+    const [bgColor, setBgColor] = useState("bg-[#2b3e67]");
 
     useEffect(() => {
         switch (answerState) {

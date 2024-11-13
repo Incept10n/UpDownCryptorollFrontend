@@ -1,7 +1,7 @@
 import { backendUrl } from "../../../constants";
 import { getJwtToken } from "../../../helperFunctions/jwtTokenFuncions";
+import { QuestionQuizResult, QuizCheckBackendResponse } from "../types/classes";
 import { QuestionBlockInfo } from "../types/interfaces";
-import { QuestionQuizResult } from "../types/QuestionQuizResult";
 
 export const fetchCheckQuiz = async (
     quizData: QuestionBlockInfo[],
@@ -23,15 +23,26 @@ export const fetchCheckQuiz = async (
         body: JSON.stringify(body),
     });
 
-    const jsonAnswer: QuestionQuizResult[] = await bruh.json();
+    if (!bruh.ok) {
+        return null;
+    }
 
-    const response = jsonAnswer.map(
-        (questionResult) =>
-            new QuestionQuizResult(
-                questionResult.questionId,
-                questionResult.questionAnswer,
-            ),
+    const jsonAnswer: QuizCheckBackendResponse = await bruh.json();
+
+    const questionResponseStates: QuestionQuizResult[] =
+        jsonAnswer.quizResponses.map(
+            (questionResult: QuestionQuizResult) =>
+                new QuestionQuizResult(
+                    questionResult.questionId,
+                    questionResult.questionAnswer,
+                    questionResult.isQuestionAnsweredCorrectly,
+                ),
+        );
+
+    const result: QuizCheckBackendResponse = new QuizCheckBackendResponse(
+        jsonAnswer.isQuizCompleted,
+        questionResponseStates,
     );
 
-    console.log(response);
+    return result;
 };

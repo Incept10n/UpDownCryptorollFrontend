@@ -11,6 +11,8 @@ import { ApplicationContext } from "../../../../../../context/ApplicationContext
 import LoadingIcon from "../../../../../common/LoadingIcon";
 import { getCurrentUsername } from "../../../../../../helperFunctions/jwtTokenFuncions";
 import { RewardTaskWithAdditionalInfo } from "../../../../../../types/RewardTaskWithAdditionalInfo";
+import { useNavigate } from "react-router-dom";
+import { ReferalLinkPopup } from "../../../../../../features/referralLink";
 
 const AllTasks = () => {
     const [rewardInfo, setRewardInfo] =
@@ -21,7 +23,12 @@ const AllTasks = () => {
 
     const [isLoading, setIsLoading] = useState(true);
 
+    const navigate = useNavigate();
+
     const { setCurrentBalance } = useContext(ApplicationContext)!;
+
+    const [displayReferralLinkPopup, setDisplayReferralLinkPopup] =
+        useState(false);
 
     const updateUserTasks = () => {
         fetchUserTasks(getCurrentUsername()!).then((result) => {
@@ -85,9 +92,7 @@ const AllTasks = () => {
                         />
                         <TaskCardLogicWrapper
                             task={rewardInfo.tasks[3]}
-                            onClick={() => {
-                                console.log("nothing for now");
-                            }}
+                            onClick={() => setDisplayReferralLinkPopup(true)}
                             updateUserTasks={updateUserTasks}
                             collectReward={collectReward}
                             additionalInfo={rewardInfo.additionalInfo[0]}
@@ -104,7 +109,7 @@ const AllTasks = () => {
                         <TaskCardLogicWrapper
                             task={rewardInfo.tasks[5]}
                             onClick={() => {
-                                console.log("nothing for now");
+                                navigate("/quiz");
                             }}
                             updateUserTasks={updateUserTasks}
                             collectReward={collectReward}
@@ -112,6 +117,13 @@ const AllTasks = () => {
                     </>
                 )
             )}
+            <ReferalLinkPopup
+                displayReferralLinkPopup={displayReferralLinkPopup}
+                handleOnCloseButtonClick={() =>
+                    setDisplayReferralLinkPopup(false)
+                }
+            />
+            ;
             <div
                 className={`${displayClaimPopup ? "opacity-100 z-[20]" : "opacity-0 z-[-20]"}
                             transition-all duration-[0.2s] ease-in-out`}

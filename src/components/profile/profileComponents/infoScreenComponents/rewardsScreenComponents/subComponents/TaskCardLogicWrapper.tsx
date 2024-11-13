@@ -22,6 +22,18 @@ const TaskCardLogicWrapper = ({
     const { t } = useTranslation();
 
     const handleTaskOnClick = async () => {
+        if (
+            (task.id === 6 &&
+                (task.status === TaskState.Uncompleted ||
+                    task.status === TaskState.Completed)) ||
+            (task.id === 4 &&
+                (task.status === TaskState.Uncompleted ||
+                    task.status === TaskState.Completed))
+        ) {
+            onClick();
+            return;
+        }
+
         switch (task.status) {
             case TaskState.Uncompleted:
                 await changeTaskState(

@@ -2,7 +2,7 @@ import { useTranslation } from "react-i18next";
 import { QuestionBlockInfo } from "../types/interfaces";
 import { useState } from "react";
 import { QuestionAnswerState } from "../types/enums";
-import { QuestionQuizResult } from "../types/QuestionQuizResult";
+import { QuizCheckBackendResponse } from "../types/classes";
 
 const useQuiz = () => {
     const { t } = useTranslation();
@@ -94,15 +94,37 @@ const useQuiz = () => {
         );
     };
 
-    // TODO: check console.log in fetchQuizResults
     // TODO: finish function that will rewrite answers state "changeQuestionAnswerStates "
     // TODO: check user clicks check quiz button -> frontend changes selected tasks colors
 
     const changeQuestionAnswerStates = (
-        quizBackendResponse: QuestionQuizResult[],
-    ) => {};
+        quizBackendResponse: QuizCheckBackendResponse,
+    ) => {
+        setQuizData((prevQuizData) =>
+            prevQuizData.map((questionBlock) => {
+                const backendResponse = quizBackendResponse.quizResponses.find(
+                    (response) =>
+                        response.questionId === questionBlock.questionNumber,
+                );
 
-    return { quizData, changeQuestionAnswer };
+                if (backendResponse) {
+                    return {
+                        ...questionBlock,
+                        currentAnswerState:
+                            backendResponse.questionAnswer === -1
+                                ? QuestionAnswerState.Neutral
+                                : backendResponse.isQuestionAnsweredCorrectly
+                                  ? QuestionAnswerState.Correct
+                                  : QuestionAnswerState.Wrong,
+                    };
+                }
+
+                return questionBlock;
+            }),
+        );
+    };
+
+    return { quizData, changeQuestionAnswer, changeQuestionAnswerStates };
 };
 
 export default useQuiz;

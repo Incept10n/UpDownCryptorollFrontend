@@ -3,3 +3,10 @@ export enum QuestionAnswerState {
     Correct,
     Wrong,
 }
+
+export enum QuizButtonState {
+    CheckQuiz,
+    Checking,
+    YouHaveMistakes,
+    AllAnswersCorrect,
+}
