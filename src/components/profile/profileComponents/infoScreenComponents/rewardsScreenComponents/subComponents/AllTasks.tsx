@@ -117,12 +117,16 @@ const AllTasks = () => {
                     </>
                 )
             )}
-            <ReferalLinkPopup
-                displayReferralLinkPopup={displayReferralLinkPopup}
-                handleOnCloseButtonClick={() =>
-                    setDisplayReferralLinkPopup(false)
-                }
-            />
+            <div
+                className={`fixed ${displayReferralLinkPopup ? "z-[20]" : "z-[-20]"}`}
+            >
+                <ReferalLinkPopup
+                    displayReferralLinkPopup={displayReferralLinkPopup}
+                    handleOnCloseButtonClick={() =>
+                        setDisplayReferralLinkPopup(false)
+                    }
+                />
+            </div>
             ;
             <div
                 className={`${displayClaimPopup ? "opacity-100 z-[20]" : "opacity-0 z-[-20]"}
