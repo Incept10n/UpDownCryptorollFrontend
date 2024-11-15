@@ -64,7 +64,7 @@ const CollectMatchRewardCard = ({
     return (
         <div
             className="absolute w-full h-full bg-[#3c3939] 
-                        bg-opacity-[0.8] rounded-[68px] z-[20]
+                        bg-opacity-[0.8] rounded-[68px] z-[15]
                         flex justify-center items-center"
         >
             <div

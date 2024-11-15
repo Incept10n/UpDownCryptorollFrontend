@@ -13,7 +13,8 @@ const QuestionMarkPopup = () => {
             </p>
             <div
                 className="triangle w-[22px] h-[22px] rotate-180 
-                            absolute bottom-[1px] right-0 translate-y-[100%] translate-x-[-130%]"
+                            absolute bottom-[1px] right-0 translate-y-[100%] 
+                           min-[1580px]:translate-x-[-130%] translate-x-[-520%]"
             ></div>
         </div>
     );

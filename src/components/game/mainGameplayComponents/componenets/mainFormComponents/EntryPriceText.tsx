@@ -6,7 +6,7 @@ const EntryPriceText = ({ entryPrice }: { entryPrice: number }) => {
 
     return (
         <div className="flex justify-start items-center">
-            <div className="popupTextGradient">
+            <div className="popupTextGradient flex-none">
                 {t("entryPriceAlreadyInMatch")}
             </div>
             <div className="flex justify-start items-center ml-[13px]">

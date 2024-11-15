@@ -1,4 +1,5 @@
 import { useTranslation } from "react-i18next";
+import { landingPageUrl } from "../../../constants";
 
 const RulesHeading = () => {
     const { t } = useTranslation();
@@ -19,7 +20,7 @@ const RulesHeading = () => {
             </h1>
             <a
                 className="xl:block hidden text-[#ccc3c3] opacity-[50%] underline font-light text-[24px]"
-                href="https://cryptoroll.su"
+                href={`${landingPageUrl}`}
                 target="_blank"
             >
                 {t("aboutTheProjectRules")}

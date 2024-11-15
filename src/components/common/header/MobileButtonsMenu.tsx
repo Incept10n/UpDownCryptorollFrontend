@@ -2,6 +2,7 @@ import { useTranslation } from "react-i18next";
 import { assets } from "../../../imagesImports/assets";
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
+import { landingPageUrl } from "../../../constants";
 
 const MobileButtonsMenu = ({
     handleGoToProfile,
@@ -55,7 +56,7 @@ const MobileButtonsMenu = ({
                     {t("rules")}
                 </Link>
                 <a
-                    href="https://cryptoroll.su"
+                    href={landingPageUrl}
                     target="_blank"
                     className="mt-[10px] underline"
                 >

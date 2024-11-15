@@ -9,6 +9,7 @@ import {
     getCurrentUsername,
     isUserLoggedIn,
 } from "../../../helperFunctions/jwtTokenFuncions";
+import { landingPageUrl } from "../../../constants";
 
 const MainHeaderButtons = () => {
     const { t } = useTranslation();
@@ -61,7 +62,7 @@ const MainHeaderButtons = () => {
                 {t("dailyChallenge")}
             </button>
             <a
-                href="https://cryptoroll.su"
+                href={landingPageUrl}
                 target="_blank"
                 className="hover:underline lg:block hidden"
             >

@@ -138,7 +138,7 @@ const WaitForMatchToFinish = ({
     return (
         <div
             className="absolute w-full h-full bg-[#3c3939] 
-                        bg-opacity-[0.8] rounded-[68px] z-[20]
+                        bg-opacity-[0.8] rounded-[68px] z-[15]
                         flex justify-center items-center"
         >
             <div
@@ -176,7 +176,10 @@ const WaitForMatchToFinish = ({
                                 amountOfMoney={-currentBet}
                             />
                         </div>
-                        <div className="min-[1750px]:block min-[1580px]:hidden sm:block hidden">
+                        <div
+                            className="min-[1750px]:block min-[1580px]:hidden sm:block 
+                                        hidden flex-none text-nowrap"
+                        >
                             <CurrentMatchTextWithMoney
                                 text={t("ifYouWinAlreadyInMatch")}
                                 addPlus
@@ -222,7 +225,7 @@ const WaitForMatchToFinish = ({
                             </div>
                         )}
                         <div
-                            className="text-[25px] text-[#72b83b] mt-[7px]
+                            className="text-[25px] text-[#72b83b] mt-[7px] flex-none text-right
                                        min-[1750px]:block min-[1580px]:hidden sm:block hidden"
                             style={{
                                 color: isCurrentlyWinning

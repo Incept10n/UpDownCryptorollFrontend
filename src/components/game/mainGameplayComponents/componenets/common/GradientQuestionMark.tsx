@@ -26,8 +26,10 @@ const GradientQuestionMark = ({ className }: { className?: string }) => {
         <div className="relative" ref={questionMarkRef}>
             <div
                 className={`${displayPopup ? "opacity-100" : "opacity-0"} 
-                            transition-all duration-[0.1s] ease-in-out z-[-10] 
-                            absolute bottom-0 left-0 translate-x-[-70%] translate-y-[-70%]`}
+                            transition-all duration-[0.1s] ease-in-out z-[20] 
+                            absolute bottom-0 left-0 
+                            min-[1580px]:translate-x-[-70%] translate-x-[-18%]
+                            translate-y-[-70%]`}
             >
                 <QuestionMarkPopup />
             </div>

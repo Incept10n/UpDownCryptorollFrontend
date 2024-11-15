@@ -6,7 +6,7 @@ import MakePredictionText from "./header/MakePredictionText";
 
 const Header = () => {
     return (
-        <header className="flex justify-between w-full h-[68px] sm:mt-[40px] mt-[25px]">
+        <header className="flex justify-between w-full h-[68px] sm:mt-[40px] mt-[25px] z-[20]">
             <div
                 className="flex justify-between items-center font-semibold 
                            sm:space-x-[34px] space-x-[20px]

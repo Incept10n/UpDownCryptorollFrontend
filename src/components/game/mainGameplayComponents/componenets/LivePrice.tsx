@@ -81,7 +81,13 @@ const LivePrice = ({
                         className="min-[1580px]:text-[30px] text-[26px] font-semibold"
                     />
                     <div
-                        className={`${profit.toFixed(2).length >= 6 ? "hidden" : "block"}`}
+                        className={`${
+                            profit.toFixed(2).length >= 6 ||
+                            (currentProfit &&
+                                currentProfit.toFixed(2).length >= 6)
+                                ? "hidden"
+                                : "block"
+                        }`}
                     >
                         <img
                             src={assets.images.inputFormCoin}

@@ -105,8 +105,8 @@ export const postMatch = async (
         username: username,
         coin: Converter.getCoinFromGameChoice(currentGameChoice),
         predictionAmount: predictionAmount,
-        predictionTimeframe: "00:00:15",
-        // Converter.getTimeFromTimeFrame(predictionTimeFrame), //"00:00:15",
+        predictionTimeframe:
+            Converter.getTimeFromTimeFrame(predictionTimeFrame), //"00:00:15",
         predictionValue:
             Converter.getStringValueFrompredictionValue(predictionValue),
     };

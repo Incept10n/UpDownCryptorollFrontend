@@ -4,7 +4,12 @@ import {
     fetchUserTasks,
 } from "../../../../../../helperFunctions/fetchFunctions";
 import { Task } from "../../../../../../types/Task";
-import { tgLink, twitterLink, vkLink } from "../../../../../../constants";
+import {
+    tgLink,
+    twitterLink,
+    vkLink,
+    landingPageUrl,
+} from "../../../../../../constants";
 import TaskCardLogicWrapper from "./TaskCardLogicWrapper";
 import RewardToCollectPopup from "./RewardToCollectPopup";
 import { ApplicationContext } from "../../../../../../context/ApplicationContext";
@@ -100,8 +105,7 @@ const AllTasks = () => {
                         <TaskCardLogicWrapper
                             task={rewardInfo.tasks[4]}
                             onClick={() => {
-                                location.href =
-                                    "https://cryptoroll.su/whitepaper";
+                                location.href = `${landingPageUrl}/whitepaper`;
                             }}
                             updateUserTasks={updateUserTasks}
                             collectReward={collectReward}
