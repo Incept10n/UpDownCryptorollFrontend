@@ -1,5 +1,8 @@
 import { backendUrl } from "../../../constants";
-import { getJwtToken } from "../../../helperFunctions/jwtTokenFuncions";
+import {
+    getJwtToken,
+    removeJwtToken,
+} from "../../../helperFunctions/jwtTokenFuncions";
 import { DailyRewardStatus } from "../types/DailyRewardStatus";
 
 export const fetchDailyRewardStatus = async (username: string) => {
@@ -13,6 +16,10 @@ export const fetchDailyRewardStatus = async (username: string) => {
             },
         },
     );
+
+    if (!result.ok && result.status === 404) {
+        removeJwtToken();
+    }
 
     const json: DailyRewardStatus = await result.json();
 

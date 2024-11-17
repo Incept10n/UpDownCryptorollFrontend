@@ -12,5 +12,5 @@ export const tgLink = "https://telegram.org/";
 export const twitterLink = "https://x.com/";
 export const vkLink = "https://vk.com/";
 export const landingPageUrl = import.meta.env.DEV
-    ? "cryptoroll.su/whitepaper"
+    ? "http://localhost:3001/landing"
     : import.meta.env.VITE_LANDING_PAGE_LINK;
