@@ -8,7 +8,7 @@ const ProfileMenu = () => {
 
     return (
         <div
-            className="w-[295px] h-auto UpDownDarkBlueBg lg:block hidden
+            className="w-[295px] h-auto UpDownDarkBlueBg lg:block hidden z-20
                        border-[#999999] border-opacity-[70%] border-[1px] rounded-[35px] p-[35px]"
         >
             <div className="text-[#ccc3c3] text-opacity-[50%] text-[24px] font-light">
