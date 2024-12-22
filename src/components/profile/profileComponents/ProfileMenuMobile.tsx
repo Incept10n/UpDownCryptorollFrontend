@@ -24,7 +24,7 @@ const ProfileMenuMobile = () => {
     }, []);
 
     return (
-        <div className="absolute left-0 top-0 lg:hidden block">
+        <div className="absolute left-0 top-0 lg:hidden block z-20">
             <div
                 className="absolute w-[27px] h-[50px] rounded-tr-[18px] buttonGrayGradientRight 
                            border-[1px] border-[#747474] flex justify-center items-center

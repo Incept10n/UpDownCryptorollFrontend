@@ -1,16 +1,16 @@
-import { useContext, useEffect, useState } from "react";
-import GuessPriceForm from "./componenets/GuessPriceForm";
-import LivePrice from "./componenets/LivePrice";
-import { ApplicationContext } from "../../../context/ApplicationContext";
+import { useContext, useEffect, useState } from 'react';
+import GuessPriceForm from './componenets/GuessPriceForm';
+import LivePrice from './componenets/LivePrice';
+import { ApplicationContext } from '../../../context/ApplicationContext';
 import {
     fetchCurrentPrice,
     fetchPlayerInfo,
-} from "../../../helperFunctions/fetchFunctions";
-import { TimeframeChoice } from "../../../types/HelperTypes";
-import { Calculator } from "../../../helperFunctions/Calculator";
-import Multipliers from "./componenets/Multipliers";
-import DoTechicalAnalysisButton from "../tradingViewWidgets/DoTechicalAnalysisButton";
-import { getCurrentUsername } from "../../../helperFunctions/jwtTokenFuncions";
+} from '../../../helperFunctions/fetchFunctions';
+import { TimeframeChoice } from '../../../types/HelperTypes';
+import { Calculator } from '../../../helperFunctions/Calculator';
+import Multipliers from './componenets/Multipliers';
+import DoTechicalAnalysisButton from '../tradingViewWidgets/DoTechicalAnalysisButton';
+import { getCurrentUsername } from '../../../helperFunctions/jwtTokenFuncions';
 
 const MainGameplay = () => {
     const { currentGame } = useContext(ApplicationContext)!;
@@ -20,7 +20,7 @@ const MainGameplay = () => {
 
     const [currentTimeframeChoice, setCurrentTimeframeChoice] =
         useState<TimeframeChoice>(TimeframeChoice.None);
-    const [betValue, setBetValue] = useState("");
+    const [betValue, setBetValue] = useState('');
 
     const [isCurrentlyInMatch, setIsCurrentlyInMatch] =
         useState<boolean>(false);

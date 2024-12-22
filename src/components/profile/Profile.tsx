@@ -1,15 +1,15 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from 'react';
 import {
     ApplicationContext,
     GameCoice,
-} from "../../context/ApplicationContext";
-import HomeBgGradient from "../home/homeComponents/HomeBgGradient";
-import ProfileMenu from "./profileComponents/ProfileMenu";
-import ProfileInfoScreen from "./profileComponents/ProfileInfoScreen";
-import { ProfilePageType } from "../../types/HelperTypes";
-import { ProfileContext } from "../../context/ProfileContext";
-import ProfileMenuMobile from "./profileComponents/ProfileMenuMobile";
-import { isUserLoggedIn } from "../../helperFunctions/jwtTokenFuncions";
+} from '../../context/ApplicationContext';
+import HomeBgGradient from '../home/homeComponents/HomeBgGradient';
+import ProfileMenu from './profileComponents/ProfileMenu';
+import ProfileInfoScreen from './profileComponents/ProfileInfoScreen';
+import { ProfilePageType } from '../../types/HelperTypes';
+import { ProfileContext } from '../../context/ProfileContext';
+import ProfileMenuMobile from './profileComponents/ProfileMenuMobile';
+import { isUserLoggedIn } from '../../helperFunctions/jwtTokenFuncions';
 
 const Profile = () => {
     const {

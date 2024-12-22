@@ -1,15 +1,15 @@
-import { useTranslation } from "react-i18next";
-import { Link, useLocation, useNavigate } from "react-router-dom";
-import { assets } from "../../../imagesImports/assets";
-import { useContext, useEffect, useState } from "react";
-import MobileButtonsMenu from "./MobileButtonsMenu";
-import { fetchPlayerInfo } from "../../../helperFunctions/fetchFunctions";
-import { ApplicationContext } from "../../../context/ApplicationContext";
+import { useTranslation } from 'react-i18next';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { assets } from '../../../imagesImports/assets';
+import { useContext, useEffect, useState } from 'react';
+import MobileButtonsMenu from './MobileButtonsMenu';
+import { fetchPlayerInfo } from '../../../helperFunctions/fetchFunctions';
+import { ApplicationContext } from '../../../context/ApplicationContext';
 import {
     getCurrentUsername,
     isUserLoggedIn,
-} from "../../../helperFunctions/jwtTokenFuncions";
-import { landingPageUrl } from "../../../constants";
+} from '../../../helperFunctions/jwtTokenFuncions';
+import { landingPageUrl } from '../../../constants';
 
 const MainHeaderButtons = () => {
     const { t } = useTranslation();
@@ -18,7 +18,7 @@ const MainHeaderButtons = () => {
     const navigate = useNavigate();
 
     const [isDisplayingButtons, setIsDisplayingButtons] = useState(
-        location.pathname !== "/",
+        location.pathname !== '/',
     );
 
     const { currentBalance, setCurrentBalance, setDisplayLoginSignupPopup } =
@@ -37,14 +37,14 @@ const MainHeaderButtons = () => {
     }, [getCurrentUsername()]);
 
     useEffect(() => {
-        setIsDisplayingButtons(location.pathname !== "/");
+        setIsDisplayingButtons(location.pathname !== '/');
     }, [location.pathname]);
 
     const handleGoToProfile = () => {
         if (!isUserLoggedIn()) {
             setDisplayLoginSignupPopup(true);
         } else {
-            navigate("/profile");
+            navigate('/profile');
         }
     };
 
@@ -54,28 +54,21 @@ const MainHeaderButtons = () => {
                        flex justify-between items-center 
                        sm:space-x-[34px] space-x-[15px] sm:mr-[60px] mr-[27px]"
         >
-            <button
-                className={`border border-[#ccc3c3] rounded-[10px] py-[9px] px-[14px]
-                            ${!isDisplayingButtons && "lg:hidden"}
-                            lg:block hidden`}
-            >
-                {t("dailyChallenge")}
-            </button>
+            <Link to="/rules" className="hover:underline lg:block hidden">
+                {t('rules')}
+            </Link>
             <a
                 href={landingPageUrl}
                 target="_blank"
                 className="hover:underline lg:block hidden"
             >
-                {t("aboutTheProject")}
+                {t('aboutTheProject')}
             </a>
-            <Link to="/rules" className="hover:underline lg:block hidden">
-                {t("rules")}
-            </Link>
             <div
                 className={`border border-[#ccc3c3] rounded-[10px] py-[8px] px-[9px]
                             flex justify-between items-center 
                             md:w-[115px] md:h-auto w-[100px] h-[27px]
-                            ${!isDisplayingButtons && "hidden"}`}
+                            ${!isDisplayingButtons && 'hidden'}`}
             >
                 <div className="md:text-[1em] text-[14px]">
                     {currentBalance}
@@ -87,7 +80,7 @@ const MainHeaderButtons = () => {
                 />
             </div>
             <button
-                className={`${!isDisplayingButtons && "lg:hidden"} lg:block hidden`}
+                className={`${!isDisplayingButtons && 'lg:hidden'} lg:block hidden`}
                 onClick={handleGoToProfile}
             >
                 <img

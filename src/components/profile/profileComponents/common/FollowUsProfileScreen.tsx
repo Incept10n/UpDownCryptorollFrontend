@@ -1,5 +1,5 @@
-import { useTranslation } from "react-i18next";
-import { assets } from "../../../../imagesImports/assets";
+import { useTranslation } from 'react-i18next';
+import { assets } from '../../../../imagesImports/assets';
 
 const FollowUsProfileScreen = () => {
     const { t } = useTranslation();
@@ -14,13 +14,13 @@ const FollowUsProfileScreen = () => {
                 className="upDownTextWhite lg:text-[38px] text-[16px] min-[1024px]:block hidden
                             font-semibold flex-none lg:mt-0 mt-[20px] mr-[16px]"
             >
-                {t("followUs")}
+                {t('followUs')}
             </div>
             <div
                 className="upDownTextWhite lg:text-[38px] text-[16px] min-[1024px]:hidden block
                             font-semibold flex-none lg:mt-0 mt-[20px]"
             >
-                {t("followUsMobile")}
+                {t('followUsMobile')}
             </div>
             <div className="flex space-x-[16px]">
                 <img
@@ -31,11 +31,6 @@ const FollowUsProfileScreen = () => {
                 <img
                     src={assets.icons.socialMedia.twitter}
                     alt="twitter icon"
-                    className="lg:w-auto lg:h-auto w-[40px] h-[40px]"
-                />
-                <img
-                    src={assets.icons.socialMedia.vk}
-                    alt="vk icon"
                     className="lg:w-auto lg:h-auto w-[40px] h-[40px]"
                 />
             </div>

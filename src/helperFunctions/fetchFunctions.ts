@@ -1,24 +1,24 @@
-import { backendUrl } from "../constants";
-import { GameCoice } from "../context/ApplicationContext";
-import { AdditionalInfo } from "../types/AdditionalInfo";
+import { backendUrl } from '../constants';
+import { GameCoice } from '../context/ApplicationContext';
+import { AdditionalInfo } from '../types/AdditionalInfo';
 import {
     PredictionValue,
     TaskState,
     TimeframeChoice,
-} from "../types/HelperTypes";
-import { Match } from "../types/Match";
-import { MatchHistoryItem } from "../types/MatchHistoryItem";
-import { RewardTaskWithAdditionalInfo } from "../types/RewardTaskWithAdditionalInfo";
-import { Task } from "../types/Task";
-import { User } from "../types/User";
-import { Converter } from "./Converter";
-import { getJwtToken, saveJwtToken } from "./jwtTokenFuncions";
+} from '../types/HelperTypes';
+import { Match } from '../types/Match';
+import { MatchHistoryItem } from '../types/MatchHistoryItem';
+import { RewardTaskWithAdditionalInfo } from '../types/RewardTaskWithAdditionalInfo';
+import { Task } from '../types/Task';
+import { User } from '../types/User';
+import { Converter } from './Converter';
+import { getJwtToken, saveJwtToken } from './jwtTokenFuncions';
 
 export const signUp = async (username: string, password: string) => {
     const response = await fetch(`${backendUrl}/signup`, {
-        method: "POST",
+        method: 'POST',
         headers: {
-            "Content-Type": "application/json",
+            'Content-Type': 'application/json',
         },
         body: JSON.stringify({ username, password }),
     });
@@ -44,9 +44,9 @@ export const signUp = async (username: string, password: string) => {
 
 export const logIn = async (username: string, password: string) => {
     const result = await fetch(`${backendUrl}/login`, {
-        method: "POST",
+        method: 'POST',
         headers: {
-            "Content-Type": "application/json",
+            'Content-Type': 'application/json',
         },
         body: JSON.stringify({ username, password }),
     });
@@ -74,7 +74,7 @@ export const fetchPlayerInfo = async (username: string) => {
     const jwtToken = getJwtToken();
 
     if (!jwtToken) {
-        throw new Error("JWT token not found. Please log in.");
+        throw new Error('JWT token not found. Please log in.');
     }
 
     const response = await fetch(`${backendUrl}/user?username=${username}`, {
@@ -114,16 +114,16 @@ export const postMatch = async (
     const jwtToken = getJwtToken();
 
     if (!jwtToken) {
-        throw new Error("JWT token not found. Please log in.");
+        throw new Error('JWT token not found. Please log in.');
     }
 
     try {
         const response = await fetch(
             `${backendUrl}/match/createMatch?username=${username}`,
             {
-                method: "POST",
+                method: 'POST',
                 headers: {
-                    "Content-Type": "application/json",
+                    'Content-Type': 'application/json',
                     Authorization: `Bearer ${jwtToken}`,
                 },
                 body: JSON.stringify(body),
@@ -134,7 +134,7 @@ export const postMatch = async (
             throw new Error(`Error while creating a match: ${response.status}`);
         }
     } catch (error) {
-        console.log("there was an error while creating match");
+        console.log('there was an error while creating match');
     }
 };
 
@@ -142,7 +142,7 @@ export const fetchCurrentUserMatch = async (username: string) => {
     const jwtToken = getJwtToken();
 
     if (!jwtToken) {
-        throw new Error("JWT token not found. Please log in.");
+        throw new Error('JWT token not found. Please log in.');
     }
 
     const response = await fetch(
@@ -187,7 +187,7 @@ export const fetchMatchHistory = async (
     const jwtToken = getJwtToken();
 
     if (!jwtToken) {
-        throw new Error("JWT token not found. Please log in.");
+        throw new Error('JWT token not found. Please log in.');
     }
 
     const response = await fetch(
@@ -223,11 +223,11 @@ export const collectLastMatch = async (username: string) => {
     const jwtToken = getJwtToken();
 
     if (!jwtToken) {
-        throw new Error("JWT token not found. Please log in.");
+        throw new Error('JWT token not found. Please log in.');
     }
 
     await fetch(`${backendUrl}/user/collectLastMatch?username=${username}`, {
-        method: "POST",
+        method: 'POST',
         headers: {
             Authorization: `Bearer ${jwtToken}`,
         },
@@ -245,15 +245,15 @@ export const changeUserInfo = async (
     const jwtToken = getJwtToken();
 
     if (!jwtToken) {
-        throw new Error("JWT token not found. Please log in.");
+        throw new Error('JWT token not found. Please log in.');
     }
 
     const result = await fetch(
         `${backendUrl}/user?username=${currentUsername}`,
         {
-            method: "PUT",
+            method: 'PUT',
             headers: {
-                "Content-Type": "application/json",
+                'Content-Type': 'application/json',
                 Authorization: `Bearer ${jwtToken}`,
             },
             body: JSON.stringify({
@@ -281,7 +281,7 @@ export const fetchUserTasks = async (
     const jwtToken = getJwtToken();
 
     if (!jwtToken) {
-        throw new Error("JWT token not found. Please log in.");
+        throw new Error('JWT token not found. Please log in.');
     }
 
     const result = await fetch(`${backendUrl}/tasks?username=${username}`, {
@@ -318,13 +318,13 @@ export const changeTaskState = async (
     const jwtToken = getJwtToken();
 
     if (!jwtToken) {
-        throw new Error("JWT token not found. Please log in.");
+        throw new Error('JWT token not found. Please log in.');
     }
 
     await fetch(`${backendUrl}/tasks?username=${username}`, {
-        method: "POST",
+        method: 'POST',
         headers: {
-            "Content-Type": "application/json",
+            'Content-Type': 'application/json',
             Authorization: `Bearer ${jwtToken}`,
         },
         body: JSON.stringify({ taskId, changedStatus }),
