@@ -36,8 +36,8 @@ jobs:
 
             echo "$SUDO_PASSWORD_SERVER" | sudo -S docker-compose up -d
 
-            echo "$SUDO_PASSWORD_SERVER" | sudo -S docker stop frontend
-            echo "$SUDO_PASSWORD_SERVER" | sudo -S docker rm frontend
+            echo "$SUDO_PASSWORD_SERVER" | sudo -S docker stop incept1on999/cryptoroll:front
+            echo "$SUDO_PASSWORD_SERVER" | sudo -S docker rm incept1on999/cryptoroll:front
 
           EOF
 
