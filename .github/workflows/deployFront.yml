@@ -33,10 +33,10 @@ jobs:
 
             echo "$SUDO_PASSWORD_SERVER" | sudo -S docker-compose up
 
-            echo "$SUDO_PASSWORD_SERVER" | sudo -S docker stop frontend
-            echo "$SUDO_PASSWORD_SERVER" | sudo -S docker rm frontend
+            # echo "$SUDO_PASSWORD_SERVER" | sudo -S docker stop frontend
+            # echo "$SUDO_PASSWORD_SERVER" | sudo -S docker rm frontend
 
-            echo "$SUDO_PASSWORD_SERVER" | sudo -S docker-compose up
+            # echo "$SUDO_PASSWORD_SERVER" | sudo -S docker-compose up
 
 
           EOF
