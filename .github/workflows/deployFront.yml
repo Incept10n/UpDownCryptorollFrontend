@@ -34,12 +34,12 @@ jobs:
             # Your server commands go here. Replace these commands with those relevant to your project.
 
 
-            echo "$SUDO_PASSWORD_SERVER" | sudo -S docker-compose up -d
+            # echo "$SUDO_PASSWORD_SERVER" | sudo -S docker-compose up -d
 
             echo "$SUDO_PASSWORD_SERVER" | sudo -S docker stop cryptoadmin-frontend-1
             echo "$SUDO_PASSWORD_SERVER" | sudo -S docker rm cryptoadmin-frontend-1
 
-            echo "$SUDO_PASSWORD_SERVER" | sudo -S docker-compose up -d
+            # echo "$SUDO_PASSWORD_SERVER" | sudo -S docker-compose up -d
 
           EOF
 
