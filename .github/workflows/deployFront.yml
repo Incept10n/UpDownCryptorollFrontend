@@ -36,10 +36,9 @@ jobs:
 
             echo "$SUDO_PASSWORD_SERVER" | sudo -S docker-compose up -d
 
-            # echo "$SUDO_PASSWORD_SERVER" | sudo -S docker stop frontend
-            # echo "$SUDO_PASSWORD_SERVER" | sudo -S docker rm frontend
+            echo "$SUDO_PASSWORD_SERVER" | sudo -S docker stop frontend
+            echo "$SUDO_PASSWORD_SERVER" | sudo -S docker rm frontend
 
-            # echo "$SUDO_PASSWORD_SERVER" | sudo -S docker-compose up
           EOF
 
           rm -f private_key.pem # Remove the private key file after use for security
