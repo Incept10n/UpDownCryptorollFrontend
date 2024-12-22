@@ -34,7 +34,7 @@ jobs:
             # Your server commands go here. Replace these commands with those relevant to your project.
 
 
-            echo "$SUDO_PASSWORD_SERVER" | sudo -S docker-compose up
+            echo "$SUDO_PASSWORD_SERVER" | sudo -S docker-compose up -d
 
             # echo "$SUDO_PASSWORD_SERVER" | sudo -S docker stop frontend
             # echo "$SUDO_PASSWORD_SERVER" | sudo -S docker rm frontend
