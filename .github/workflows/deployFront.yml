@@ -27,14 +27,14 @@ jobs:
           echo "$PRIVATE_KEY" > private_key.pem # Write the private key to a file
           chmod 600 private_key.pem # Set the appropriate permissions for the key file
 
+          scp -o StrictHostKeyChecking=no -i private_key.pem -P 8888 ./docker-compose.yml cryptoadmin@188.243.207.170:/home/cryptoadmin/
+
           # Establish an SSH connection and execute commands on the remote server
           ssh -o StrictHostKeyChecking=no -i private_key.pem -t cryptoadmin@188.243.207.170 -p 8888 <<EOF
             # Your server commands go here. Replace these commands with those relevant to your project.
 
-            echo "Connected to server"
-            echo "$SUDO_PASSWORD_SERVER" | sudo -S whoami
 
-            # echo "$SUDO_PASSWORD_SERVER" | sudo -S docker-compose up
+            echo "$SUDO_PASSWORD_SERVER" | sudo -S docker-compose up
 
             # echo "$SUDO_PASSWORD_SERVER" | sudo -S docker stop frontend
             # echo "$SUDO_PASSWORD_SERVER" | sudo -S docker rm frontend
