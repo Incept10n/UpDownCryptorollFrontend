@@ -28,7 +28,7 @@ jobs:
           chmod 600 private_key.pem # Set the appropriate permissions for the key file
 
           # Establish an SSH connection and execute commands on the remote server
-          ssh -o StrictHostKeyChecking=no -i private_key.pem -t server1@188.243.207.170 -p 8888 <<EOF
+          ssh -o StrictHostKeyChecking=no -i private_key.pem -t cryptoadmin@188.243.207.170 -p 8888 <<EOF
             # Your server commands go here. Replace these commands with those relevant to your project.
 
             echo "$SUDO_PASSWORD_SERVER" | sudo -S docker-compose up
