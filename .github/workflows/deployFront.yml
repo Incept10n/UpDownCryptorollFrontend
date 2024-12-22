@@ -31,14 +31,15 @@ jobs:
           ssh -o StrictHostKeyChecking=no -i private_key.pem -t cryptoadmin@188.243.207.170 -p 8888 <<EOF
             # Your server commands go here. Replace these commands with those relevant to your project.
 
-            echo "$SUDO_PASSWORD_SERVER" | sudo -S docker-compose up
+            echo "Connected to server"
+            echo "$SUDO_PASSWORD_SERVER" | sudo -S whoami
+
+            # echo "$SUDO_PASSWORD_SERVER" | sudo -S docker-compose up
 
             # echo "$SUDO_PASSWORD_SERVER" | sudo -S docker stop frontend
             # echo "$SUDO_PASSWORD_SERVER" | sudo -S docker rm frontend
 
             # echo "$SUDO_PASSWORD_SERVER" | sudo -S docker-compose up
-
-
           EOF
 
           rm -f private_key.pem # Remove the private key file after use for security
