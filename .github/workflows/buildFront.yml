@@ -35,7 +35,7 @@ jobs:
           build-args: |
             VITE_CURRENT_HOST=https://cryptoroll.su
             VITE_BACKEND_URL=https://cryptoroll.su/api
-            VITE_LANDING_PAGE_LINK=https://cryptoroll.su/landing
+            VITE_LANDING_PAGE_LINK=https://cryptoroll.su/landing-page
           tags: incept1on999/cryptoroll:front
 
 
