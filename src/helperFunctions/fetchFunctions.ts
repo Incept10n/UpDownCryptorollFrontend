@@ -170,7 +170,6 @@ export const fetchCurrentUserMatch = async (username: string) => {
 export const fetchCurrentPrice: (coin: GameCoice) => Promise<number> = async (
     coin: GameCoice,
 ) => {
-    console.log(`THE BACK URL IS ${backendUrl}`);
     const response = await fetch(
         `${backendUrl}/livePrice?sym=${Converter.getCoinFromGameChoice(coin)}`,
     );
