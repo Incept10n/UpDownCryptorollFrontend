@@ -40,7 +40,7 @@ const MobileButtonsMenu = ({
             </div>
             <div
                 className={`absolute sm:top-[100px] sm:right-[50px] top-[80px] right-[19px]
-                           w-[118px] h-[140px] UpDownDarkBlueBg
+                           w-[118px] pb-[15px] UpDownDarkBlueBg
                            border-[1px] border-[#a4a4a4] rounded-[16px]
                            flex flex-col justify-start items-center text-[14px] font-semibold
                            ${!isExpanded && "hidden"}`}
