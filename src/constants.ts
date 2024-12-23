@@ -1,9 +1,10 @@
 export const currentHost = import.meta.env.DEV
     ? "http://172.27.33.20:5173"
     : import.meta.env.VITE_CURRENT_HOST;
-export const backendUrl = import.meta.env.DEV
-    ? "http://172.27.33.20:5089"
-    : import.meta.env.VITE_BACKEND_URL;
+export const backendUrl = "https://cryptoroll.su/api";
+// import.meta.env.DEV
+//     ? "http://172.27.33.20:5089"
+//     : import.meta.env.VITE_BACKEND_URL;
 
 export const manifestUrl =
     "https://raw.githubusercontent.com/Incept10n/BUFF/refs/heads/master/tonconnect-manifest.json";
