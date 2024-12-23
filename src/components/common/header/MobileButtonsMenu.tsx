@@ -62,7 +62,6 @@ const MobileButtonsMenu = ({
                 >
                     {t("aboutMobile")}
                 </a>
-                <div className="mt-[10px] underline">{t("dailyChallenge")}</div>
             </div>
         </div>
     );
